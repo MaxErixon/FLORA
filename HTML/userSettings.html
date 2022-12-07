@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="userSettings.css"> 
+    <title>UserSettings</title>
+</head>
+    <header>
+        <h1>Quizmaster</h1>
+        <h2>User Quiz</h2>
+        <h2>Submit Quiz</h2>
+        <h2>Username</h2>
+        <img src="../Images/user.jpg"> 
+</header>
+<body>
+
+    <form action="userSettings.php" method="post">
+             <h1>Edit account settings</h1>
+                 <div id="container">
+                    <div class="userNform">
+                            <h3>Current Username</h3>
+                            <label for="username">Username:</label>
+                            <input type="text" name="username" placeholder="current username">
+
+                            <h3>New username</h3>
+                            <label for="username">New username:</label>
+                            <input type="text" name="username" placeholder="username">
+                            <h3>Confirm new username</h3>
+                            <label for="username">Confirm new username:</label>
+                            <input type="text" name="username" placeholder="confirm username">
+                            <button type="text" name="submit">Submit</button>
+                    <div>
+
+                            <div class ="passWform">
+                                <h3>Current Password</h3>
+                                <label for="password">Password:</label>
+                                <input type="password" name="password" placeholder="current password">
+                                <h3>New password</h3>
+                                <label for="password">New password:</label>
+                                <input type="password" name="password" placeholder="new password">
+
+                                <label for="password">Confirm new password:</label>
+                                <input type="password" name="password" placeholder="confirm password">
+                                <button type="text" name="submit">Submit</button>
+                              </form>
+                            </div>
+
+                
+                <div id="profilePhoto">
+                    <h3>Profile photo</h3>
+                    <img src="../Images/picture.jpg">
+                    <button src="../Images/edit.jpg"></button>
+                </div>
+
+                <button>Save</button>
+                <button onclick="DeleteAccount()">Delete account</button>
+
+                <script>
+                function DeleteAccount() {
+                  confirm("Are you sure you want to delete your account?");
+                }
+                </script>
+
+
+                </div>
+       
+
+      
+    
+</body>
+</html>
