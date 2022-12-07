@@ -1,0 +1,19 @@
+header{
+    background-color: rgb(190, 190, 190);
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    position: fixed; 
+}
+
+h1{
+    margin-left: 5vh;
+}
+
+img{
+    position: absolute;
+    top: 15px;
+    right: 70px;
+    width: 6vh;
+}
