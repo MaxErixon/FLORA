@@ -17,3 +17,15 @@ img{
     right: 70px;
     width: 6vh;
 }
+
+button {
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+
+  position: absolute;
+  top: 15px;
+  right: 70px;
+  width: 6vh;
+}
