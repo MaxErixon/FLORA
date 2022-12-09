@@ -22,7 +22,8 @@ h1{
 }
 
 img{
-    width: 5vh;
+    width: 4vh;
+    height: 4vh;
 }
 
 button {
@@ -32,23 +33,24 @@ button {
   background-color: inherit;
 
   position: absolute;
-  top: 3px;
+  top: 0.5vh;
   right: 50px;
   width: 6vh;
 }
 
-.container{
+#container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
 
-  
    
 }
 
 .start-up{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height: 25vh;
-    width: 25vh;
-    gap: 18vh;
+    grid-template-columns:repeat(3,1fr);
+    gap: 12vh;
+
 }
 
 .free-quiz{
@@ -58,14 +60,25 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 10px 10px 10px 10px;
 }
 
 .free-quiz > img{
     height: 10vh;
     width: 10vh;
 }
-
+.title-free-quiz{
+    position: absolute;
+    bottom: 48vh;
+    background-color: rgb(173, 217, 234);
+    width: 25vh;
+    height: 10vh;
+    border-radius: 0px 0px 10px 10px;
+}
+.title-free-quiz > p{
+    text-align: center;
+    font-size: 2rem;
+}
 .user-quiz{
     background-color: rgb(190, 190, 190);
     height: 25vh;
@@ -80,7 +93,18 @@ button {
     height: 10vh;
     width: 10vh;
 }
-
+.title-user-quiz{
+    position: absolute;
+    bottom: 48vh;
+    background-color: rgb(173, 234, 198);
+    width: 25vh;
+    height: 10vh;
+    border-radius: 0px 0px 10px 10px;
+}
+.title-user-quiz > p{
+    text-align: center;
+    font-size: 2rem;
+}
 .submit-quiz{
     background-color: rgb(190, 190, 190);
     height: 25vh;
@@ -94,4 +118,18 @@ button {
 .submit-quiz > img{
     height: 10vh;
     width: 10vh;
+}
+
+.title-submit-quiz{
+    position: absolute;
+    bottom: 48vh;
+    background-color: rgb(173, 234, 198);
+    width: 25vh;
+    height: 10vh;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.title-submit-quiz > p{
+    text-align: center;
+    font-size: 2rem;
 }
