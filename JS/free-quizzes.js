@@ -85,9 +85,25 @@ function createBoxesOfQuiz(){
 function categoryEvent(categoryId){
     if(categoryId == "categoryId0"){
         location.href = "home-free.html";
-        console.log("bu");
+    }else if(categoryId == "categoryId1"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId2"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId3"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId4"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId5"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId6"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId7"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId8"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId9"){
+        location.href = "home-free.html";
     }
-    console.log(categoryId);
-    
+    console.log(categoryId); 
 }
 createBoxesOfQuiz();
