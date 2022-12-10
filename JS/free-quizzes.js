@@ -53,3 +53,40 @@ const category = [
     },
 
 ]
+
+console.log(category[0].icon);
+
+function createBoxesOfQuiz(){
+    for(let i = 0; i < category.length; i++){
+        let divId = document.getElementById("container"); 
+        let categoryId = document.createElement("div");
+        categoryId.id = "categoryNumber" + `${i}`;
+        let categoryChildId = divId.appendChild(categoryId);
+        let categoryTitleId = document.createElement("div");
+        categoryTitleId.innerHTML = category[i].title;
+    
+        categoryTitleId.className = "TitleNumber" + `${i}`;
+        categoryChildId.appendChild(categoryTitleId); 
+        
+        let iconId = document.createElement("div");
+        iconId.innerHTML = `
+        <img src=${category[i].icon}>
+        `
+        iconId.className = "IconNumber" + `${i}`;
+        categoryChildId.appendChild(iconId); 
+
+        let click = document.getElementById(categoryId.id);
+        click.addEventListener("click", function (){
+            categoryEvent(categoryId.id);
+        })   
+    }   
+}
+function categoryEvent(categoryId){
+    if(categoryId == "categoryNumber0"){
+        location.href = "home-free.html";
+        console.log("bu");
+    }
+    console.log(categoryId);
+    
+}
+createBoxesOfQuiz();

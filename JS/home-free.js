@@ -1,10 +1,21 @@
 "use strict"
 
-function setButtonsEventHandler(){
-    let userIcon = document.getElementById("icon-user");
-    userIcon.addEventListener("click", buttonFreeQuiz);
+function btnuserIcon(){
+    location.href = "login.html"
+    console.log("hello");
 }
 
-function buttonFreeQuiz(){
+function btnfreeQuiz(){
+    location.href = "free-quiz.html"
+    console.log("hello");
+}
+
+function btnuserQuiz(){
+    //Call  function alert with a info-message 
+    console.log("hello");
+}
+
+function btnsubmitQuiz(){
+    //Call  function alert with a info-message 
     console.log("hello");
 }
