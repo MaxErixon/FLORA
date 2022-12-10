@@ -48,7 +48,7 @@ const category = [
     },
     {   id: 10,
         title: "Sport & Leisure",
-        icon: "../Images/Categories/sport.jpg",
+        icon: "../Images/Categories/sports.jpg",
         information: "This category contains questions and answers about sports and leisure. Questions about leisure, games, sports, athletes, sporting events and individual sporting achievements.."
     },
 
@@ -60,19 +60,20 @@ function createBoxesOfQuiz(){
     for(let i = 0; i < category.length; i++){
         let divId = document.getElementById("container"); 
         let categoryId = document.createElement("div");
-        categoryId.id = "categoryNumber" + `${i}`;
+        categoryId.className = "categoryBox";
+        categoryId.id = "categoryId" + `${i}`;
         let categoryChildId = divId.appendChild(categoryId);
         let categoryTitleId = document.createElement("div");
         categoryTitleId.innerHTML = category[i].title;
     
-        categoryTitleId.className = "TitleNumber" + `${i}`;
+        categoryTitleId.className = "titleBox";
         categoryChildId.appendChild(categoryTitleId); 
         
         let iconId = document.createElement("div");
         iconId.innerHTML = `
         <img src=${category[i].icon}>
         `
-        iconId.className = "IconNumber" + `${i}`;
+        iconId.className = "iconBox";
         categoryChildId.appendChild(iconId); 
 
         let click = document.getElementById(categoryId.id);
@@ -82,7 +83,7 @@ function createBoxesOfQuiz(){
     }   
 }
 function categoryEvent(categoryId){
-    if(categoryId == "categoryNumber0"){
+    if(categoryId == "categoryId0"){
         location.href = "home-free.html";
         console.log("bu");
     }
