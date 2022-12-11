@@ -12,7 +12,7 @@
     <div class="header">
     <!--Typsnitt Roboto-->
     <h1>Quizmaster</h1>
-    <button id = "icon-user">
+    <button id= "icon-user" onclick = "btnuserIcon()">
         <img src="../Images/user.jpg" alt="buttonpng">
     </button>
 </div>
@@ -20,13 +20,13 @@
     <div class="title"><p>Let's QUIZ</p></div>
     <div id="container">
         <div class="start-up">
-            <div class="free-quiz"><img src="../Images/free-quiz.png">
+            <div class="free-quiz" onclick="btnfreeQuiz()"><img src="../Images/free-quiz.png">
                 <div class="title-free-quiz"><p>Free quizzes</p></div>
             </div>
-             <div class="user-quiz"><img src="../Images/lock.jpg">
+             <div class="user-quiz" onclick ="btnuserQuiz()"><img src="../Images/lock.jpg">
                 <div class="title-user-quiz"><p>Play user quizzes</p></div>
             </div>
-             <div class="submit-quiz"><img src="../Images/lock.jpg">
+             <div class="submit-quiz" onclick="btnsubmitQuiz()"><img src="../Images/lock.jpg">
                 <div class="title-submit-quiz"><p>Submit a quiz</p></div>
             </div>
 </div>

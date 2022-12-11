@@ -48,8 +48,62 @@ const category = [
     },
     {   id: 10,
         title: "Sport & Leisure",
-        icon: "../Images/Categories/sport.jpg",
+        icon: "../Images/Categories/sports.jpg",
         information: "This category contains questions and answers about sports and leisure. Questions about leisure, games, sports, athletes, sporting events and individual sporting achievements.."
     },
 
 ]
+
+console.log(category[0].icon);
+
+function createBoxesOfQuiz(){
+    for(let i = 0; i < category.length; i++){
+        let divId = document.getElementById("container"); 
+        let categoryId = document.createElement("div");
+        categoryId.className = "categoryBox";
+        categoryId.id = "categoryId" + `${i}`;
+        let categoryChildId = divId.appendChild(categoryId);
+        let categoryTitleId = document.createElement("div");
+        categoryTitleId.innerHTML = category[i].title;
+    
+        categoryTitleId.className = "titleBox";
+        categoryChildId.appendChild(categoryTitleId); 
+        
+        let iconId = document.createElement("div");
+        iconId.innerHTML = `
+        <img src=${category[i].icon}>
+        `
+        iconId.className = "iconBox";
+        categoryChildId.appendChild(iconId); 
+
+        let click = document.getElementById(categoryId.id);
+        click.addEventListener("click", function (){
+            categoryEvent(categoryId.id);
+        })   
+    }   
+}
+function categoryEvent(categoryId){
+    if(categoryId == "categoryId0"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId1"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId2"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId3"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId4"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId5"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId6"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId7"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId8"){
+        location.href = "home-free.html";
+    }else if(categoryId == "categoryId9"){
+        location.href = "home-free.html";
+    }
+    console.log(categoryId); 
+}
+createBoxesOfQuiz();
