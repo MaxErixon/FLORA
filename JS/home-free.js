@@ -19,3 +19,8 @@ function btnsubmitQuiz(){
     //Call  function alert with a info-message 
     console.log("hello");
 }
+
+function btnbackIcon(){
+    location.href = "free-quiz.html";
+    console.log("hello");
+}
