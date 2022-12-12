@@ -83,55 +83,95 @@ function createBoxesOfQuiz(){
     }   
 }
 function categoryEvent(categoryId){
+    let hidden = document.getElementById("container");
+    hidden.style.display = "none";
+
+    let backDiv = document.createElement("div");
+    backDiv.className = "backDiv";
+    backDiv.innerHTML = `
+    <button onclick = ${"btnbackIcon()"}>
+     <img src="../Images/back-button.png" alt="buttonpng">
+ </button>
+    `
+    document.body.appendChild(backDiv);
+
+    let wrapper = document.getElementById("wrapper-category");
+    let categoryDivTitle = document.createElement("div");
+    categoryDivTitle.className = "categoryTitle";
+    wrapper.appendChild(categoryDivTitle);
+
+    let categoryDivLogo = document.createElement("div");
+    categoryDivLogo.className = "categoryLogo";
+  
+    wrapper.appendChild(categoryDivLogo);
+
+    let categoryDivInfo = document.createElement("div");
+    categoryDivInfo.className = "categoryInfo";
+    wrapper.appendChild(categoryDivInfo);
+
     if(categoryId == "categoryId0"){
-       let hidden = document.getElementById("container");
-       hidden.style.display = "none";
-
-       let backDiv = document.createElement("div");
-       backDiv.className = "backDiv";
-       backDiv.innerHTML = `
-       <img src= "../Images/back-button.png">
-       `
-       document.body.appendChild(backDiv);
-
-       let wrapper = document.getElementById("wrapper-category");
-       let categoryDivTitle = document.createElement("div");
-       categoryDivTitle.className = "categoryTitle";
-       categoryDivTitle.innerHTML = category[0].title;
-       wrapper.appendChild(categoryDivTitle);
-
-       let categoryDivLogo = document.createElement("div");
-       categoryDivLogo.className = "categoryLogo";
-       categoryDivLogo.innerHTML = `
-       <img src=${category[0].icon}>
-       `
-       wrapper.appendChild(categoryDivLogo);
-
-       let categoryDivInfo = document.createElement("div");
-       categoryDivInfo.className = "categoryInfo";
-       categoryDivInfo.innerHTML = category[0].information;
-       wrapper.appendChild(categoryDivInfo);
-
-
+        categoryDivTitle.innerHTML = category[0].title;
+        categoryDivLogo.innerHTML = `
+        <img src=${category[0].icon}>
+        `
+        categoryDivInfo.innerHTML = category[0].information;
 
     }else if(categoryId == "categoryId1"){
-        location.href = "home-free.html";
+       categoryDivTitle.innerHTML = category[1].title;
+       categoryDivLogo.innerHTML = `
+       <img src=${category[1].icon}>
+       `
+       categoryDivInfo.innerHTML = category[1].information;
+    
     }else if(categoryId == "categoryId2"){
-        location.href = "home-free.html";
+        categoryDivTitle.innerHTML = category[2].title;
+       categoryDivLogo.innerHTML = `
+       <img src=${category[2].icon}>
+       `
+       categoryDivInfo.innerHTML = category[2].information;
     }else if(categoryId == "categoryId3"){
-        location.href = "home-free.html";
+        categoryDivTitle.innerHTML = category[3].title;
+       categoryDivLogo.innerHTML = `
+       <img src=${category[3].icon}>
+       `
+       categoryDivInfo.innerHTML = category[3].information;
     }else if(categoryId == "categoryId4"){
-        location.href = "home-free.html";
+        categoryDivTitle.innerHTML = category[4].title;
+       categoryDivLogo.innerHTML = `
+       <img src=${category[4].icon}>
+       `
+       categoryDivInfo.innerHTML = category[4].information;
     }else if(categoryId == "categoryId5"){
-        location.href = "home-free.html";
+        categoryDivTitle.innerHTML = category[5].title;
+       categoryDivLogo.innerHTML = `
+       <img src=${category[5].icon}>
+       `
+       categoryDivInfo.innerHTML = category[5].information;
+
     }else if(categoryId == "categoryId6"){
-        location.href = "home-free.html";
+        categoryDivTitle.innerHTML = category[6].title;
+       categoryDivLogo.innerHTML = `
+       <img src=${category[6].icon}>
+       `
+       categoryDivInfo.innerHTML = category[6].information;
     }else if(categoryId == "categoryId7"){
-        location.href = "home-free.html";
+        categoryDivTitle.innerHTML = category[7].title;
+       categoryDivLogo.innerHTML = `
+       <img src=${category[7].icon}>
+       `
+       categoryDivInfo.innerHTML = category[7].information;
     }else if(categoryId == "categoryId8"){
-        location.href = "home-free.html";
+        categoryDivTitle.innerHTML = category[8].title;
+       categoryDivLogo.innerHTML = `
+       <img src=${category[8].icon}>
+       `
+       categoryDivInfo.innerHTML = category[8].information;
     }else if(categoryId == "categoryId9"){
-        location.href = "home-free.html";
+        categoryDivTitle.innerHTML = category[9].title;
+       categoryDivLogo.innerHTML = `
+       <img src=${category[9].icon}>
+       `
+       categoryDivInfo.innerHTML = category[9].information;
     }
     console.log(categoryId); 
 }

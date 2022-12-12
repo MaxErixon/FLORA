@@ -48,6 +48,7 @@ body{
     width: 25vh;
     height: 25vh;
     margin-top: 5vh;
+    cursor: pointer;
 }
 
 
@@ -86,4 +87,17 @@ body{
 
 .categoryInfo{
     font-size: 1rem;
+}
+
+.backDiv{
+    position: absolute;
+    top: 15vh;
+    left: 10vh;
+    width: 15vh;
+    height: 15vh;
+}
+
+.backDiv > img{
+    width: 7vh;
+    height: 7vh;
 }
