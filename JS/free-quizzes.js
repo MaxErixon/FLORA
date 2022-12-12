@@ -109,6 +109,7 @@ function categoryEvent(categoryId){
     categoryDivInfo.className = "categoryInfo";
     wrapper.appendChild(categoryDivInfo);
 
+
     if(categoryId == "categoryId0"){
         categoryDivTitle.innerHTML = category[0].title;
         categoryDivLogo.innerHTML = `
