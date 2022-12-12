@@ -84,7 +84,34 @@ function createBoxesOfQuiz(){
 }
 function categoryEvent(categoryId){
     if(categoryId == "categoryId0"){
-        location.href = "home-free.html";
+       let hidden = document.getElementById("container");
+       hidden.style.display = "none";
+
+       let backDiv = document.createElement("div");
+       backDiv.className = "backDiv";
+       backDiv.innerHTML = 
+       document.body.appendChild(backDiv);
+
+       let wrapper = document.getElementById("wrapper-category");
+       let categoryDivTitle = document.createElement("div");
+       categoryDivTitle.className = "categoryTitle";
+       categoryDivTitle.innerHTML = category[0].title;
+       wrapper.appendChild(categoryDivTitle);
+
+       let categoryDivLogo = document.createElement("div");
+       categoryDivLogo.className = "categoryLogo";
+       categoryDivLogo.innerHTML = `
+       <img src=${category[0].icon}>
+       `
+       wrapper.appendChild(categoryDivLogo);
+
+       let categoryDivInfo = document.createElement("div");
+       categoryDivInfo.className = "categoryInfo";
+       categoryDivInfo.innerHTML = category[0].information;
+       wrapper.appendChild(categoryDivInfo);
+
+
+
     }else if(categoryId == "categoryId1"){
         location.href = "home-free.html";
     }else if(categoryId == "categoryId2"){
@@ -106,4 +133,8 @@ function categoryEvent(categoryId){
     }
     console.log(categoryId); 
 }
+
+
+
+
 createBoxesOfQuiz();

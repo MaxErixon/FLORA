@@ -62,3 +62,28 @@ body{
     margin-bottom: 10vh;
 
 }
+
+#wrapper-category{
+    display: grid;
+    grid-row: 1fr 1fr 1fr;
+    justify-items: center;
+    margin-top: 10vh;
+}
+
+.categoryTitle{
+    margin-bottom: 3vh;
+    font-size: 2rem;
+}
+
+.categoryLogo{
+    margin-bottom: 3vh;
+}
+
+.categoryLogo > img{
+    width: 10vh;
+    height: 10vh;
+}
+
+.categoryInfo{
+    font-size: 1rem;
+}
