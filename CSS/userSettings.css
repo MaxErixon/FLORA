@@ -17,9 +17,6 @@ h1{
 }
 
 img{
-    position: absolute;
-    top: 15px;
-    right: 70px;
     width: 6vh;
 }
 #container{
@@ -96,4 +93,10 @@ button {
 .nav-link{
     text-decoration: none;
     color: black;
+    margin-left: 3vh;
+}
+
+.menu-container{
+    display: flex;
+    align-items: center;
 }
