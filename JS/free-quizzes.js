@@ -89,7 +89,9 @@ function categoryEvent(categoryId){
 
        let backDiv = document.createElement("div");
        backDiv.className = "backDiv";
-       backDiv.innerHTML = 
+       backDiv.innerHTML = `
+       <img src= "../Images/back-button.png">
+       `
        document.body.appendChild(backDiv);
 
        let wrapper = document.getElementById("wrapper-category");
