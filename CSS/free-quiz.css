@@ -106,3 +106,18 @@ body{
     height: 7vh;
 }
 
+#input-fields{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    gap: 10vh;
+}
+
+.button-play > button {
+    border: none;
+   cursor: pointer;
+   appearance: none;
+   background-color: inherit;
+ 
+}
