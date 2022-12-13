@@ -109,6 +109,7 @@ function categoryEvent(categoryId){
     categoryDivInfo.className = "categoryInfo";
     wrapper.appendChild(categoryDivInfo);
 
+    selectQuiz(); 
 
     if(categoryId == "categoryId0"){
         categoryDivTitle.innerHTML = category[0].title;
@@ -176,6 +177,48 @@ function categoryEvent(categoryId){
     }
     console.log(categoryId); 
 }
+
+function selectQuiz(){
+    let inputFields = document.getElementById("input-fields");
+
+    let text = document.createElement("div");
+    text.innerHTML = "Number of questions";
+    text.className = "textOfNumber";
+    inputFields.appendChild(text);
+
+    let numberOfQuestion = document.createElement("input");
+    numberOfQuestion.type = "text";
+    numberOfQuestion.className = "first-input";
+    inputFields.appendChild(numberOfQuestion);
+
+    let label = document.createElement("label");
+    label.innerHTML = "Difficulty";
+    label.className = "label";
+    inputFields.appendChild(label);
+    // This array below will be replaced by API-call 
+    let array = ["easy", "medium", "hard"];
+    let selectList = document.createElement("select");
+    selectList.id = "mySelect";
+
+    
+    inputFields.appendChild(selectList);
+    
+    for (let i = 0; i < array.length; i++) {
+        let option = document.createElement("option");
+        option.value = array[i];
+        option.text = array[i];
+        selectList.appendChild(option);
+    }
+
+    let button = document.createElement("div");
+    button.textContent = "Play quiz";
+    button.innerHTML =`
+    <button>Click me</button> `
+    button.className = "button-play";
+    inputFields.appendChild(button);
+}
+
+
 
 
 
