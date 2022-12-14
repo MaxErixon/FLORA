@@ -1,0 +1,12 @@
+.fdiv{
+    display: flex;
+    justify-content: center;
+}
+
+.inputWrap{
+    display: flex;
+}
+
+.inputWrap img{
+    margin-right: 1vw;
+}

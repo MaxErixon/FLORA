@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "category": "sports&leisure",
+        "question": "Which team won the 2014 Fifa world cup?",
+        "correctAnswer": "Germany",
+        "incorrectAnswer1": "Spain",
+        "incorrectAnswer2": "Brazil",
+        "incorrectAnswer3": "France"
+    },
+    {
+        "id": 2,
+        "category": "music",
+        "question": "Who owns the record for the most streamed song on spotify?",
+        "correctAnswer": "Ed Sheeran",
+        "incorrectAnswer1": "The Weeknd",
+        "incorrectAnswer2": "Drake",
+        "incorrectAnswer3": "Zara Larsson"
+    }
+]
