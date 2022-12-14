@@ -29,17 +29,7 @@ body{
     text-decoration: none;
     color: black;
  }
- button {
-   border: none;
-   cursor: pointer;
-   appearance: none;
-   background-color: inherit;
- 
-   position: absolute;
-   top: 0.5vh;
-   right: 50px;
-   width: 6vh;
- }
+
  
  #container{
     display: grid;
@@ -68,6 +58,18 @@ body{
 
 }
 
+#icon-user{
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+  
+    position: absolute;
+    top: 0.5vh;
+    right: 50px;
+    width: 6vh;
+}
+
 #wrapper-category{
     display: grid;
     grid-row: 1fr 1fr 1fr;
@@ -75,6 +77,12 @@ body{
     margin-top: 10vh;
 }
 
+#backdiv{
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+}
 .categoryTitle{
     margin-bottom: 3vh;
     font-size: 2rem;
@@ -114,10 +122,23 @@ body{
     gap: 10vh;
 }
 
-.button-play > button {
+.button-play > #btnPlayQuiz{
     border: none;
-   cursor: pointer;
-   appearance: none;
-   background-color: inherit;
- 
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    position: absolute;
+
+    bottom: 30vh;
+    height: 8vh;
+    right: 25vh;
+    width: 15vh;
+    background-color: rgb(210, 208, 208);
+
+    border-radius: 10px 10px 10px 10px;
 }
+
+#btnPlayQuiz:hover{
+    background-color: rgb(148, 146, 146);
+}
+
