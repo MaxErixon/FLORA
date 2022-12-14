@@ -179,6 +179,7 @@ function categoryEvent(categoryId){
 }
 
 function selectQuiz(){
+    document.getElementById("clock").style.visibility = "hidden";
     let inputFields = document.getElementById("input-fields");
 
     let text = document.createElement("div");
@@ -211,19 +212,41 @@ function selectQuiz(){
     }
 
     let btnPlayQuiz = document.createElement("div");
-    btnPlayQuiz.className = "button-play";
+    btnPlayQuiz.id = "button-play";
     btnPlayQuiz.innerHTML = `
-    <button id = "btnPlayQuiz" onclick ${"btnPlayQuiz()"}> Play quiz
-    </button>`
-    document.body.appendChild(btnPlayQuiz);
+    <button id = "btnPlayQuiz"> Play quiz </button>`
+    document.body.appendChild(btnPlayQuiz);   
     
+    let click = document.getElementById("button-play");
+    click.addEventListener("click", playQuiz);
 
 }
 
+function playQuiz(){
+    document.getElementById("clock").style.visibility = "visible";
+    document.getElementById("wrapper-category").style.display = "none";
+    document.getElementById("input-fields").style.display = "none";
+    document.getElementById("backdiv").style.display = "none";
+    document.getElementById("button-play").style.display = "none";
 
+    let clockDiv = document.getElementById("clock"); 
+    let clock = document.createElement("SPAN"); 
+    clock.id = "seconds";
+    clock.innerHTML = "5"
+    clockDiv.appendChild(clock);
 
+    timeLeft = 5;
 
+function countdown() {
+	timeLeft--;
+	document.getElementById("seconds").innerHTML = String( timeLeft );
+	if (timeLeft > 0) {
+		setTimeout(countdown, 1000);
+	}
+};
 
+setTimeout(countdown, 1000);
+}
 
 
 
