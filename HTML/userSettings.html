@@ -19,16 +19,16 @@
 
 
              <div id="forms">
-                    <form action="userSettings.php" method="post">
+                    <form action="" method="post">
                             <h1>Edit account settings</h1>
                                     <div class="userform">
-                                        <h3>Current Password:</h3>
+                                        <h3>Current Username:</h3>
                                             <input type="text" name="username" placeholder="current username">
-                                            <h3>New password:</h3>
+                                            <h3>New Username:</h3>
                                             <input type="text" name="username" placeholder="username">
-                                            <h3>Confirm new password:</h3>              
+                                            <h3>Confirm new username:</h3>              
                                             <input type="text" name="username" placeholder="confirm username">
-                                            <button type="text" name="submit">Submit</button>
+                                            <button onclick="SavedEditings()">Save</button>
                                         </form>
                                         </div>
 
@@ -39,7 +39,7 @@
                                                 <input type="password" name="password" placeholder="new password">
                                                 <h3>Confirm new password:</h3>
                                                 <input type="password" name="password" placeholder="confirm password">
-                                                <button type="text" name="submit">Submit</button>
+                                                <button onclick="SavedEditings()">Save</button>
                                             </form>
                                        </div>
              </div>
@@ -50,7 +50,7 @@
                 
 
             <div class="btnWrapper">
-                 <button id="" onclick="SavedEditings()">Save</button>
+                 
                  <button onclick="DeleteAccount()" class=" btn btn-default">Delete account</button>
             </div>
                 </div>
