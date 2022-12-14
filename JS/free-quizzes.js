@@ -222,7 +222,15 @@ function selectQuiz(){
 
 }
 
+let categoryName = "";
+
 function playQuiz(){
+    let categoryClass = document.getElementsByClassName("categoryTitle")
+    let categoryNameBlank = categoryClass[0].innerHTML
+    console.log(categoryNameBlank);
+    let categoryNameAnd = categoryNameBlank.replace(" ", "_");
+    categoryName = categoryNameAnd.replace("&", "and")  
+
     document.getElementById("clock").style.visibility = "visible";
     document.getElementById("wrapper-category").style.display = "none";
     document.getElementById("input-fields").style.display = "none";
@@ -242,12 +250,22 @@ function countdown() {
 	document.getElementById("seconds").innerHTML = String( timeLeft );
 	if (timeLeft > 0) {
 		setTimeout(countdown, 1000);
-	}
+	}else if(timeLeft == 0){
+       document.getElementById("clock").style.display="none";
+       console.log(categoryName);
+       getQuizQuestion(categoryName, "2", "easy"); 
+
+       
+    }
 };
 
 setTimeout(countdown, 1000);
 }
 
-
+async function getQuizQuestion(category,limit,difficulty){
+    let response = await fetch(`https://the-trivia-api.com/api/questions?categories=${category}&limit=${limit}&difficulty=${difficulty}`);
+    let data = await response.json();
+    console.log(data);
+}
 
 createBoxesOfQuiz();
