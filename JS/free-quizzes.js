@@ -89,7 +89,7 @@ function categoryEvent(categoryId){
     let backDiv = document.createElement("div");
     backDiv.className = "backDiv";
     backDiv.innerHTML = `
-    <button onclick = ${"btnbackIcon()"}>
+    <button id = "backdiv" onclick = ${"btnbackIcon()"}>
      <img src="../Images/back-button.png" alt="buttonpng">
  </button>
     `
@@ -210,13 +210,17 @@ function selectQuiz(){
         selectList.appendChild(option);
     }
 
-    let button = document.createElement("div");
-    button.textContent = "Play quiz";
-    button.innerHTML =`
-    <button>Click me</button> `
-    button.className = "button-play";
-    inputFields.appendChild(button);
+    let btnPlayQuiz = document.createElement("div");
+    btnPlayQuiz.className = "button-play";
+    btnPlayQuiz.innerHTML = `
+    <button id = "btnPlayQuiz" onclick ${"btnPlayQuiz()"}> Play quiz
+    </button>`
+    document.body.appendChild(btnPlayQuiz);
+    
+
 }
+
+
 
 
 
