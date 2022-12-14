@@ -22,22 +22,22 @@
                     <form action="userSettings.php" method="post">
                             <h1>Edit account settings</h1>
                                     <div class="userform">
-                                            <h3>Current Username</h3>
+                                        <h3>Current Password:</h3>
                                             <input type="text" name="username" placeholder="current username">
-                                            <h3>New username</h3>
+                                            <h3>New password:</h3>
                                             <input type="text" name="username" placeholder="username">
-                                            <h3>Confirm new username</h3>                          
+                                            <h3>Confirm new password:</h3>              
                                             <input type="text" name="username" placeholder="confirm username">
                                             <button type="text" name="submit">Submit</button>
                                         </form>
                                         </div>
 
                                         <div class="passWform">
-                                                <h3>Current Password</h3>
+                                                <h3>Current Password:</h3>
                                                 <input type="password" name="password" placeholder="current password">
-                                                <h3>New password</h3>
+                                                <h3>New password:</h3>
                                                 <input type="password" name="password" placeholder="new password">
-                                                <h3>Confirm new password</h3>
+                                                <h3>Confirm new password:</h3>
                                                 <input type="password" name="password" placeholder="confirm password">
                                                 <button type="text" name="submit">Submit</button>
                                             </form>
@@ -50,8 +50,8 @@
                 
 
             <div class="btnWrapper">
-                 <button onclick="SavedEditings()">Save</button>
-                 <button onclick="DeleteAccount()">Delete account</button>
+                 <button id="" onclick="SavedEditings()">Save</button>
+                 <button onclick="DeleteAccount()" class=" btn btn-default">Delete account</button>
             </div>
                 </div>
 
@@ -59,13 +59,13 @@
 
 </div>
 <div id = "meny">
-    <div class="menu-container"> <img class="menu-symbol" src="../Images/books.jpg" alt=""> <a href="mode.html" class="nav-link">My Quizes</a> </div>
-    <div class="menu-container"> <img class="menu-symbol" src="../Images/books.jpg" alt=""> <a href="mode.html" class="nav-link">My Quizes</a> </div>
-    <div class="menu-container"> <img class="menu-symbol" src="../Images/books.jpg" alt=""> <a href="mode.html" class="nav-link">My Quizes</a> </div>
+    <div class="menu-container"> <img class="menu-symbol" src="../Images/books.jpg" alt=""> <a href="mode.html" class="nav-link">My library</a> </div>
+    <div class="menu-container"> <img class="menu-symbol" src="../Images/question.jpg" alt=""> <a href="mode.html" class="nav-link">My Quizes</a> </div>
+    <div class="menu-container"> <img class="menu-symbol" src="../Images/settings.jpg" alt=""> <a href="mode.html" class="nav-link">Settings</a> </div>
 </div>  
 </div>    
        
-
+<script src="../JS/alert.js"></script>
       
     
 </body>
