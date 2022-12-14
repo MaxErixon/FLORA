@@ -122,7 +122,7 @@ body{
     gap: 10vh;
 }
 
-.button-play > #btnPlayQuiz{
+#button-play > #btnPlayQuiz{
     border: none;
     cursor: pointer;
     appearance: none;
@@ -142,3 +142,17 @@ body{
     background-color: rgb(148, 146, 146);
 }
 
+#clock {
+	width: 300px;
+	height: 300px;
+	margin: auto;
+}
+
+span {
+	display: block;
+	width: 100%;
+	margin-top: 20vh;
+	padding-top: 60px;
+	text-align: center;
+	font-size: 150px;
+}

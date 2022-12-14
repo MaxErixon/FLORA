@@ -24,3 +24,8 @@ function btnbackIcon(){
     location.href = "free-quiz.html";
     console.log("hello");
 }
+
+function btnPlayQuiz(){
+    location.href = "login.html";
+    console.log("hello");
+}
