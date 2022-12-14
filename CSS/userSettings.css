@@ -46,6 +46,7 @@ img{
     height: 135px;
     width: 135px;
     background: url(../Images/picture.jpg) no-repeat;
+    cursor: pointer;
 }
 
 button {
