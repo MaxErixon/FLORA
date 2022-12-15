@@ -1,13 +1,17 @@
+
+//Clears all the inputs
 function clearInputs() {
     question.value = "";
     correctAnswer.value = "";
     incorrectAnswer1.value = "";
     incorrectAnswer2.value = "";
     incorrectAnswer3.value = "";
-    category.value = "Choose a category"
+    category.value = "";
 
 }
 
+
+//Submits a question to the DB with the values of the inputs
 function submitQuestion() {
     let category = document.querySelector("#category")
 
@@ -29,7 +33,7 @@ function submitQuestion() {
       };
     
       let rqt_post = new Request(
-        "http://localhost:8888/PROJEKT-22/Questions/add.php",
+        "/APIs/Questions/add.php",
         {
           method: "POST",
           body: JSON.stringify(body_post),

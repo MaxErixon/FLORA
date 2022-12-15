@@ -63,8 +63,8 @@ $incorrectAnswer3 = $requestData["incorrectAnswer3"];
         sendJSON($error, 400);
     }
 
-    if ($correctAnswer == "" or $question == "" or $incorrectAnswer1 == "" or $incorrectAnswer2 == "" or $incorrectAnswer3 == "") {
-        $error = ["error"=>"Missing text"];
+    if ($correctAnswer == "" or $question == "" or $incorrectAnswer1 == "" or $incorrectAnswer2 == "" or $incorrectAnswer3 == "" or $category == "set") {
+        $error = ["error"=>"Missing text or category"];
         sendJSON($error, 404);
     }
 
