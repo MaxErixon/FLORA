@@ -156,3 +156,30 @@ span {
 	text-align: center;
 	font-size: 150px;
 }
+
+#wrapper-quiz{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+}
+.box-question {
+    width: 50vh;
+    height: 7vh;
+    background-color: rgb(210, 208, 208);
+    margin-bottom: 10vh;
+}
+
+.box-question > input{
+    margin-top: 2vh;
+    margin-left: 2vh;
+    width: 3vh;
+    height: 3vh;
+}
+
+#info-quiz{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

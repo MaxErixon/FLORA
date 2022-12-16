@@ -191,7 +191,8 @@ function selectQuiz(){
     numberOfQuestion.type = "text";
     numberOfQuestion.className = "first-input";
     inputFields.appendChild(numberOfQuestion);
-
+    //numberOfQuestion.innerHTML = numberOfQuestion.value;
+    
     let label = document.createElement("label");
     label.innerHTML = "Difficulty";
     label.className = "label";
@@ -200,15 +201,16 @@ function selectQuiz(){
     let array = ["easy", "medium", "hard"];
     let selectList = document.createElement("select");
     selectList.id = "mySelect";
-
-    
-    inputFields.appendChild(selectList);
+        
+    inputFields.append(selectList);
     
     for (let i = 0; i < array.length; i++) {
         let option = document.createElement("option");
         option.value = array[i];
         option.text = array[i];
         selectList.appendChild(option);
+        let selectValue = option.value; 
+        console.log(selectValue);
     }
 
     let btnPlayQuiz = document.createElement("div");
@@ -218,7 +220,11 @@ function selectQuiz(){
     document.body.appendChild(btnPlayQuiz);   
     
     let click = document.getElementById("button-play");
-    click.addEventListener("click", playQuiz);
+    click.addEventListener("click", function(){
+        inputFields.innerText = numberOfQuestion.value;
+        console.log(inputFields.innerText);
+        playQuiz();
+    });
 
 }
 
@@ -228,11 +234,11 @@ function playQuiz(){
     let categoryClass = document.getElementsByClassName("categoryTitle")
     let categoryNameBlank = categoryClass[0].innerHTML
     console.log(categoryNameBlank);
-    let categoryNameAnd = categoryNameBlank.replace(" ", "_");
-    categoryName = categoryNameAnd.replace("&", "and")  
+    let categoryNameAnd = categoryNameBlank.replace("&amp;","and");
+    categoryName = categoryNameAnd.replace(/ /g, "_")  
 
     document.getElementById("clock").style.visibility = "visible";
-    document.getElementById("wrapper-category").style.display = "none";
+    document.getElementById("wrapper-category").style.visibility = "hidden";
     document.getElementById("input-fields").style.display = "none";
     document.getElementById("backdiv").style.display = "none";
     document.getElementById("button-play").style.display = "none";
@@ -240,10 +246,10 @@ function playQuiz(){
     let clockDiv = document.getElementById("clock"); 
     let clock = document.createElement("SPAN"); 
     clock.id = "seconds";
-    clock.innerHTML = "5"
+    clock.innerHTML = "3"
     clockDiv.appendChild(clock);
 
-    timeLeft = 5;
+    timeLeft = 3;
 
 function countdown() {
 	timeLeft--;
@@ -252,9 +258,25 @@ function countdown() {
 		setTimeout(countdown, 1000);
 	}else if(timeLeft == 0){
        document.getElementById("clock").style.display="none";
+       let overviewQuiz = document.getElementById("wrapper-quiz");
+       let infoQuiz = document.getElementById("info-quiz");
+       let quizTitle = document.createElement("div");
+       quizTitle.className = "quiz-title";
+       quizTitle.innerHTML = categoryName;
+       infoQuiz.appendChild(quizTitle);
+   
+       categoryName;
+
        console.log(categoryName);
        getQuizQuestion(categoryName, "2", "easy"); 
-
+       
+       for (let i = 0; i < 4; i++) {
+        let question = document.createElement("div");
+        question.className = "box-question";
+        question.innerHTML = `
+        <input type = "radio" name = "radio">`;
+        overviewQuiz.appendChild(question);
+    }
        
     }
 };
@@ -267,5 +289,7 @@ async function getQuizQuestion(category,limit,difficulty){
     let data = await response.json();
     console.log(data);
 }
+
+
 
 createBoxesOfQuiz();
