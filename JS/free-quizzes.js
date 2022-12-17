@@ -257,7 +257,7 @@ function playQuiz(){
     categoryName = categoryNameAnd.replace(/ /g, "_")  
 
     document.getElementById("clock").style.visibility = "visible";
-    document.getElementById("wrapper-category").style.visibility = "hidden";
+    document.getElementById("wrapper-category").style.display = "none";
     document.getElementById("input-fields").style.display = "none";
     document.getElementById("backdiv").style.display = "none";
     document.getElementById("button-play").style.display = "none";
@@ -265,10 +265,10 @@ function playQuiz(){
     let clockDiv = document.getElementById("clock"); 
     let clock = document.createElement("SPAN"); 
     clock.id = "seconds";
-    clock.innerHTML = "3"
+    clock.innerHTML = "1"
     clockDiv.appendChild(clock);
 
-    timeLeft = 3;
+    timeLeft = 1;
 
 function countdown() {
 	timeLeft--;
@@ -282,17 +282,28 @@ function countdown() {
        let quizTitle = document.createElement("div");
        quizTitle.id = "quiz-title";
        infoQuiz.appendChild(quizTitle);
+
+       let question = document.createElement("div");
+       question.id = "question";
+       infoQuiz.appendChild(question);
        categoryName;
 
-       getQuizQuestion(categoryName, numberInput, levelOption); 
    
        for (let i = 0; i < 4; i++) {
-        let question = document.createElement("div");
-        question.className = "box-question";
-        question.innerHTML = `
-        <input type = "radio" name = "radio">`;
-        overviewQuiz.appendChild(question);
+        let questionBox = document.createElement("div");
+        questionBox.className = "box-question";
+        questionBox.id = "box-question";
+        overviewQuiz.appendChild(questionBox);
+        let input = document.createElement("input");
+        input.id = "input";
+        input.type = "radio";
+        questionBox.appendChild(input);
+
+        let label = document.createElement("label");
+        label.id = "label" + `${i}`;
+        questionBox.appendChild(label);
     }
+    getQuizQuestion(categoryName, numberInput, levelOption); 
        
     }
 };
@@ -306,7 +317,22 @@ async function getQuizQuestion(category,limit,difficulty){
     data = await response.json();
     let quizTitle = document.getElementById("quiz-title");
     quizTitle.innerHTML = data[0].category;
+    let question = document.getElementById("question");
+    question.innerHTML = data[0].question;
     console.log(data);
+
+    let answers = [...data[0].incorrectAnswers];
+    answers.push(data[0].correctAnswer);
+    console.log(answers);
+
+    let shuffledArray = answers.sort((a,b) => 0.8 - Math.random());
+console.log(shuffledArray);
+
+   for (let i = 0; i < 4; i++) {
+        let addAnswer = document.getElementById("label" + `${i}`); 
+        addAnswer.textContent = shuffledArray[i];
+    }
+    
 }
 
 
