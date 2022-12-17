@@ -109,7 +109,7 @@ function categoryEvent(categoryId){
     categoryDivInfo.className = "categoryInfo";
     wrapper.appendChild(categoryDivInfo);
 
-    selectQuiz(); 
+    
 
     if(categoryId == "categoryId0"){
         categoryDivTitle.innerHTML = category[0].title;
@@ -176,18 +176,20 @@ function categoryEvent(categoryId){
        categoryDivInfo.innerHTML = category[9].information;
     }
     console.log(categoryId); 
+
+    selectQuiz();
 }
 
-function selectQuiz(){
-    document.getElementById("clock").style.visibility = "hidden";
-    let inputFields = document.getElementById("input-fields");
+function createInputFields(){
+   inputFields = document.getElementById("input-fields");
+   inputFields.innerHTML = "";
 
     let text = document.createElement("div");
     text.innerHTML = "Number of questions";
     text.className = "textOfNumber";
     inputFields.appendChild(text);
 
-    let numberOfQuestion = document.createElement("input");
+    numberOfQuestion = document.createElement("input");
     numberOfQuestion.type = "text";
     numberOfQuestion.className = "first-input";
     inputFields.appendChild(numberOfQuestion);
@@ -197,11 +199,11 @@ function selectQuiz(){
     label.innerHTML = "Difficulty";
     label.className = "label";
     inputFields.appendChild(label);
+
     // This array below will be replaced by API-call 
     let array = ["easy", "medium", "hard"];
-    let selectList = document.createElement("select");
+    selectList = document.createElement("select");
     selectList.id = "mySelect";
-        
     inputFields.append(selectList);
     
     for (let i = 0; i < array.length; i++) {
@@ -209,10 +211,13 @@ function selectQuiz(){
         option.value = array[i];
         option.text = array[i];
         selectList.appendChild(option);
-        let selectValue = option.value; 
-        console.log(selectValue);
     }
 
+}
+
+function selectQuiz(){
+    document.getElementById("clock").style.visibility = "hidden";
+    createInputFields();
     let btnPlayQuiz = document.createElement("div");
     btnPlayQuiz.id = "button-play";
     btnPlayQuiz.innerHTML = `
@@ -222,13 +227,27 @@ function selectQuiz(){
     let click = document.getElementById("button-play");
     click.addEventListener("click", function(){
         inputFields.innerText = numberOfQuestion.value;
-        console.log(inputFields.innerText);
-        playQuiz();
+        numberInput = inputFields.innerText; 
+    
+        if(isNaN(numberInput) || numberInput < 1 || numberInput > 50){
+            alert("Sorry, number of question must be between 1-50");
+            createInputFields();
+        }else{
+            levelOption = selectList.value;
+            console.log(levelOption);
+            playQuiz();
+        }
     });
-
+   
 }
 
+
+let inputFields = null;
+let numberOfQuestion = null;
 let categoryName = "";
+let numberInput = "";
+let levelOption = "";
+let selectList= null;
 
 function playQuiz(){
     let categoryClass = document.getElementsByClassName("categoryTitle")
@@ -261,15 +280,12 @@ function countdown() {
        let overviewQuiz = document.getElementById("wrapper-quiz");
        let infoQuiz = document.getElementById("info-quiz");
        let quizTitle = document.createElement("div");
-       quizTitle.className = "quiz-title";
-       quizTitle.innerHTML = categoryName;
+       quizTitle.id = "quiz-title";
        infoQuiz.appendChild(quizTitle);
-   
        categoryName;
 
-       console.log(categoryName);
-       getQuizQuestion(categoryName, "2", "easy"); 
-       
+       getQuizQuestion(categoryName, numberInput, levelOption); 
+   
        for (let i = 0; i < 4; i++) {
         let question = document.createElement("div");
         question.className = "box-question";
@@ -283,10 +299,13 @@ function countdown() {
 
 setTimeout(countdown, 1000);
 }
+let data = [];
 
 async function getQuizQuestion(category,limit,difficulty){
     let response = await fetch(`https://the-trivia-api.com/api/questions?categories=${category}&limit=${limit}&difficulty=${difficulty}`);
-    let data = await response.json();
+    data = await response.json();
+    let quizTitle = document.getElementById("quiz-title");
+    quizTitle.innerHTML = data[0].category;
     console.log(data);
 }
 
