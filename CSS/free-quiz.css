@@ -178,8 +178,8 @@ span {
 }
 
 #info-quiz{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
 }
 
