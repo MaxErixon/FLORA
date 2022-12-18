@@ -43,10 +43,14 @@ img{
 }
 
 .profilePic{
-    height: 135px;
-    width: 135px;
+    height: 129px;
+    width: 129px;
+    border-radius: 10px 10px 10px 10px;
     background: url(../Images/picture.jpg) no-repeat;
     cursor: pointer;
+}
+.profilePic:hover {
+    background-color: darkgray;
 }
 
 button {
@@ -95,9 +99,18 @@ button {
     text-decoration: none;
     color: black;
     margin-left: 3vh;
+    
 }
 
-.menu-container{
+.Library-container{
+    display: flex;
+    align-items: center;
+}
+.Quiz-container{
+    display: flex;
+    align-items: center;
+}
+.Settings-container{
     display: flex;
     align-items: center;
 }
