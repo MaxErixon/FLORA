@@ -16,5 +16,14 @@
         "incorrectAnswer1": "The Weeknd",
         "incorrectAnswer2": "Drake",
         "incorrectAnswer3": "Zara Larsson"
+    },
+    {
+        "id": 3,
+        "category": "arts&Literature",
+        "question": "hej",
+        "correctAnswer": "hej",
+        "incorrectAnswer1": "geh",
+        "incorrectAnswer2": "gege",
+        "incorrectAnswer3": "gegege"
     }
 ]
