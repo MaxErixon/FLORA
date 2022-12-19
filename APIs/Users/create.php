@@ -43,7 +43,7 @@ if ($method == "POST") {
         sendJSON($error, 400);
     }
 
-    if ($requestData["username"] == "" and $requestData["password"] == "") {
+    if ($requestData["username"] == "" or $requestData["password"] == "") {
         $error = ["error"=>"Bad request"];
         sendJSON($error, 404);
     }
