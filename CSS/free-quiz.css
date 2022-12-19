@@ -162,6 +162,17 @@ span {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     justify-items: center;
+    margin-top: 20vh;
+}
+
+#quiz-title{
+    font-size: 20px;
+}
+
+#question{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 3vh;
 }
 .box-question {
     width: 50vh;
@@ -181,5 +192,9 @@ span {
     display: grid;
     grid-template-rows: 1fr 1fr;
     justify-items: center;
+    margin-top: 10vh;
 }
 
+label{
+    margin-left: 5vh;
+}

@@ -248,6 +248,7 @@ let categoryName = "";
 let numberInput = "";
 let levelOption = "";
 let selectList= null;
+let questionNumber = 1;
 
 function playQuiz(){
     let categoryClass = document.getElementsByClassName("categoryTitle")
@@ -283,6 +284,10 @@ function countdown() {
        quizTitle.id = "quiz-title";
        infoQuiz.appendChild(quizTitle);
 
+       let questionCount = document.createElement("div");
+       questionCount.id = "question-count";
+       infoQuiz.appendChild(questionCount);
+
        let question = document.createElement("div");
        question.id = "question";
        infoQuiz.appendChild(question);
@@ -292,49 +297,119 @@ function countdown() {
        for (let i = 0; i < 4; i++) {
         let questionBox = document.createElement("div");
         questionBox.className = "box-question";
-        questionBox.id = "box-question";
+        questionBox.id = "box-question" + `${i}`;
         overviewQuiz.appendChild(questionBox);
         let input = document.createElement("input");
         input.id = "input";
         input.type = "radio";
+        input.name = "radio";
         questionBox.appendChild(input);
 
         let label = document.createElement("label");
         label.id = "label" + `${i}`;
         questionBox.appendChild(label);
+
+        let radioButtons = document.querySelectorAll('input[name="radio"]');
+        console.log(radioButtons.length);
+      
+        input.addEventListener("click", () =>{
+            let i = 0; 
+            for(let radioButton of radioButtons){
+                if(radioButton.checked){
+                    let label = document.getElementById("label" + `${i}`);
+                    let color = document.getElementById("box-question" + `${i}`);
+                    if(correctAnswer == label.textContent){
+                        color.style.backgroundColor = "green";
+                    }else{
+                        color.style.backgroundColor = "red";
+                        setCorrectAnswer();
+                    }
+                    nextQuestion.style.visibility = "visible";
+                }
+                i++
+            }
+            
+        });
+
     }
+    let nextQuestion = document.createElement("button");
+        nextQuestion.id = "next-question";
+        nextQuestion.innerHTML = "Next Question";
+        overviewQuiz.appendChild(nextQuestion);
+        nextQuestion.style.visibility = "hidden";
+
+        nextQuestion.addEventListener("click", () =>{
+        questionNumber++;
+        nextQuestion.style.visibility = "hidden";
+        clearAnswerColor();
+        clearButtonSelect();
+        showQuestion();
+    })
     getQuizQuestion(categoryName, numberInput, levelOption); 
        
     }
 };
 
+function setCorrectAnswer(){
+    for(i = 0; i < 4; i++){
+        let label = document.getElementById("label" + `${i}`);
+        let color = document.getElementById("box-question" + `${i}`);
+        if(correctAnswer == label.textContent){
+            color.style.backgroundColor = "green";
+        }
+    }
+}
+
+function clearAnswerColor(){
+    for(i = 0; i < 4; i++){ 
+        let color = document.getElementById("box-question" + `${i}`);
+        color.style.backgroundColor = "";
+    }
+}
+
+function clearButtonSelect(){
+        let radioButtons = document.querySelectorAll('input[name="radio"]');
+        for(let radioButton of radioButtons){
+            radioButton.checked = false;
+        }
+}
+
 setTimeout(countdown, 1000);
 }
 let data = [];
+let correctAnswer = "";
 
 async function getQuizQuestion(category,limit,difficulty){
     let response = await fetch(`https://the-trivia-api.com/api/questions?categories=${category}&limit=${limit}&difficulty=${difficulty}`);
     data = await response.json();
     let quizTitle = document.getElementById("quiz-title");
     quizTitle.innerHTML = data[0].category;
-    let question = document.getElementById("question");
-    question.innerHTML = data[0].question;
+    showQuestion();
+}
+
+
+function showQuestion(){
+    let questionCounter = document.getElementById("question-count");
+    questionCounter.innerText = `${questionNumber}` + "/" + `${data.length}`;
+
+
+    let question = document.getElementById("question"); 
+    question.innerHTML = data[questionNumber-1].question;
     console.log(data);
 
-    let answers = [...data[0].incorrectAnswers];
-    answers.push(data[0].correctAnswer);
+    let answers = [...data[questionNumber-1].incorrectAnswers];
+    answers.push(data[questionNumber-1].correctAnswer);
     console.log(answers);
+    correctAnswer = data[questionNumber-1].correctAnswer;
 
     let shuffledArray = answers.sort((a,b) => 0.8 - Math.random());
-console.log(shuffledArray);
+    console.log(shuffledArray);
 
    for (let i = 0; i < 4; i++) {
         let addAnswer = document.getElementById("label" + `${i}`); 
         addAnswer.textContent = shuffledArray[i];
     }
-    
+
 }
-
-
 
 createBoxesOfQuiz();
