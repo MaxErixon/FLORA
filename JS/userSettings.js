@@ -1,11 +1,11 @@
 "use strict"
 
-
 function hiddenForms(){
     document.getElementById("forms").style.visibility ="hidden";
     console.log("library");
     document.getElementById("BtnWrapper").style.visibility ="hidden";
   
+
 
     let saveQuizBox = document.createElement("div");
     saveQuizBox.className = "SavedQuiz";
