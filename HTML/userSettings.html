@@ -30,7 +30,7 @@
                                             <input type="text" name="username" placeholder="confirm username">
                                             <button onclick="SavedEditings()">Save</button>
                                         </form>
-                                        </div>
+                                       </div>
 
                                         <div class="passWform">
                                                 <h3>Current Password:</h3>
@@ -42,36 +42,36 @@
                                                 <button onclick="SavedEditings()">Save</button>
                                             </form>
                                        </div>
+                                       
              </div>
 
-                <div class="profilePhoto">
-                    <h3>Profile photo</h3>
-                    <button class="profilePic"></button>
-                
-
-            <div class="btnWrapper">
-                 
-                 <button onclick="DeleteAccount()" class=" btn btn-default">Delete account</button>
+             <div id="BtnWrapper"> <img src="../Images/picture.jpg" alt=""><h3>Profile photo</h3>
+                <button onclick="DeleteAccount()" class=" btn btn-default">Delete account</button>
             </div>
-                </div>
+        </div>
+            
+           
 
 </div>
 
 </div>
 <div id = "meny">
-    <div class="library-container"> <img class="menu-symbol" src="../Images/books.jpg" alt=""> <a href="mode.html" class="nav-link">My library</a> </div>
-    <div class="Quiz-container"> <img class="menu-symbol" src="../Images/question.jpg" alt=""> <a href="mode.html" class="nav-link">My Quizes</a> </div>
-    <div class="Settings-container"> <img class="menu-symbol" src="../Images/settings.jpg" alt=""> <a href="mode.html" class="nav-link">Settings</a> </div>
+    <button id="library" onclick="hiddenForms()"><img class="menu-symbol" src="../Images/books.jpg">
+    <a>My library</a></button>
+    
+    <div class="Quiz-container"> <img class="menu-symbol" src="../Images/question.jpg" alt=""> <a href="" class="nav-link">My Quizes</a> </div>
+    <div class="Settings-container"> <img class="menu-symbol" src="../Images/settings.jpg" alt=""> <a href="" class="nav-link">Settings</a> </div>
     <div class="helpAndlogout"> 
-          <button id ="help" class=" btn btn-default" onclick="contactUs()"><img src="../Images/help.jpg"></button>
+          <button id ="help" class="btn btn-default" onclick="contactUs()"><img src="../Images/help.jpg"></button>
           <button id ="logout" class=" btn btn-default" onclick="logout()"><img src="../Images/logout.jpg"></button>
         
     
     </div>
 
-</div>    
-       
+</div>     
 <script src="../JS/alert.js"></script>
+<script src="../JS/userSettings.js"></script>     
+
       
     
 </body>

@@ -1,27 +1,35 @@
 "use strict"
 
-function setUp(){
-    document.getElementsByClassName("Library-container").onclick = setSavedQuiz;
 
-}
-
-function setSavedQuiz(){
-
-    let hidden = document.getElementById("forms");
-    hidden.style.display = "hidden";
+function hiddenForms(){
+    document.getElementById("forms").style.visibility ="hidden";
+    console.log("library");
+    document.getElementById("BtnWrapper").style.visibility ="hidden";
+  
 
     let saveQuizBox = document.createElement("div");
     saveQuizBox.className = "SavedQuiz";
     document.body.style.backgroundColor = "grey";
-     let text = "" 
+
+}
+
+function getQuizInfo (){
+    for(let i = 0; i < savedQuiz.length; i++){
+        let divId = document.getElementById("container"); 
+        let categoryId = document.createElement("div");
+        categoryId.className = "savedQuizBox";
+        let categoryTitleId = document.createElement("div");
+        categoryTitleId.innerHTML = category[i].title;
+        
     
 }
-
-function clickProfilePhoto () {
-    document.getElementsByClassName("profilePhoto").onclick = setSettings;
-
 }
 
+
+
+
+
+/* 
 function setSettings(){
     let hidden = document.getElementById("forms");
     hidden.style.display = "none";
@@ -70,3 +78,4 @@ function setSettings(){
 
 
 
+*/

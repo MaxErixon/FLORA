@@ -42,15 +42,11 @@ img{
     
 }
 
-.profilePic{
+#Btn {
     height: 129px;
     width: 129px;
     border-radius: 10px 10px 10px 10px;
-    background: url(../Images/picture.jpg) no-repeat;
     cursor: pointer;
-}
-.profilePic:hover {
-    background-color: darkgray;
 }
 
 button {
