@@ -250,6 +250,21 @@ let levelOption = "";
 let selectList= null;
 let questionNumber = 1;
 
+/*
+function startTimerLine (timer){
+    counterLine = setInterval (timer,29);
+    function timer(){
+        timer += 1; 
+        time_line.style.width = time + "px"; 
+
+        if(time > 549){
+            clearInterval(counterLine);
+        }
+    }
+}
+
+*/ 
+
 function playQuiz(){
     let categoryClass = document.getElementsByClassName("categoryTitle")
     let categoryNameBlank = categoryClass[0].innerHTML
@@ -282,9 +297,9 @@ function countdown() {
        let infoQuiz = document.getElementById("info-quiz");
        let timer = document.createElement("div");
        timer.id = "count-timer";
-       timer.innerHTML = "Time-Left";
+       timer.textContent = "Time-Left";
        infoQuiz.appendChild(timer);
-       
+
        let quizTitle = document.createElement("div");
        quizTitle.id = "quiz-title";
        infoQuiz.appendChild(quizTitle);
