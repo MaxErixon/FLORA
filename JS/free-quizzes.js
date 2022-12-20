@@ -280,6 +280,11 @@ function countdown() {
        document.getElementById("clock").style.display="none";
        let overviewQuiz = document.getElementById("wrapper-quiz");
        let infoQuiz = document.getElementById("info-quiz");
+       let timer = document.createElement("div");
+       timer.id = "count-timer";
+       timer.innerHTML = "Time-Left";
+       infoQuiz.appendChild(timer);
+       
        let quizTitle = document.createElement("div");
        quizTitle.id = "quiz-title";
        infoQuiz.appendChild(quizTitle);
@@ -292,6 +297,8 @@ function countdown() {
        question.id = "question";
        infoQuiz.appendChild(question);
        categoryName;
+
+
 
    
        for (let i = 0; i < 4; i++) {
