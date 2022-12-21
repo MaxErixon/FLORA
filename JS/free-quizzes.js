@@ -371,7 +371,7 @@ function countdown() {
 
     let timeValue = 15;
     let counter = 0;
-
+//Time 
 function startTimer(time){
     counter = setInterval(timer, 1000);
     function timer(){
@@ -383,7 +383,7 @@ function startTimer(time){
         
         if(time < 0){
             clearInterval(counter);
-            timeTex[0].textContent = "Time Off";
+            timeTex[0].textContent = "Time off";
         }
     }      
 }
