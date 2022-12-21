@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home-free</title>
+    <link rel="stylesheet" href="../CSS/home-free.css" />
+    <link rel="stylesheet" href="../CSS/submitQuiz.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <!--Typsnitt Roboto-->
+      <h1>Quizmaster</h1>
+      <button id="icon-user" onclick="btnuserIcon()">
+        <img src="../Images/user.jpg" alt="buttonpng" />
+      </button>
+    </div>
+
+    <div class="title"><p>Submit a question</p></div>
+
+    <div class="fdiv">
+      <form>
+        <select id="category" name="category" size="1">
+          <option value="arts&Literature">Arts & Literature</option>
+          <option value="movies&TV">Movies & TV</option>
+          <option value="sports&leisure">Sports & Leisure</option>
+          <option value="geography">Geography</option>
+          <option value="history">History</option>
+          <option value="science">Science</option>
+          <option value="society&culture">Society & Culture</option>
+          <option value="generalKnowledge">Genreal Knowledge</option>
+          <option value="music">Music</option>
+          <option value="food&drink">Food & Drink</option>
+        </select>
+        <br />
+
+        <br />
+        <div class="inputWrap">
+          <img src="../Images/questionmark.jpg" alt="" srcset="" /><input
+            type="text"
+            id="question"
+            name="question"
+            placeholder="Question"
+          /><br />
+        </div>
+
+        <br />
+        <div class="inputWrap">
+          <img src="../Images/Greencheck.jpg" alt="" srcset="" /><input
+            type="text"
+            id="correctAnswer"
+            placeholder="Correct answer"
+            name="correctAnswer"
+          /><br />
+        </div>
+
+        <br />
+        <div class="inputWrap">
+          <img src="../Images/Incorrect.jpg" alt="" srcset="" /><input
+            type="text"
+            id="incorrectAnswer1"
+            name="incorrectAnswer1"
+            placeholder="Incorrect answer 1"
+          />
+          <br />
+        </div>
+        <br />
+        <div class="inputWrap">
+          <img src="../Images/Incorrect.jpg" alt="" srcset="" /><input
+            type="text"
+            id="incorrectAnswer2"
+            name="incorrectAnswer2"
+            placeholder="Incorrect answer 2"
+          />
+          <br />
+        </div>
+        <br />
+        <div class="inputWrap">
+          <img src="../Images/Incorrect.jpg" alt="" srcset="" /><input
+            type="text"
+            id="incorrectAnswer3"
+            name="incorrectAnswer3"
+            placeholder="Incorrect answer 3"
+          /><br />
+        </div>
+        <br />
+        <input id="submitbtn" type="button" value="Submit question" /><br />
+      </form>
+    </div>
+
+    <script src="../JS/submitQuiz.js"></script>
+  </body>
+</html>

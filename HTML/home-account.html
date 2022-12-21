@@ -4,39 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-    <title>HomeAccount</title>
-    <link rel="stylesheet" href="home-account.css">
+    <title>Home-account</title>
+    <link rel="stylesheet" href="../CSS/home-account.css">
 </head>
+
 <body>
-    
-       <div id="header">
-          <h1>Quizmaster</h1>
-          <h2>User Quiz</h2>
-          <h2>Submit a Quiz</h2>
-          <img src="./Images/user.jpg" alt="userIcon">
-        </div>
-    
-
-<div id="wrapper">
-  
-    <div class ="FreeQuiz">
-        <img src="./Images/free-quiz.png" alt="Lamp">
-        <button class="button1">Free Quiz</button>
-
-    </div>
-
-    <div class ="UserQuiz">
-        <img src="./Images/uzer-quiz.png" alt="users quiz">
-        <button class="button2">User Quiz</button>
-    </div>
-
-    <div class ="SubmitQuiz">
-        <img src="./Images/pen.jpg" alt="drawing pencil">
-        <button class="button3">Submit Quiz</button>
-    
-    </div>
+    <div class="header">
+    <!--Typsnitt Roboto-->
+    <h1>Quizmaster</h1>
+    <h2>User Quiz</h2>
+    <h2>Submit Quiz</h2>
+      <h2>User Quiz</h2>
+    <button id= "icon-user" onclick = "btnuserIcon()">
+        <img src="../Images/user.jpg" alt="buttonpng">
+    </button>
 </div>
-    
+
+    <div class="title"><p>Let's QUIZ</p></div>
+    <div id="container">
+        <div class="start-up">
+            <div class="free-quiz" onclick="btnfreeQuiz()"><img src="../Images/free-quiz.png">
+                <div class="title-free-quiz"><p>Free quizzes</p></div>
+            </div>
+             <div class="user-quiz" onclick ="btnuserQuiz()"><img src="../Images/user-quiz.png">
+                <div class="title-user-quiz"><p>Play user quizzes</p></div>
+            </div>
+             <div class="submit-quiz" onclick="btnsubmitQuiz()"><img src="../Images/pen.jpg">
+                <div class="title-submit-quiz"><p>Submit a quiz</p></div>
+            </div>
+</div>
+</div>
+
+    <script src="../JS/home-free.js"></script>
 </body>
 </html>

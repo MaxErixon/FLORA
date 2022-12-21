@@ -1,0 +1,61 @@
+.fdiv {
+  display: flex;
+  justify-content: center;
+}
+
+.inputWrap {
+  display: flex;
+}
+
+.inputWrap img {
+  margin-right: 1vw;
+}
+
+#category {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 194px;
+    margin-left: 56px;
+  }
+
+#correctAnswer {
+  border: solid #32ba7c;
+  border-radius: 5px;
+  color: #32ba7c;
+}
+
+#incorrectAnswer1 {
+  border: solid #ff5b5b;
+  border-radius: 5px;
+  color: #ff5b5b;
+}
+
+#incorrectAnswer2 {
+    border: solid #ff5b5b;
+    border-radius: 5px;
+    color: #ff5b5b;
+  }
+
+  #incorrectAnswer3 {
+    border: solid #ff5b5b;
+    border-radius: 5px;
+    color: #ff5b5b;
+  }
+
+  #question{
+    border-radius: 5px;
+    border: solid black;
+    color:black;
+  }
+
+  #submitbtn{
+    background-color: #0028ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 250.45px;
+  }
