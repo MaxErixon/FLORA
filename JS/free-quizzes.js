@@ -241,7 +241,6 @@ function selectQuiz(){
    
 }
 
-
 let inputFields = null;
 let numberOfQuestion = null;
 let categoryName = "";
@@ -250,20 +249,6 @@ let levelOption = "";
 let selectList= null;
 let questionNumber = 1;
 
-/*
-function startTimerLine (timer){
-    counterLine = setInterval (timer,29);
-    function timer(){
-        timer += 1; 
-        time_line.style.width = time + "px"; 
-
-        if(time > 549){
-            clearInterval(counterLine);
-        }
-    }
-}
-
-*/ 
 
 function playQuiz(){
     let categoryClass = document.getElementsByClassName("categoryTitle")
@@ -307,9 +292,8 @@ function countdown() {
        timer_sec.innerHTML = "15";
        timer.appendChild(timer_sec);
 
-       let timeLine = document.createElement("div");
-       timeLine.className = "time_line";
-       infoQuiz.appendChild(timeLine);
+       startTimer(15);
+
 
        let quizTitle = document.createElement("div");
        quizTitle.id = "quiz-title";
@@ -323,9 +307,6 @@ function countdown() {
        question.id = "question";
        infoQuiz.appendChild(question);
        categoryName;
-
-
-
    
        for (let i = 0; i < 4; i++) {
         let questionBox = document.createElement("div");
@@ -351,6 +332,7 @@ function countdown() {
                 if(radioButton.checked){
                     let label = document.getElementById("label" + `${i}`);
                     let color = document.getElementById("box-question" + `${i}`);
+                    clearInterval(counter);
                     if(correctAnswer == label.textContent){
                         color.style.backgroundColor = "green";
                     }else{
@@ -372,6 +354,8 @@ function countdown() {
         nextQuestion.style.visibility = "hidden";
 
         nextQuestion.addEventListener("click", () =>{
+        clearInterval(counter);
+        startTimer(timeValue);
         questionNumber++;
         nextQuestion.style.visibility = "hidden";
         clearAnswerColor();
@@ -382,6 +366,27 @@ function countdown() {
        
     }
 };
+    let timeTex = document.getElementsByClassName("time_left_txt");
+    let timeCount = document.getElementsByClassName("timer_sec");
+
+    let timeValue = 15;
+    let counter = 0;
+
+function startTimer(time){
+    counter = setInterval(timer, 1000);
+    function timer(){
+        timeCount[0].textContent = time;
+        time--;
+        if(time < 9){
+            timeCount[0].textContent = "0" + timeCount[0].textContent;
+        }
+        
+        if(time < 0){
+            clearInterval(counter);
+            timeTex[0].textContent = "Time Off";
+        }
+    }      
+}
 
 function setCorrectAnswer(){
     for(i = 0; i < 4; i++){
