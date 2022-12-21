@@ -9,7 +9,7 @@ function clearInputs() {
 }
 
 function missingInputs() {
-  alert("Please fill out all the inputs");
+  alert("Please enter all the required information!");
 }
 
 //Submits a question to the DB with the values of the inputs
