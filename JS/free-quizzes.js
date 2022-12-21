@@ -109,7 +109,7 @@ function categoryEvent(categoryId){
     categoryDivInfo.className = "categoryInfo";
     wrapper.appendChild(categoryDivInfo);
 
-    
+    //test
 
     if(categoryId == "categoryId0"){
         categoryDivTitle.innerHTML = category[0].title;
@@ -200,7 +200,7 @@ function createInputFields(){
     label.className = "label";
     inputFields.appendChild(label);
 
-    // This array below will be replaced by API-call 
+    // This array below will be replaced by APi-call 
     let array = ["easy", "medium", "hard"];
     selectList = document.createElement("select");
     selectList.id = "mySelect";
@@ -241,7 +241,6 @@ function selectQuiz(){
    
 }
 
-
 let inputFields = null;
 let numberOfQuestion = null;
 let categoryName = "";
@@ -249,6 +248,7 @@ let numberInput = "";
 let levelOption = "";
 let selectList= null;
 let questionNumber = 1;
+
 
 function playQuiz(){
     let categoryClass = document.getElementsByClassName("categoryTitle")
@@ -281,10 +281,20 @@ function countdown() {
        let overviewQuiz = document.getElementById("wrapper-quiz");
        let infoQuiz = document.getElementById("info-quiz");
        let timer = document.createElement("div");
-       timer.id = "count-timer";
-       timer.innerHTML = "Time-Left";
+       timer.className = "timer";
        infoQuiz.appendChild(timer);
-       
+       let time_txt = document.createElement("div");
+       time_txt.className = "time_left_txt";
+       time_txt.innerHTML = "Time Left";
+       timer.appendChild(time_txt);
+       let timer_sec = document.createElement("div");
+       timer_sec.className = "timer_sec";
+       timer_sec.innerHTML = "15";
+       timer.appendChild(timer_sec);
+
+       startTimer(15);
+
+
        let quizTitle = document.createElement("div");
        quizTitle.id = "quiz-title";
        infoQuiz.appendChild(quizTitle);
@@ -297,9 +307,6 @@ function countdown() {
        question.id = "question";
        infoQuiz.appendChild(question);
        categoryName;
-
-
-
    
        for (let i = 0; i < 4; i++) {
         let questionBox = document.createElement("div");
@@ -325,6 +332,7 @@ function countdown() {
                 if(radioButton.checked){
                     let label = document.getElementById("label" + `${i}`);
                     let color = document.getElementById("box-question" + `${i}`);
+                    clearInterval(counter);
                     if(correctAnswer == label.textContent){
                         color.style.backgroundColor = "green";
                     }else{
@@ -346,6 +354,8 @@ function countdown() {
         nextQuestion.style.visibility = "hidden";
 
         nextQuestion.addEventListener("click", () =>{
+        clearInterval(counter);
+        startTimer(timeValue);
         questionNumber++;
         nextQuestion.style.visibility = "hidden";
         clearAnswerColor();
@@ -356,6 +366,27 @@ function countdown() {
        
     }
 };
+    let timeTex = document.getElementsByClassName("time_left_txt");
+    let timeCount = document.getElementsByClassName("timer_sec");
+
+    let timeValue = 15;
+    let counter = 0;
+//Time
+function startTimer(time){
+    counter = setInterval(timer, 1000);
+    function timer(){
+        timeCount[0].textContent = time;
+        time--;
+        if(time < 9){
+            timeCount[0].textContent = "0" + timeCount[0].textContent;
+        }
+        
+        if(time < 0){
+            clearInterval(counter);
+            timeTex[0].textContent = "Time off";
+        }
+    }      
+}
 
 function setCorrectAnswer(){
     for(i = 0; i < 4; i++){
@@ -394,7 +425,7 @@ async function getQuizQuestion(category,limit,difficulty){
     showQuestion();
 }
 
-
+// Visa frågor
 function showQuestion(){
     let questionCounter = document.getElementById("question-count");
     questionCounter.innerText = `${questionNumber}` + "/" + `${data.length}`;
