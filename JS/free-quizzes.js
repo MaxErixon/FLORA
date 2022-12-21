@@ -200,7 +200,7 @@ function createInputFields(){
     label.className = "label";
     inputFields.appendChild(label);
 
-    // This array below will be replaced by API-call 
+    // This array below will be replaced by APi-call 
     let array = ["easy", "medium", "hard"];
     selectList = document.createElement("select");
     selectList.id = "mySelect";
@@ -371,7 +371,7 @@ function countdown() {
 
     let timeValue = 15;
     let counter = 0;
-//Time 
+//Time
 function startTimer(time){
     counter = setInterval(timer, 1000);
     function timer(){
