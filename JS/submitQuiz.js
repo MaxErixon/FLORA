@@ -5,7 +5,17 @@ function clearInputs() {
   incorrectAnswer1.value = "";
   incorrectAnswer2.value = "";
   incorrectAnswer3.value = "";
-  category.value = "";
+  category.value = null;
+}
+
+function questionCreated() {
+  let answer = confirm(
+    "Your questions has been added!"
+  );
+  if (answer === true) {
+    console.log(answer);
+    location.href = "home-account.html";
+  }
 }
 
 function missingInputs() {
@@ -49,6 +59,7 @@ function submitQuestion() {
     .then((resource) => {
       console.log(resource);
             clearInputs();
+            questionCreated();
     });
 }
 
