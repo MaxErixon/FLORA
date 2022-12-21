@@ -20,16 +20,45 @@ if (file_exists($fileName)) {
     
 }
 
-if (isset($_GET["category"])) {
+
+
+if (isset($_GET["category"]) and isset($_GET["limit"]) ) {
     
     $category = $_GET["category"];
+    $limit = $_GET["limit"];
+    $array=[];
 
     foreach ($user_questions as $q) {
         if ($q["category"] == $category) {
-            $user_questionsCategory[]=$q;
+            $array[]=$q;
         }
     }
-    sendJSON($user_questionsCategory);
+    
+    shuffle($array);
+
+    for ($i=0; $i <$limit ; $i++) { 
+        $array2[]=$array[$i];
+    }
+    sendJSON($array2);
+
+    $error = ["error"=>"User does not exist"];
+    sendJSON($error);
+} 
+
+
+if (isset($_GET["category"]) ) {
+    
+    $category = $_GET["category"];
+    $array=[];
+
+    foreach ($user_questions as $q) {
+        if ($q["category"] == $category) {
+            $array[]=$q;
+        }
+    }
+    
+    sendJSON($array);
+
     $error = ["error"=>"User does not exist"];
     sendJSON($error);
 } 
@@ -41,23 +70,13 @@ if (isset($_GET["limit"])) {
     
     $limit = $_GET["limit"];
 
-$arr=[];
+    shuffle($user_questions);
+    $array=[];
 
-for ($i=0; $i < $limit ; $i++) { 
-    foreach ($arr as $que) {
-        if ($que["id"] == 3) {
-            sendJSON($que);
-        }
+    for ($i=0; $i <$limit ; $i++) { 
+        $array[]=$user_questions[$i];
     }
-
-        $max = count($user_questions);
-        $user_questionsLimit = $user_questions[rand(0,$max-1)];
-        $arr[]=$user_questionsLimit;
-        
-    }
-    
-
-    sendJSON($arr);
+    sendJSON($array);
 
     $error = ["error"=>"User does not exist"];
     sendJSON($error);
