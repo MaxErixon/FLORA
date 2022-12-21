@@ -63,42 +63,4 @@ function submitQuestion() {
     });
 }
 
-function getQuestions() {
-  let rqt_post = new Request("/APIs/Questions/show.php");
-  fetch(rqt_post)
-    .then((respo) => respo.json())
-    .then((resource) => {
-      let answers = [];
-
-      resource.forEach((element) => {
-        answers = [
-          element.correctAnswer,
-          element.incorrectAnswer1,
-          element.incorrectAnswer2,
-          element.incorrectAnswer3,
-        ];
-
-        let answersShuffled = answers
-          .map((value) => ({ value, sort: Math.random() }))
-          .sort((a, b) => a.sort - b.sort)
-          .map(({ value }) => value);
-
-        let div = document.createElement("div");
-        document.querySelector("body").appendChild(div);
-        div.innerHTML = `
-            <br><br>${element.question}
-            <br>
-            <br>${answersShuffled}
-            <br><br> ${element.correctAnswer}`;
-
-        // answersShuffled.forEach(element => {
-        //    console.log(element);
-
-        // });
-
-        console.log(element.question, answersShuffled, element.correctAnswer);
-      });
-    });
-}
-
 document.querySelector("#submitbtn").addEventListener("click", submitQuestion);
