@@ -425,7 +425,7 @@ async function getQuizQuestion(category,limit,difficulty){
     showQuestion();
 }
 
-
+// Visa frågorna 
 function showQuestion(){
     let questionCounter = document.getElementById("question-count");
     questionCounter.innerText = `${questionNumber}` + "/" + `${data.length}`;
