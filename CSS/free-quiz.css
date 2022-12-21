@@ -162,7 +162,7 @@ span {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     justify-items: center;
-    margin-top: 20vh;
+    margin-top: 10vh;
 }
 
 #quiz-title{
@@ -199,7 +199,43 @@ label{
     margin-left: 5vh;
 }
 
-#count-timer{
-    margin-left: 40vh;
-    
+.timer{
+    color: #004085;
+    background-color: #cce5ff;
+    border: 1px solid #b8daff;
+    height: 45px;
+    padding: 0 8px;
+    margin-left: 50vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 145px;
+}
+
+.time_left_txt{
+    user-select: none;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.timer_sec{
+    background-color: #343a40;
+    font-size: 18px;
+    font-weight: 500;
+    height: 30px;
+    width: 45px;
+    color:#fff;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    user-select: none;
+}
+
+.time_line{
+    position: absolute;
+    bottom: 10vh;
+    width: 30%;
+    height: 30px;
+    background-color: rgb(108, 108, 108);
 }

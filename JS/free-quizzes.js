@@ -296,9 +296,20 @@ function countdown() {
        let overviewQuiz = document.getElementById("wrapper-quiz");
        let infoQuiz = document.getElementById("info-quiz");
        let timer = document.createElement("div");
-       timer.id = "count-timer";
-       timer.textContent = "Time-Left";
+       timer.className = "timer";
        infoQuiz.appendChild(timer);
+       let time_txt = document.createElement("div");
+       time_txt.className = "time_left_txt";
+       time_txt.innerHTML = "Time Left";
+       timer.appendChild(time_txt);
+       let timer_sec = document.createElement("div");
+       timer_sec.className = "timer_sec";
+       timer_sec.innerHTML = "15";
+       timer.appendChild(timer_sec);
+
+       let timeLine = document.createElement("div");
+       timeLine.className = "time_line";
+       infoQuiz.appendChild(timeLine);
 
        let quizTitle = document.createElement("div");
        quizTitle.id = "quiz-title";
