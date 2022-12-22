@@ -8,16 +8,18 @@ function clearInputs() {
   category.value = null;
 }
 
+//Alert for sucessfully created question
 function questionCreated() {
-  let answer = confirm(
-    "Your questions has been added!"
-  );
+  let answer = confirm("Your questions has been added!");
   if (answer === true) {
     console.log(answer);
     location.href = "home-account.html";
+  } else {
+    window.location.reload();
   }
 }
 
+//Alert for missing info
 function missingInputs() {
   alert("Please enter all the required information!");
 }
@@ -57,9 +59,11 @@ function submitQuestion() {
       return response.json();
     })
     .then((resource) => {
-      console.log(resource);
-            clearInputs();
-            questionCreated();
+      if (resource.error == "Missing text or category") {
+      } else {
+        clearInputs();
+        questionCreated();
+      }
     });
 }
 
