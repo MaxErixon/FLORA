@@ -109,8 +109,6 @@ function categoryEvent(categoryId){
     categoryDivInfo.className = "categoryInfo";
     wrapper.appendChild(categoryDivInfo);
 
-    //test
-
     if(categoryId == "categoryId0"){
         categoryDivTitle.innerHTML = category[0].title;
         categoryDivLogo.innerHTML = `
@@ -340,6 +338,10 @@ function countdown() {
                         setCorrectAnswer();
                     }
                     nextQuestion.style.visibility = "visible";
+                } if(`${questionNumber}` == `${data.length}`){
+                    let finish = document.getElementById("results");
+                    finish.style.visibility = "visible";
+                    nextQuestion.style.visibility = "hidden";
                 }
                 i++
             }
@@ -363,7 +365,58 @@ function countdown() {
         showQuestion();
     })
     getQuizQuestion(categoryName, numberInput, levelOption); 
-       
+
+    let showResults = document.createElement("button");
+        showResults.id = "results";
+        showResults.innerHTML = "Finish";
+        overviewQuiz.appendChild(showResults);
+        showResults.style.visibility = "hidden";
+
+        showResults.addEventListener("click", () => {
+            let hiddenTimer = document.getElementsByClassName("timer");
+            hiddenTimer[0].style.visibility = "hidden";
+            let hiddenQuestion = document.getElementById("question");
+            hiddenQuestion.style.visibility = "hidden";
+            let hiddenWrapperQuiz = document.getElementById("wrapper-quiz");
+            hiddenWrapperQuiz.style.visibility = "hidden";
+            showResults.style.visibility = "hidden";
+
+            let pictureFinish = document.createElement("div");
+            pictureFinish.id = "Finish-logo";
+            pictureFinish.innerHTML = `
+            <img src="../Images/congratulation.jpg">
+           `
+            infoQuiz.appendChild(pictureFinish);
+
+            const date = new Date();
+            let day = date.getDate();
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+            let currentDate = `${day}-${month}-${year}`;
+            let current_time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+            console.log(currentDate);
+    
+            let dateInfo = document.createElement("div");
+            dateInfo.id = "date";
+            dateInfo.innerHTML = currentDate;
+            infoQuiz.appendChild(dateInfo);
+
+            let timeInfo = document.createElement("div");
+            timeInfo.id = "time";
+            timeInfo.innerHTML = current_time;
+            infoQuiz.appendChild(timeInfo);
+        
+
+            let backToMenu = document.createElement("button");
+            backToMenu.id = "back-menu";
+            backToMenu.innerHTML = "Back to menu";
+            infoQuiz.appendChild(backToMenu);
+
+            backToMenu.addEventListener("click", () =>{
+                location.href = "free-quiz.html";
+            })
+        })
+        
     }
 };
     let timeTex = document.getElementsByClassName("time_left_txt");
@@ -381,12 +434,12 @@ function startTimer(time){
             timeCount[0].textContent = "0" + timeCount[0].textContent;
         }
         
-        if(time < 0){
+        if(time < 0 && `${questionNumber}` == `${data.length}`){
             clearInterval(counter);
             timeTex[0].textContent = "Time off";
             setCorrectAnswer();
-            let findNextQuestion = document.getElementById("next-question");
-            findNextQuestion.style.visibility = "visible";
+            let findShowResults = document.getElementById("results");
+            findShowResults.style.visibility = "visible";
         }
     }      
 }
@@ -428,11 +481,9 @@ async function getQuizQuestion(category,limit,difficulty){
     showQuestion();
 }
 
-// Visa frågor
 function showQuestion(){
     let questionCounter = document.getElementById("question-count");
     questionCounter.innerText = `${questionNumber}` + "/" + `${data.length}`;
-
 
     let question = document.getElementById("question"); 
     question.innerHTML = data[questionNumber-1].question;
@@ -454,3 +505,5 @@ function showQuestion(){
 }
 
 createBoxesOfQuiz();
+
+
