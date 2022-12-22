@@ -289,10 +289,10 @@ function countdown() {
        timer.appendChild(time_txt);
        let timer_sec = document.createElement("div");
        timer_sec.className = "timer_sec";
-       timer_sec.innerHTML = "15";
+       timer_sec.innerHTML = "30";
        timer.appendChild(timer_sec);
 
-       startTimer(15);
+       startTimer(30);
 
 
        let quizTitle = document.createElement("div");
@@ -369,9 +369,9 @@ function countdown() {
     let timeTex = document.getElementsByClassName("time_left_txt");
     let timeCount = document.getElementsByClassName("timer_sec");
 
-    let timeValue = 15;
+    let timeValue = 30;
     let counter = 0;
-//Time
+
 function startTimer(time){
     counter = setInterval(timer, 1000);
     function timer(){
@@ -384,6 +384,9 @@ function startTimer(time){
         if(time < 0){
             clearInterval(counter);
             timeTex[0].textContent = "Time off";
+            setCorrectAnswer();
+            let findNextQuestion = document.getElementById("next-question");
+            findNextQuestion.style.visibility = "visible";
         }
     }      
 }
