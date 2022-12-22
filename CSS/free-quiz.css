@@ -239,3 +239,32 @@ label{
     height: 30px;
     background-color: rgb(108, 108, 108);
 }
+
+#back-menu{
+    position: absolute;
+    bottom: 40vh;   
+}
+
+#date{
+    margin-bottom: 5vh;
+}
+
+#Finish-logo{
+    position: absolute;
+    right: 20vh;
+    left: 0;
+    bottom: 50vh;
+    margin-left: 40vh;
+}
+
+#Finish-logo > img{
+width: 20vh;
+height: 20vh;
+}
+
+#question-count > span{
+    font-size: 15px;
+    display: flex;
+
+text-align: center;
+}

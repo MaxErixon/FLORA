@@ -269,6 +269,7 @@ function playQuiz(){
 
     timeLeft = 1;
 
+
 function countdown() {
 	timeLeft--;
 	document.getElementById("seconds").innerHTML = String( timeLeft );
@@ -305,6 +306,8 @@ function countdown() {
        question.id = "question";
        infoQuiz.appendChild(question);
        categoryName;
+
+       let userScore = 0;
    
        for (let i = 0; i < 4; i++) {
         let questionBox = document.createElement("div");
@@ -314,6 +317,7 @@ function countdown() {
         let input = document.createElement("input");
         input.id = "input";
         input.type = "radio";
+
         input.name = "radio";
         questionBox.appendChild(input);
 
@@ -330,9 +334,12 @@ function countdown() {
                 if(radioButton.checked){
                     let label = document.getElementById("label" + `${i}`);
                     let color = document.getElementById("box-question" + `${i}`);
+                    
                     clearInterval(counter);
                     if(correctAnswer == label.textContent){
                         color.style.backgroundColor = "green";
+                        userScore += 1;
+                        console.log(userScore);
                     }else{
                         color.style.backgroundColor = "red";
                         setCorrectAnswer();
@@ -373,6 +380,7 @@ function countdown() {
         showResults.style.visibility = "hidden";
 
         showResults.addEventListener("click", () => {
+
             let hiddenTimer = document.getElementsByClassName("timer");
             hiddenTimer[0].style.visibility = "hidden";
             let hiddenQuestion = document.getElementById("question");
@@ -380,6 +388,13 @@ function countdown() {
             let hiddenWrapperQuiz = document.getElementById("wrapper-quiz");
             hiddenWrapperQuiz.style.visibility = "hidden";
             showResults.style.visibility = "hidden";
+
+            let results_box = document.getElementById("question-count");
+            if(userScore < 3){
+                results_box.innerHTML =  `${userScore}` + "out of" + `${data.length}`;
+            }
+            
+
 
             let pictureFinish = document.createElement("div");
             pictureFinish.id = "Finish-logo";
@@ -393,17 +408,17 @@ function countdown() {
             let month = date.getMonth() + 1;
             let year = date.getFullYear();
             let currentDate = `${day}-${month}-${year}`;
-            let current_time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+            let current_time = date.getHours() + ":" + 0 + date.getMinutes()+ ":" + date.getSeconds();
             console.log(currentDate);
     
             let dateInfo = document.createElement("div");
             dateInfo.id = "date";
-            dateInfo.innerHTML = currentDate;
+            dateInfo.innerHTML = "Date" + ":" + currentDate;
             infoQuiz.appendChild(dateInfo);
 
             let timeInfo = document.createElement("div");
             timeInfo.id = "time";
-            timeInfo.innerHTML = current_time;
+            timeInfo.innerHTML = "Time" + ":" + current_time;
             infoQuiz.appendChild(timeInfo);
         
 
