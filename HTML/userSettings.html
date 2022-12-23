@@ -19,27 +19,33 @@
 
 
              <div id="forms">
-                    <form action="" method="post">
+                    <form action="change_password.php" method="post">
                             <h1>Edit account settings</h1>
                                     <div class="userform">
-                                        <h3>Current Username:</h3>
-                                            <input type="text" name="username" placeholder="current username">
+                                        <h3>Old Username:</h3>
+                                            <input type="text" name="username" placeholder="old susername">
+                                           <br><br>
                                             <h3>New Username:</h3>
-                                            <input type="text" name="username" placeholder="username">
+                                            <input type="text" id="newUsername" placeholder="username">
+                                            <br><br>
                                             <h3>Confirm new username:</h3>              
-                                            <input type="text" name="username" placeholder="confirm username">
-                                            <button onclick="SavedEditings()">Save</button>
+                                            <input type="text" id="ConfirmUsername" placeholder="confirm username">
+                                            <br><br>
+                                            <button onclick="ChangePassword()">Change username</button>
                                         </form>
                                         </div>
 
                                         <div class="passWform">
-                                                <h3>Current Password:</h3>
-                                                <input type="password" name="password" placeholder="current password">
+                                                <h3>Old Password:</h3>
+                                                <input type="password" id="password" placeholder="old password">
+                                                <br><br>
                                                 <h3>New password:</h3>
-                                                <input type="password" name="password" placeholder="new password">
+                                                <input type="password" id="newPassword" placeholder="new password">
+                                                <br><br>
                                                 <h3>Confirm new password:</h3>
-                                                <input type="password" name="password" placeholder="confirm password">
-                                                <button onclick="SavedEditings()">Save</button>
+                                                <input type="password" id="confirmPassword" placeholder="confirm password">
+                                                <br><br>
+                                                <button onclick="ChangePassword()">Change password</button>
                                             </form>
                                        </div>
              </div>
@@ -70,8 +76,11 @@
     </div>
 
 </div>    
-       
+<!--Mention the path of the json file in the script source along with the javascript file -->
+<script type="text/javascript" src="../APIs/Users/users.json"></script>
+<script type="text/javascript" src="../JS/changePass.js"></script>
 <script src="../JS/alert.js"></script>
+
       
     
 </body>
