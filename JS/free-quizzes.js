@@ -109,8 +109,6 @@ function categoryEvent(categoryId){
     categoryDivInfo.className = "categoryInfo";
     wrapper.appendChild(categoryDivInfo);
 
-    
-
     if(categoryId == "categoryId0"){
         categoryDivTitle.innerHTML = category[0].title;
         categoryDivLogo.innerHTML = `
@@ -200,7 +198,7 @@ function createInputFields(){
     label.className = "label";
     inputFields.appendChild(label);
 
-    // This array below will be replaced by API-call 
+    // This array below will be replaced by APi-call 
     let array = ["easy", "medium", "hard"];
     selectList = document.createElement("select");
     selectList.id = "mySelect";
@@ -241,7 +239,6 @@ function selectQuiz(){
    
 }
 
-
 let inputFields = null;
 let numberOfQuestion = null;
 let categoryName = "";
@@ -249,6 +246,7 @@ let numberInput = "";
 let levelOption = "";
 let selectList= null;
 let questionNumber = 1;
+
 
 function playQuiz(){
     let categoryClass = document.getElementsByClassName("categoryTitle")
@@ -271,6 +269,7 @@ function playQuiz(){
 
     timeLeft = 1;
 
+
 function countdown() {
 	timeLeft--;
 	document.getElementById("seconds").innerHTML = String( timeLeft );
@@ -281,10 +280,20 @@ function countdown() {
        let overviewQuiz = document.getElementById("wrapper-quiz");
        let infoQuiz = document.getElementById("info-quiz");
        let timer = document.createElement("div");
-       timer.id = "count-timer";
-       timer.innerHTML = "Time-Left";
+       timer.className = "timer";
        infoQuiz.appendChild(timer);
-       
+       let time_txt = document.createElement("div");
+       time_txt.className = "time_left_txt";
+       time_txt.innerHTML = "Time Left";
+       timer.appendChild(time_txt);
+       let timer_sec = document.createElement("div");
+       timer_sec.className = "timer_sec";
+       timer_sec.innerHTML = "30";
+       timer.appendChild(timer_sec);
+
+       startTimer(30);
+
+
        let quizTitle = document.createElement("div");
        quizTitle.id = "quiz-title";
        infoQuiz.appendChild(quizTitle);
@@ -298,8 +307,7 @@ function countdown() {
        infoQuiz.appendChild(question);
        categoryName;
 
-
-
+       let userScore = 0;
    
        for (let i = 0; i < 4; i++) {
         let questionBox = document.createElement("div");
@@ -309,6 +317,7 @@ function countdown() {
         let input = document.createElement("input");
         input.id = "input";
         input.type = "radio";
+
         input.name = "radio";
         questionBox.appendChild(input);
 
@@ -325,13 +334,21 @@ function countdown() {
                 if(radioButton.checked){
                     let label = document.getElementById("label" + `${i}`);
                     let color = document.getElementById("box-question" + `${i}`);
+                    
+                    clearInterval(counter);
                     if(correctAnswer == label.textContent){
                         color.style.backgroundColor = "green";
+                        userScore += 1;
+                        console.log(userScore);
                     }else{
                         color.style.backgroundColor = "red";
                         setCorrectAnswer();
                     }
                     nextQuestion.style.visibility = "visible";
+                } if(`${questionNumber}` == `${data.length}`){
+                    let finish = document.getElementById("results");
+                    finish.style.visibility = "visible";
+                    nextQuestion.style.visibility = "hidden";
                 }
                 i++
             }
@@ -346,6 +363,8 @@ function countdown() {
         nextQuestion.style.visibility = "hidden";
 
         nextQuestion.addEventListener("click", () =>{
+        clearInterval(counter);
+        startTimer(timeValue);
         questionNumber++;
         nextQuestion.style.visibility = "hidden";
         clearAnswerColor();
@@ -353,9 +372,92 @@ function countdown() {
         showQuestion();
     })
     getQuizQuestion(categoryName, numberInput, levelOption); 
-       
+
+    let showResults = document.createElement("button");
+        showResults.id = "results";
+        showResults.innerHTML = "Finish";
+        overviewQuiz.appendChild(showResults);
+        showResults.style.visibility = "hidden";
+
+        showResults.addEventListener("click", () => {
+
+            let hiddenTimer = document.getElementsByClassName("timer");
+            hiddenTimer[0].style.visibility = "hidden";
+            let hiddenQuestion = document.getElementById("question");
+            hiddenQuestion.style.visibility = "hidden";
+            let hiddenWrapperQuiz = document.getElementById("wrapper-quiz");
+            hiddenWrapperQuiz.style.visibility = "hidden";
+            showResults.style.visibility = "hidden";
+
+            let results_box = document.getElementById("question-count");
+            if(userScore < 3){
+                results_box.innerHTML =  `${userScore}` + "out of" + `${data.length}`;
+            }
+            
+
+
+            let pictureFinish = document.createElement("div");
+            pictureFinish.id = "Finish-logo";
+            pictureFinish.innerHTML = `
+            <img src="../Images/congratulation.jpg">
+           `
+            infoQuiz.appendChild(pictureFinish);
+
+            const date = new Date();
+            let day = date.getDate();
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+            let currentDate = `${day}-${month}-${year}`;
+            let current_time = date.getHours() + ":" + 0 + date.getMinutes()+ ":" + date.getSeconds();
+            console.log(currentDate);
+    
+            let dateInfo = document.createElement("div");
+            dateInfo.id = "date";
+            dateInfo.innerHTML = "Date" + ":" + currentDate;
+            infoQuiz.appendChild(dateInfo);
+
+            let timeInfo = document.createElement("div");
+            timeInfo.id = "time";
+            timeInfo.innerHTML = "Time" + ":" + current_time;
+            infoQuiz.appendChild(timeInfo);
+        
+
+            let backToMenu = document.createElement("button");
+            backToMenu.id = "back-menu";
+            backToMenu.innerHTML = "Back to menu";
+            infoQuiz.appendChild(backToMenu);
+
+            backToMenu.addEventListener("click", () =>{
+                location.href = "free-quiz.html";
+            })
+        })
+        
     }
 };
+    let timeTex = document.getElementsByClassName("time_left_txt");
+    let timeCount = document.getElementsByClassName("timer_sec");
+
+    let timeValue = 30;
+    let counter = 0;
+
+function startTimer(time){
+    counter = setInterval(timer, 1000);
+    function timer(){
+        timeCount[0].textContent = time;
+        time--;
+        if(time < 9){
+            timeCount[0].textContent = "0" + timeCount[0].textContent;
+        }
+        
+        if(time < 0 && `${questionNumber}` == `${data.length}`){
+            clearInterval(counter);
+            timeTex[0].textContent = "Time off";
+            setCorrectAnswer();
+            let findShowResults = document.getElementById("results");
+            findShowResults.style.visibility = "visible";
+        }
+    }      
+}
 
 function setCorrectAnswer(){
     for(i = 0; i < 4; i++){
@@ -394,11 +496,9 @@ async function getQuizQuestion(category,limit,difficulty){
     showQuestion();
 }
 
-
 function showQuestion(){
     let questionCounter = document.getElementById("question-count");
     questionCounter.innerText = `${questionNumber}` + "/" + `${data.length}`;
-
 
     let question = document.getElementById("question"); 
     question.innerHTML = data[questionNumber-1].question;
@@ -420,3 +520,5 @@ function showQuestion(){
 }
 
 createBoxesOfQuiz();
+
+

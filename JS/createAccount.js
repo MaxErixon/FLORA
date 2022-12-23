@@ -27,7 +27,7 @@ function accountCreated() {
   }
 
   function missingText() {
-    alert("Please choose a username and password");
+    alert("Please choose a username and password!");
   }
 
 
