@@ -11,7 +11,6 @@ $fileName= "users.json";
 $method = $_SERVER["REQUEST_METHOD"];
 
 
-
 if ($method != "POST") {
         $error = ["error"=>"Invalid method"];
         sendJSON($error, 405);
