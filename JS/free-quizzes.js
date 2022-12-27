@@ -188,7 +188,7 @@ function createInputFields(){
     inputFields.appendChild(text);
 
     numberOfQuestion = document.createElement("input");
-    numberOfQuestion.type = "text";
+    numberOfQuestion.type = "number";
     numberOfQuestion.className = "first-input";
     inputFields.appendChild(numberOfQuestion);
     //numberOfQuestion.innerHTML = numberOfQuestion.value;
