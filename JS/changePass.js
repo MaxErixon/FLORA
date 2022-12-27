@@ -1,34 +1,34 @@
 "use-strict";
 // Kolla vem som är inloggad
+function getUserInfo() {
+  const user = user.find(function )
+  if(user === loggedin){
+    console.log(true);
+   
 
-
-function checkUser(){
-
-    
+  }
 }
 
 function ChangePassword(){
-    var password = document.querySelector('input[name="password"]');
-    var username = document.querySelector('input[name="username"]');
+    var confirmPassword = document.querySelector('input[name="confirmPassword"]');
+    var confirmUsername = document.querySelector('input[name="confirmUsername"]');
     
-    localStorage.setItem('input', document.getElementsByClassName("passWform").value);
-    console.log(value);
+    localStorage.setItem(confirmUsername, confirmPassword, document.getElementsByClassName("passWform").value);
     alert('Password has been changed!');
 
-let body_post = {
-    username: username.value,
-    password: password.value,
-};
-  
-let rqt_post = new Request("../APIs/users/update.php", {
-      method: "PATCH",
-      body: JSON.stringify(body_post),
-      headers: { "Content-type": "application/json" },
-});
-fetch(rqt_post)
-    .then((respo) => respo.json())
+document.querySelector("#changepassword").addEventListener("click"), function(event){
+  event.preventDefault();
+  let confirmUsername = document.getElementById("confirmUsername").value;
+  let confirmPassword = document.getElementById("confirmPassword").value;
+
+  fetch("../APIs/users/update.php", {
+    method: "PUT",
+    headers: { "Content-type": "application/json" },
+    body: JSON.stringify({
+      id: id, username: confirmUsername, password:confirmPassword
+    }).then((respo) => respo.json())
     .then((resource) => {
-        if (username.value == newUsername || password.value == newPassword ) {
+        if (username.value == confirmUsername || password.value == confirmPassword ) {
           missingText();
         }
         else{
@@ -37,9 +37,9 @@ fetch(rqt_post)
             username.value = "";
             UpdatePassword();
         }
-    });
-}
-
+});
+  })
+}}
 
 function UpdatePassword(){
 
