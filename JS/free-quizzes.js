@@ -288,10 +288,10 @@ function countdown() {
        timer.appendChild(time_txt);
        let timer_sec = document.createElement("div");
        timer_sec.className = "timer_sec";
-       timer_sec.innerHTML = "30";
+       timer_sec.innerHTML = "5";
        timer.appendChild(timer_sec);
 
-       startTimer(30);
+       startTimer(5);
 
 
        let quizTitle = document.createElement("div");
@@ -437,7 +437,7 @@ function countdown() {
     let timeTex = document.getElementsByClassName("time_left_txt");
     let timeCount = document.getElementsByClassName("timer_sec");
 
-    let timeValue = 30;
+    let timeValue = 5;
     let counter = 0;
 
 function startTimer(time){
@@ -449,7 +449,13 @@ function startTimer(time){
             timeCount[0].textContent = "0" + timeCount[0].textContent;
         }
         
-        if(time < 0 && `${questionNumber}` == `${data.length}`){
+        if(time < 0 && questionNumber < data.length){
+            clearInterval(counter);
+            timeTex[0].textContent = "Time off";
+            setCorrectAnswer();
+            let showNextQuestion = document.getElementById("next-question");
+            showNextQuestion.style.visibility = "visible";            
+        }else if (questionNumber == data.length && time < 0){
             clearInterval(counter);
             timeTex[0].textContent = "Time off";
             setCorrectAnswer();
@@ -459,6 +465,9 @@ function startTimer(time){
     }      
 }
 
+//&& `${questionNumber}` == `${data.length}`
+// let findShowResults = document.getElementById("results");
+//findShowResults.style.visibility = "visible";
 function setCorrectAnswer(){
     for(i = 0; i < 4; i++){
         let label = document.getElementById("label" + `${i}`);
