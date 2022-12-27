@@ -10,13 +10,6 @@ $fileName= "users.json";
 
 $method = $_SERVER["REQUEST_METHOD"];
 
-session_start();
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    echo "Welcome to the member's area, " . htmlspecialchars($_SESSION['username']) . "!";
-} else {
-    echo "Please log in first to see this page.";
-}
-
 if ($method != "PATCH") {
     
         $error = ["error"=>"Invalid method"];
