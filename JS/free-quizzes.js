@@ -403,12 +403,22 @@ function countdown() {
            `
             infoQuiz.appendChild(pictureFinish);
 
+            function addZero(i) {
+                if (i < 10) {i = "0" + i}
+                return i;
+            }; 
+
             const date = new Date();
             let day = date.getDate();
             let month = date.getMonth() + 1;
             let year = date.getFullYear();
             let currentDate = `${day}-${month}-${year}`;
-            let current_time = date.getHours() + ":" + 0 + date.getMinutes()+ ":" + date.getSeconds();
+            let h = addZero(date.getHours());
+            let m = addZero(date.getMinutes());
+            let s = addZero(date.getSeconds());
+            let time = h + ":" + m + ":" + s;
+
+
             console.log(currentDate);
     
             let dateInfo = document.createElement("div");
@@ -418,7 +428,7 @@ function countdown() {
 
             let timeInfo = document.createElement("div");
             timeInfo.id = "time";
-            timeInfo.innerHTML = "Time" + ":" + current_time;
+            timeInfo.innerHTML = "Time" + ":" + time;
             infoQuiz.appendChild(timeInfo);
         
 
