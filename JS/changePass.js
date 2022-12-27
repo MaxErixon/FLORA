@@ -1,25 +1,25 @@
 "use-strict";
-// Kolla vem som är inloggad
-function getUserInfo() {
-  const user = user.find(function )
-  if(user === loggedin){
-    console.log(true);
-   
+// Hämta databasen
 
-  }
-}
 
 function ChangePassword(){
+    var newPassword = document.querySelector('input[name="newPassword"]');
     var confirmPassword = document.querySelector('input[name="confirmPassword"]');
+
+    var newUsername = document.querySelector('input[name="newUsername"]');
     var confirmUsername = document.querySelector('input[name="confirmUsername"]');
     
-    localStorage.setItem(confirmUsername, confirmPassword, document.getElementsByClassName("passWform").value);
-    alert('Password has been changed!');
+   
 
-document.querySelector("#changepassword").addEventListener("click"), function(event){
-  event.preventDefault();
-  let confirmUsername = document.getElementById("confirmUsername").value;
-  let confirmPassword = document.getElementById("confirmPassword").value;
+   if(newPassword === confirmPassword){
+
+   }
+
+   if(newUsername === confirmUsername){
+
+  }
+
+
 
   fetch("../APIs/users/update.php", {
     method: "PUT",
@@ -39,12 +39,13 @@ document.querySelector("#changepassword").addEventListener("click"), function(ev
         }
 });
   })
-}}
+}
 
 function UpdatePassword(){
 
 }
 
+/*
 function loginBtnClick(){
     if(document.getElementById('login').value == localStorage.getItem('password')){
       alert('Correct Login');
@@ -52,3 +53,4 @@ function loginBtnClick(){
       alert('Wrong Password');
     }
   }
+  */
