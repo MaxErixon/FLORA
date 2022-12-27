@@ -418,7 +418,7 @@ function countdown() {
             let s = addZero(date.getSeconds());
             let time = h + ":" + m + ":" + s;
 
-
+            let current_time = 
             console.log(currentDate);
     
             let dateInfo = document.createElement("div");

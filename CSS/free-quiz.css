@@ -182,11 +182,14 @@ span {
 }
 
 .box-question > input{
-    margin-top: 2vh;
+    width: 20px;
+    height: 20px;
+    padding: 0;
     margin-left: 2vh;
-
-    width: 3vh;
-    height: 3vh;
+    position: relative;
+    top: 2vh;
+    *overflow: hidden;
+    
 }
 
 #info-quiz{
@@ -197,8 +200,8 @@ span {
 }
 
 label{
-    word-break: break-all;
-    margin-left: 3vh;
+    display: block;
+    padding-left: 45px;
 }
 
 #text{
