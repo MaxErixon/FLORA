@@ -1,24 +1,41 @@
-* {
-    margin: 0px;
+body{
+    margin:0;
+    background-color: #9190ae;
+ }
+ header{
+     height: 10vh;
+     background-color: whitesmoke;  
+ }
+
+ h1{
+    font-family: 'Varela Round', sans-serif;
+    margin-left: 3.5vh;
+ }
+
+ #icon-user{
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+  
+    position: absolute;
+    top: 2vh;
+    right: 50px;
+    width: 10vh;
 }
 
-header{
-    background-color: rgb(190, 190, 190);
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100vw;
-    height: 60px;  
-    border-bottom: 1px solid black;
+.logo{
+    position: absolute;
+    top: -5vh;
+    left: 5vh;
+    margin-top: 2vh;
+    width: 15vh;
+    height: 18vh;
 }
-
-h1{
-    margin-left: 5vh;
-}
-
 img{
     width: 6vh;
-}
+    height: 6vh;
+ }
 #container{
     display: flex;
     align-items: center;
@@ -26,7 +43,8 @@ img{
 }
 
 .userform {
-    border: 1px solid black;
+    border: 5px dotted black;
+    background-color: rgb(173, 173, 197);
     margin: 30px;
     padding: 50px;
     gap: 50px;
@@ -34,7 +52,8 @@ img{
     
 }
 .passWform {
-    border: 1px solid black;
+    border: 5px dotted black;
+    background-color: rgb(173, 173, 197);
     margin: 30px;
     padding: 50px;
     gap: 50px;
@@ -54,17 +73,20 @@ img{
 }
 
 button {
-    height: 40px;
-    width: 100px;
+    height: 10vh;
+    width: 20vh;
 }
 
 .btnWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 20px;
+    position: absolute;
+    top: 21.5vh;
+    right: 60vh;
+    border: 5px dotted black;
+background-color: rgb(173, 173, 197);
+
+
+height: 30vh;
+width: 20vw;
     
 }
 #meny{
@@ -72,13 +94,13 @@ button {
     height: 100vh;
     right: 0;
     position: fixed;
-    background-color: rgb(190, 190, 190);
+    background-color:rgb(173, 173, 197);
     top: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-   border-top: 1px solid black;
+
 }
 
 .nav-item{
@@ -126,12 +148,105 @@ button {
     height: 50px;
     width: 50px;
     border: none;
-    border-radius: 40px 40px 40px 40px;
+    cursor: pointer;
+    appearance: none;
+    position: absolute;
+    bottom: 6vh;
+    left: 5vh;
+}
+
+#help:hover{
+    scale: 1.2;
 }
 
 #logout {
     height: 60px;
     width: 60px;
     border: none;
+    cursor: pointer;
+    appearance: none;
+    position: absolute;
+    bottom: 5vh;
+    right: 5vh;
     border-radius: 40px 40px 40px 40px;
 }
+#logout:hover{
+    scale: 1.2;
+}
+
+.user-text{
+    position: absolute;
+    top: 1.5vh;
+    left: 35vh;
+    font-family: 'Varela Round', sans-serif;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+ }
+
+ a{
+    text-decoration:none;
+    color: black;
+    box-shadow: inset 0 0 0 0 #9190ae;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    font-family: 'Varela Round', sans-serif;
+ }
+a:hover{
+  box-shadow: inset 100px 100px 0 0  #9190ae;
+  color: white;
+    
+}
+ .submit{
+    position: absolute;
+    top: 1.5vh;
+    left: 55vh;
+    font-family: 'Varela Round', sans-serif;
+ }
+
+ .edit{
+    position: absolute;
+    top: 1.5vh;
+    left: 85vh;
+    font-family: 'Varela Round', sans-serif;
+ }
+
+ h3{
+    font-family: 'Varela Round', sans-serif;
+ }
+
+ .change-username{
+    border-radius: 10px 10px 10px 10px;
+    position: absolute;
+    left: 50vh;
+    bottom: 33vh;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    width: 15vh;
+    height: 5vh;
+ }
+
+ .change-password{
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 39vh;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    width: 15vh;
+    height: 5vh;
+ }
+
+.btn-default{
+    border-radius: 10px 10px 10px 10px;
+    position: absolute;
+    top: 10vh;
+    left: 8vh;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: rgb(222, 109, 109);
+}
+.btn-default:hover{
+    background-color: rgb(165, 107, 107);
+}
+

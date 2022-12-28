@@ -217,5 +217,11 @@ a:hover{
     font-family: 'Varela Round', sans-serif;
  }
 
+ .edit{
+    position: absolute;
+    top: 1.5vh;
+    left: 85vh;
+    font-family: 'Varela Round', sans-serif;
+ }
  
  

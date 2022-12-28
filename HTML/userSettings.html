@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href ="../CSS/userSettings.css"> 
     <title>UserSettings</title>
 </head>
     <header>
-        <h1>Quizmaster</h1>
-        <h2>User Quiz</h2>
-        <h2>Submit Quiz</h2>
-        <h2>Username</h2>
-        <img src="../Images/user.jpg"> 
+        <img src="../Images/Quiz-logo.png" class = "logo">
+        <h3 class="user-text"><a href="">User Quiz</a></h3>
+        <h3 class="submit"><a href="">Submit a question</a></h3>
+        <h3 class="edit"><a href="">Edit account settings</a></h3>
+        <button id = "icon-user">
+            <img src="../Images/user.jpg" alt="buttonpng">
+        </button>
 </header>
 <body>
     <div id="container">
@@ -31,7 +36,7 @@
                                             <h3>Confirm new username:</h3>              
                                             <input type="text" id="confirmUsername" placeholder="confirm username">
                                             <br><br>
-                                            <button onclick="ChangePassword()">Change username</button>
+                                            <button class="change-username" onclick="ChangePassword()">Change username</button>
                                         </form>
                                         </div>
 
@@ -45,19 +50,16 @@
                                                 <h3>Confirm new password:</h3>
                                                 <input type="password" id="confirmPassword" placeholder="confirm password">
                                                 <br><br>
-                                                <button onclick="ChangePassword()">Change password</button>
+                                                <button class ="change-password" onclick="ChangePassword()">Change password</div>
                                             </form>
                                        </div>
              </div>
 
-                <div class="profilePhoto">
-                    <h3>Profile photo</h3>
-                    <button class="profilePic"></button>
-                
+        
 
             <div class="btnWrapper">
                  
-                 <button onclick="DeleteAccount()" class=" btn btn-default">Delete account</button>
+                 <button onclick="DeleteAccount()" class="btn-default">Delete account</button>
             </div>
                 </div>
 
@@ -69,8 +71,8 @@
     <div class="Quiz-container"> <img class="menu-symbol" src="../Images/question.jpg" alt=""> <a href="mode.html" class="nav-link">My Quizes</a> </div>
     <div class="Settings-container"> <img class="menu-symbol" src="../Images/settings.jpg" alt=""> <a href="mode.html" class="nav-link">Settings</a> </div>
     <div class="helpAndlogout"> 
-          <button id ="help" class=" btn btn-default" onclick="contactUs()"><img src="../Images/help.jpg"></button>
-          <button id ="logout" class=" btn btn-default" onclick="logout()"><img src="../Images/logout.jpg"></button>
+          <div id ="help" onclick="contactUs()"><img src="../Images/help.jpg"></div>
+          <div id ="logout" onclick="logout()"><img src="../Images/logout.jpg"></div>
         
     
     </div>
