@@ -114,3 +114,13 @@ p{
     margin-left: 5vh;
     font-family: 'Varela Round', sans-serif;
 }
+
+.submitBtn{
+
+    width: 15vh;
+    height: 5vh;
+    border-radius: 10px 10px 10px 10px;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+}
