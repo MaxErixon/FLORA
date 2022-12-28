@@ -102,3 +102,7 @@ form{
     width: 250.45px;
     cursor: pointer;
   }
+
+  .title > p{
+    font-family: 'Varela Round', sans-serif;
+  }
