@@ -24,12 +24,18 @@
         <img src="../Images/user.jpg" alt="buttonpng" />
       </button>
     </div>
+    
 
-    <div class="title"><p>Submit a question</p></div>
+    <div class="title">
+      <p>Submit a question</p>
+      <h3>Submit a question for our team to review and add to the database if accepted!</h3>
+    </div>
+    
 
     <div class="fdiv">
       <form>
         <select id="category" name="category" size="1">
+          <option value="" selected disabled hidden>Choose a category</option>
           <option value="arts&Literature">Arts & Literature</option>
           <option value="movies&TV">Movies & TV</option>
           <option value="sports&leisure">Sports & Leisure</option>
@@ -47,7 +53,7 @@
         <div class="inputWrap">
           <img src="../Images/questionmark.jpg" alt="" srcset="" /><input
             type="text"
-            id="question"
+            id="question-input"
             name="question"
             placeholder="Question"
           /><br />
@@ -93,7 +99,14 @@
           /><br />
         </div>
         <br />
-        <input id="submitbtn" type="button" value="Submit question" /><br />
+        <div class="submitbtn">
+          <div class="bt more-bt">
+            <span class="fl"></span><span class="sfl"></span
+            ><span class="cross"></span><i></i>
+            <p>Submit question</p>
+          </div>
+        </div>
+
       </form>
     </div>
 
