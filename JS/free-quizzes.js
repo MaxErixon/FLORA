@@ -183,7 +183,7 @@ function createInputFields(){
    inputFields.innerHTML = "";
 
     let text = document.createElement("div");
-    text.innerHTML = "Number of questions";
+    text.innerHTML = "Number of questions" + ":";
     text.className = "textOfNumber";
     inputFields.appendChild(text);
 
@@ -194,7 +194,7 @@ function createInputFields(){
     //numberOfQuestion.innerHTML = numberOfQuestion.value;
     
     let label = document.createElement("label");
-    label.innerHTML = "Difficulty";
+    label.innerHTML = "Difficulty" + ":";
     label.className = "label";
     inputFields.appendChild(label);
 
