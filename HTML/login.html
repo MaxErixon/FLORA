@@ -4,13 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/login.css" />
     <title>Login</title>
   </head>
   <body>
     <div class="header">
-      <!--Typsnitt Roboto-->
-      <h1>Quizmaster</h1>
+      
+      <img src="../Images/Quiz-logo.png" class = "logo">
+
+
       <button id="icon-user">
         <img src="../Images/user.jpg" alt="buttonpng" />
       </button>
@@ -19,17 +24,13 @@
     <main>
       <div id="loginForm">
           <div class="loginform">
-            <h1>Welcome to Quizmaster!</h1>
-            <br />
             <h3>
              Login with your account!
             </h3>
-            <h3>Username</h3>
             <input type="text" name="username" id="logInusername" placeholder="username"/>
-            <h3>Password</h3>
             <input type="password" name="password" id="logInpassword" placeholder="password"/>
             <div id="buttonlogin">
-              <button id="loginBtn">Login</button>
+              <button id="loginBtn">Log in</button>
             </div>
             <p>You don't have an account?</p>
             <a href="../HTML/createAccount.html">
