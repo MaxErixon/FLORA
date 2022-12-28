@@ -388,3 +388,31 @@ border-radius: 10px 10px 10px 10px;
     font-size: 1.5rem;
     font-family: 'Varela Round', sans-serif;
 }
+
+.user-text{
+    position: absolute;
+    top: 1.5vh;
+    left: 35vh;
+    font-family: 'Varela Round', sans-serif;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+ }
+
+ a{
+    text-decoration:none;
+    color: black;
+    box-shadow: inset 0 0 0 0 #9190ae;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+ }
+a:hover{
+  box-shadow: inset 100px 100px 0 0  #9190ae;
+  color: white;
+    
+}
+ .submit{
+    position: absolute;
+    top: 1.5vh;
+    left: 55vh;
+    font-family: 'Varela Round', sans-serif;
+ }

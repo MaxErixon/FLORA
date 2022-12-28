@@ -3,10 +3,8 @@ body{
    background-color: #9190ae;
 }
 .header{
-
     height: 10vh;
-    background-color: whitesmoke;
-    
+    background-color: whitesmoke;  
 }
 
 .title > h1{
@@ -197,4 +195,5 @@ h3{
     right: 18vh;
     font-family:'Indie Flower', cursive;
 }
+
 

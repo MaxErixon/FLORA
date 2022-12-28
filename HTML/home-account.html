@@ -5,33 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home-account</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Varela+Round&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="../CSS/home-account.css">
 </head>
 
 <body>
     <div class="header">
-    <!--Typsnitt Roboto-->
-    <h1>Quizmaster</h1>
-    <h2>User Quiz</h2>
-    <h2>Submit Quiz</h2>
-      <h2>User Quiz</h2>
+        <img src="../Images/Quiz-logo.png" class = "logo">
+        <h3 class="user-text"><a href="">User Quiz</a></h3>
+        <h3 class="submit"><a href="">Submit a question</a></h3>
+
+
     <button id= "icon-user" onclick = "btnuserIcon()">
         <img src="../Images/user.jpg" alt="buttonpng">
     </button>
 </div>
 
-    <div class="title"><p>Let's QUIZ</p></div>
-    <div id="container">
-        <div class="start-up">
-            <div class="free-quiz" onclick="btnfreeQuiz()"><img src="../Images/free-quiz.png">
-                <div class="title-free-quiz"><p>Free quizzes</p></div>
-            </div>
-             <div class="user-quiz" onclick ="btnuserQuiz()"><img src="../Images/user-quiz.png">
-                <div class="title-user-quiz"><p>Play user quizzes</p></div>
-            </div>
-             <div class="submit-quiz" onclick="btnsubmitQuiz()"><img src="../Images/pen.jpg">
-                <div class="title-submit-quiz"><p>Submit a quiz</p></div>
-            </div>
+<div class="title"><h1>Welcome to QuizMaster</h1></div>
+<div id="container">
+    <div class="start-up">
+        <div class="free-quiz" onclick="btnfreeQuiz()"><img src="../Images/free-quiz.png">
+            <div class="title-free-quiz"><p>Category quizzes</p></div>
+        </div>
+         <div class="user-quiz" onclick ="btnuserQuiz()"><img src="../Images/user-quiz.png">
+            <div class="title-user-quiz"><p>Play user quizzes</p></div>
+        </div>
+         <div class="submit-quiz" onclick="btnsubmitQuiz()"><img src="../Images/pen.jpg">
+            <div class="title-submit-quiz"><p>Submit a question</p></div>
+        </div>
 </div>
 </div>
 
