@@ -264,10 +264,10 @@ function playQuiz(){
     let clockDiv = document.getElementById("clock"); 
     let clock = document.createElement("SPAN"); 
     clock.id = "seconds";
-    clock.innerHTML = "1"
+    clock.innerHTML = "5"
     clockDiv.appendChild(clock);
 
-    timeLeft = 1;
+    timeLeft = 5;
 
 
 function countdown() {
@@ -288,10 +288,10 @@ function countdown() {
        timer.appendChild(time_txt);
        let timer_sec = document.createElement("div");
        timer_sec.className = "timer_sec";
-       timer_sec.innerHTML = "5";
+       timer_sec.innerHTML = "30";
        timer.appendChild(timer_sec);
 
-       startTimer(5);
+       startTimer(30);
 
 
        let quizTitle = document.createElement("div");
@@ -390,16 +390,15 @@ function countdown() {
             showResults.style.visibility = "hidden";
 
             let results_box = document.getElementById("question-count");
-            if(userScore < 3){
-                results_box.innerHTML =  `${userScore}` + "out of" + `${data.length}`;
-            }
+            results_box.innerHTML =  "Score: " + `${userScore}` +  " of " + `${data.length}`;
+        
             
 
 
             let pictureFinish = document.createElement("div");
             pictureFinish.id = "Finish-logo";
             pictureFinish.innerHTML = `
-            <img src="../Images/congratulation.jpg">
+            <img src="../Images/trophy.png">
            `
             infoQuiz.appendChild(pictureFinish);
 
@@ -423,12 +422,12 @@ function countdown() {
     
             let dateInfo = document.createElement("div");
             dateInfo.id = "date";
-            dateInfo.innerHTML = "Date" + ":" + currentDate;
+            dateInfo.innerHTML = "Date" + ": " + currentDate;
             infoQuiz.appendChild(dateInfo);
 
             let timeInfo = document.createElement("div");
             timeInfo.id = "time";
-            timeInfo.innerHTML = "Time" + ":" + time;
+            timeInfo.innerHTML = "Time" + ": " + time;
             infoQuiz.appendChild(timeInfo);
         
 
@@ -447,7 +446,7 @@ function countdown() {
     let timeTex = document.getElementsByClassName("time_left_txt");
     let timeCount = document.getElementsByClassName("timer_sec");
 
-    let timeValue = 5;
+    let timeValue = 30;
     let counter = 0;
 
 function startTimer(time){
