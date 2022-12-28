@@ -37,7 +37,7 @@ function ChangePassword(){
             username.value = "";
             UpdatePassword();
         }
-});
+})
   })
 }
 
