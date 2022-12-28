@@ -33,7 +33,7 @@ function DeleteAccount() {
   }
 }
 
-function SavedEditings() {
+/* function SavedEditings() {
   let userform = document.getElementsByClassName("userform");
   let passWform = document.getElementsByClassName("passWform");
   if (userform && passWform === "") {
@@ -47,6 +47,7 @@ function SavedEditings() {
     location.href = "home-account.html";
   }
 }
+*/
 
 function contactUs() {
   alert(

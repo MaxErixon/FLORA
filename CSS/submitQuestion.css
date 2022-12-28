@@ -3,6 +3,10 @@
   justify-content: center;
 }
 
+form{
+  width: 250px;
+}
+
 .inputWrap {
   display: flex;
 }
@@ -19,36 +23,74 @@
     padding: 10px;
     width: 194px;
     margin-left: 56px;
+    cursor: pointer;
   }
 
 #correctAnswer {
   border: solid #32ba7c;
   border-radius: 5px;
   color: #32ba7c;
+  width: 20px;
+  transition: width 1s;
+}
+
+#correctAnswer:focus{
+  width: 200px;
+  background-color: #32ba7c;
+  color:white
 }
 
 #incorrectAnswer1 {
   border: solid #ff5b5b;
   border-radius: 5px;
   color: #ff5b5b;
+  width: 20px;
+  transition: width 1s;
+}
+#incorrectAnswer1:focus{
+  width: 200px;
+  background-color: #ff5b5b;
+  color:white
 }
 
 #incorrectAnswer2 {
     border: solid #ff5b5b;
     border-radius: 5px;
     color: #ff5b5b;
+    width: 20px;
+  transition: width 1s;
+  }
+  #incorrectAnswer2:focus{
+    width: 200px;
+    background-color: #ff5b5b;
+    color:white
   }
 
   #incorrectAnswer3 {
     border: solid #ff5b5b;
     border-radius: 5px;
     color: #ff5b5b;
+    width: 20px;
+  transition: width 1s;
+  }
+  #incorrectAnswer3:focus{
+    width: 200px;
+    background-color: #ff5b5b;
+    color:white
   }
 
   #question{
     border-radius: 5px;
     border: solid black;
     color:black;
+    width: 20px;
+    transition: width 1s;
+  }
+
+  #question:focus{
+    width: 200px;
+    background-color: black;
+    color:white
   }
 
   #submitbtn{
@@ -58,4 +100,9 @@
     border-radius: 5px;
     padding: 10px;
     width: 250.45px;
+    cursor: pointer;
+  }
+
+  .title > p{
+    font-family: 'Varela Round', sans-serif;
   }

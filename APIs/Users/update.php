@@ -10,8 +10,6 @@ $fileName= "users.json";
 
 $method = $_SERVER["REQUEST_METHOD"];
 
-
-
 if ($method != "PATCH") {
     
         $error = ["error"=>"Invalid method"];

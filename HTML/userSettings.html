@@ -4,54 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href ="../CSS/userSettings.css"> 
     <title>UserSettings</title>
 </head>
     <header>
-        <h1>Quizmaster</h1>
-        <h2>User Quiz</h2>
-        <h2>Submit Quiz</h2>
-        <h2>Username</h2>
-        <img src="../Images/user.jpg"> 
+        <a href="home-account.html"><img src="../Images/Quiz-logo.png" class = "logo"></a>
+        <h3 class="user-text"><a href="user-questions.html">User Quiz</a></h3>
+        <h3 class="submit"><a href="SubmitQuestion.html">Submit a question</a></h3>
+        <h3 class="edit"><a href="userSettings.html">Edit account settings</a></h3>
+        <button id = "icon-user">
+            <img src="../Images/user.jpg" alt="buttonpng">
+        </button>
 </header>
 <body>
     <div id="container">
 
 
              <div id="forms">
-                    <form action="" method="post">
+                    <form action="change_password.php" method="post">
                             <h1>Edit account settings</h1>
                                     <div class="userform">
-                                        <h3>Current Username:</h3>
-                                            <input type="text" name="username" placeholder="current username">
+                                        <h3>Old Username:</h3>
+                                            <input type="text" name="username" placeholder="old susername">
+                                           <br><br>
                                             <h3>New Username:</h3>
-                                            <input type="text" name="username" placeholder="username">
+                                            <input type="text" id="newUsername" placeholder="username">
+                                            <br><br>
                                             <h3>Confirm new username:</h3>              
-                                            <input type="text" name="username" placeholder="confirm username">
-                                            <button onclick="SavedEditings()">Save</button>
+                                            <input type="text" id="confirmUsername" placeholder="confirm username">
+                                            <br><br>
+                                            <button class="change-username" onclick="ChangePassword()">Change username</button>
                                         </form>
                                         </div>
 
                                         <div class="passWform">
-                                                <h3>Current Password:</h3>
-                                                <input type="password" name="password" placeholder="current password">
+                                                <h3>Old Password:</h3>
+                                                <input type="password" id="password" placeholder="old password">
+                                                <br><br>
                                                 <h3>New password:</h3>
-                                                <input type="password" name="password" placeholder="new password">
+                                                <input type="password" id="newPassword" placeholder="new password">
+                                                <br><br>
                                                 <h3>Confirm new password:</h3>
-                                                <input type="password" name="password" placeholder="confirm password">
-                                                <button onclick="SavedEditings()">Save</button>
+                                                <input type="password" id="confirmPassword" placeholder="confirm password">
+                                                <br><br>
+                                                <button class ="change-password" onclick="ChangePassword()">Change password</div>
                                             </form>
                                        </div>
              </div>
 
-                <div class="profilePhoto">
-                    <h3>Profile photo</h3>
-                    <button class="profilePic"></button>
-                
+        
 
             <div class="btnWrapper">
                  
-                 <button onclick="DeleteAccount()" class=" btn btn-default">Delete account</button>
+                 <button onclick="DeleteAccount()" class="btn-default">Delete account</button>
             </div>
                 </div>
 
@@ -63,15 +71,18 @@
     <div class="Quiz-container"> <img class="menu-symbol" src="../Images/question.jpg" alt=""> <a href="mode.html" class="nav-link">My Quizes</a> </div>
     <div class="Settings-container"> <img class="menu-symbol" src="../Images/settings.jpg" alt=""> <a href="mode.html" class="nav-link">Settings</a> </div>
     <div class="helpAndlogout"> 
-          <button id ="help" class=" btn btn-default" onclick="contactUs()"><img src="../Images/help.jpg"></button>
-          <button id ="logout" class=" btn btn-default" onclick="logout()"><img src="../Images/logout.jpg"></button>
+          <div id ="help" onclick="contactUs()"><img src="../Images/help.jpg"></div>
+          <div id ="logout" onclick="logout()"><img src="../Images/logout.jpg"></div>
         
     
     </div>
 
 </div>    
-       
+<!--Mention the path of the json file in the script source along with the javascript file -->
+<script type="text/javascript" src="../APIs/Users/users.json"></script>
+<script type="text/javascript" src="../JS/changePass.js"></script>
 <script src="../JS/alert.js"></script>
+
       
     
 </body>
