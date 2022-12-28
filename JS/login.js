@@ -18,7 +18,7 @@ function logInUser(){
     };
 
   //request to log in PHP-file
-  const user_status_request = new Request("../PHP/login.php", options);
+  const user_status_request = new Request("..APIs/users/login.php", options);
 
   let responseStatus;
   //fetch the request , when the resource promise comes call the function logIn_answer
