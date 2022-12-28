@@ -14,4 +14,4 @@ function sendJSON($data, $statusCode = 200){
     $json = json_encode($data);
     echo $json;
     exit();
-    }
+}

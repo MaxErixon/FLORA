@@ -1,38 +1,38 @@
 <?php
-
-ini_set("display errors", 1);
-
+//For login with username and password
 require_once "functions.php";
 
-$fileName = "users.json";
+//Displays errors
+ini_set("display_errors", 1);
 
-$method = $_SERVER["REQUEST_METHOD"];
-
-
-
-session_start(); // Starts the session
-
-
-if(isset($_POST['Submit'])){
-    /* Define username and associated password array */
-    $logins = array('username1' => 'password1','username2' => 'password2');
-    
-    /* Check and assign submitted Username and Password to new variable */
-    $Username = isset($_POST['Username']) ? $_POST['Username'] : '';
-    $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
-    
-    /* Check Username and Password existence in defined array */            
-    if (isset($logins[$Username]) && $logins[$Username] == $Password){
-            /* Success: Set session variables and redirect to Protected page  */
-            $_SESSION['UserData']['Username']=$logins[$Username];
-            header("location:home-account.php");
-            exit;
-    } else {
-            /*Unsuccessful attempt: Set error message */
-            $msg="<span style='color:red'>Invalid Login Details</span>";
-    }
+// If request method is not POST send error message 
+if($request_method !== "POST"){
+    $error = ["error" => "Only POST method is allowed"]; 
+    sendJSON($error, 400);
 }
 
+//The r_data must include username and password 
+if(isset($requestData["username"], $requestData["password"])){
+    if(empty($requestData["username"]) or empty($requestData["password"])){
+        $error = ["error" => "Please fill in all of the information."];
+        sendJSON($error, 404);
+    }
+    //if the requestData is correct, loop through the database of 
+    //users and check that the user exists
+    foreach($users as $user){
+        if($user["username"] == $requestData["username"] and $user["password"] == $requestData["password"]){
+            //Allwo the user to login if it's in the database.
+            sendJSON($user);
+
+        }
+    }
+    $error = ["error" => "No user found."];
+    sendJSON($error, 400);
+}
+
+
+
+?>
 ?> 
 
 
