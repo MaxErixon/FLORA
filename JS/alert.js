@@ -58,11 +58,7 @@ function contactUs() {
 function logout() {
   let answer = confirm("Are you sure you want to logout?");
   if (answer === true) {
-    setTimeout(function () {
-      alert("Logging out...");
-    }, 3000);
-    console.log(setTimeout);
-    location.href = "home-free.html";
+    location.href = "login.html";
   }
 }
 

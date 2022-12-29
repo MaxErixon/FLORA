@@ -21,11 +21,11 @@
 
 
              <div id="forms">
-                    <form action="changePass.php" method="post">
+                    <form action="update.php" method="PATCH">
                             <h1>Edit account settings</h1>
                                     <div class="userform">
                                         <h3>Old Username:</h3>
-                                            <input type="text" name="username" placeholder="old susername">
+                                            <input type="text" name="username" placeholder="username">
                                            <br><br>
                                             <h3>New Username:</h3>
                                             <input type="text" id="newUsername" placeholder="username">
@@ -33,7 +33,7 @@
                                             <h3>Confirm new username:</h3>              
                                             <input type="text" id="confirmUsername" placeholder="confirm username">
                                             <br><br>
-                                            <button onclick="ChangeUsername()" class="btn">Change username</button>
+                                            <button onclick="ChangeInfo()" class="btn">Change username</button>
                                         </form>
                                         </div>
 
@@ -47,7 +47,7 @@
                                                 <h3>Confirm new password:</h3>
                                                 <input type="password" id="confirmPassword" placeholder="confirm password">
                                                 <br><br>
-                                                <button onclick="ChangePassword()" class="btn">Change password</div>
+                                                <button onclick="ChangeInfo()" class="btn">Change password</div>
                                             </form>
                                        </div>
              </div>
@@ -72,7 +72,7 @@
 </div>    
 <!--Mention the path of the json file in the script source along with the javascript file -->
 <script type="text/javascript" src="../APIs/Users/users.json"></script>
-<script type="text/javascript" src="../JS/changePass.js"></script>
+<script src="../JS/changePass.js"></script>
 <script src="../JS/alert.js"></script>
 
       
