@@ -3,20 +3,8 @@ body{
     background-color: #9190ae;
     font-family: "Varela Round", sans-serif;
  }
- .header{
-     height: 10vh;
-     background-color: whitesmoke;  
- }
  
- .title > h1{
-     font-family: 'Varela Round', sans-serif;
-    text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
-    margin-top: 8vh;
-     margin-left:5vh;
-     padding: 5px;
- }
+ 
  
  img{
      width: 6vh;
@@ -224,5 +212,13 @@ a:hover{
     left: 85vh;
     font-family: 'Varela Round', sans-serif;
  }
+
+ .show-name {
+    position: absolute;
+    top: 1.5vh;
+    left: 155vh;
+    font-family: 'Varela Round', sans-serif;
+   }
+   
  
  

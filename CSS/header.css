@@ -1,0 +1,60 @@
+.header {
+    height: 10vh;
+    background-color: whitesmoke;
+  }
+  
+  .header > button {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    position: absolute;
+    top: 0.5vh;
+    right: 50px;
+    width: 6vh;
+  }
+  .header > h2:nth-child(2) {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: relative;
+    top: 25px;
+    max-width: 228px;
+    overflow-wrap: anywhere;
+    text-align: end;
+    left: 1100px;
+    color: #3b8631;
+   }
+   
+  
+  h1 {
+    margin-top: 0;
+    margin-left: 5vh;
+    padding: 5px;
+  }
+  
+  img {
+    width: 6vh;
+    height: 6vh;
+  }
+  
+  #icon-user {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+  
+    position: absolute;
+    top: 2vh;
+    right: 50px;
+    width: 10vh;
+  }
+  .title > h1{
+    font-family: 'Varela Round', sans-serif;
+   text-align: center;
+   font-size: 3rem;
+   font-weight: bold;
+   margin-top: 8vh;
+    margin-left:5vh;
+    padding: 5px;
+}
+
