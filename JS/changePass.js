@@ -3,9 +3,6 @@
 
 
 function ChangePassword(){
-    var newUsername = document.querySelector('input[name="newUsername"]');
-    var confirmUsername = document.querySelector('input[name="confirmUsername"]');
-    
     var newPassword = document.querySelector('input[name="newPassword"]');
     var confirmPassword = document.querySelector('input[name="confirmPassword"]');
     
@@ -15,6 +12,20 @@ function ChangePassword(){
     location.href ="userSettings.html";
   } else{
    alert("Password changed sucessfully");
+   location.href = "userSettings.html";
+}
+}
+
+function ChangeUsername(){
+  
+    var newUsername = document.querySelector('input[name="newUsername"]');
+    var confirmUsername = document.querySelector('input[name="confirmUsername"]');
+    
+   if(newUsername !== confirmUsername){
+    alert("New username and confirm username must match!");
+    location.href ="userSettings.html";
+  } else{
+   alert("Username changed sucessfully");
    location.href = "userSettings.html";
 }
 }
