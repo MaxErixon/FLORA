@@ -197,12 +197,13 @@ body{
 a:hover{
   box-shadow: inset 100px 100px 0 0  #9190ae;
   color: white;
+  border-radius: 5px;
     
 }
- .submit{
+.submit {
     position: absolute;
     top: 1.5vh;
-    left: 55vh;
+    left: 61vh;
     font-family: 'Varela Round', sans-serif;
  }
 

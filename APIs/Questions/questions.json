@@ -16,5 +16,14 @@
         "incorrectAnswer1": "The Weeknd",
         "incorrectAnswer2": "Drake",
         "incorrectAnswer3": "Zara Larsson"
+    },
+    {
+        "id": 3,
+        "category": "Movies & TV",
+        "question": "In what year did the first Harry Potter movie release?",
+        "correctAnswer": "2001",
+        "incorrectAnswer1": "2005",
+        "incorrectAnswer2": "2003",
+        "incorrectAnswer3": "2002"
     }
 ]

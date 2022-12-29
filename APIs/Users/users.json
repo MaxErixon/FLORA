@@ -143,5 +143,10 @@
         "id": 29,
         "username": "Pineiro123",
         "password": "spanien"
+    },
+    {
+        "id": 30,
+        "username": "Sebbe",
+        "password": "arya"
     }
 ]

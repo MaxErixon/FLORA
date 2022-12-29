@@ -57,7 +57,7 @@ img {
   right: -20px;
   width: 10vh;
   display: flex;
-  margin-right: 10px;
+  margin-right: 21px;
   height: fit-content;
 }
 .title > h1 {
@@ -76,6 +76,13 @@ img {
     
 }
 
-#icon-user > h2:hover{
-  color: aquamarine;
+#icon-user > h2:hover {
+  color: #3c5539;
+}
+
+.submit {
+  position: absolute;
+  top: 1.5vh;
+  left: 61vh;
+  font-family: 'Varela Round', sans-serif;
 }
