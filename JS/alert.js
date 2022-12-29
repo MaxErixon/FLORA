@@ -78,7 +78,6 @@ function contactUs() {
   );
 }
 
-
 function DeleteQuestion() {
   let answer = confirm("Are you sure you want to delete this quuestion?");
   if (answer === true) {

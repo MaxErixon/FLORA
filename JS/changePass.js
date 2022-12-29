@@ -1,55 +1,50 @@
 "use-strict";
 
+let sessionUser;
+
+function ChangeInfo(){
+  console.log("hej");
+    sessionUser = localStorage.getItem("sessionUser");
+    const password = document.getElementById("password").value;
+    const username = document.getElementById("username").value;
 
 
-function ChangePassword(){
-    var newPassword = document.querySelector('input[name="newPassword"]');
-    var confirmPassword = document.querySelector('input[name="confirmPassword"]');
-    
+    const user = {
+      username: username, 
+      password: password,
+    };
 
-   if(newPassword !== confirmPassword){
-    alert("New password and confirm password must match!");
-    location.href ="userSettings.html";
-  } else{
-   alert("Password changed sucessfully");
-   location.href = "userSettings.html";
-}
-}
+    const request = {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: {"Content-type": "application/json"},
+    };
 
-function ChangeUsername(){
-  
-    var newUsername = document.querySelector('input[name="newUsername"]');
-    var confirmUsername = document.querySelector('input[name="confirmUsername"]');
-    
-   if(newUsername !== confirmUsername){
-    alert("New username and confirm username must match!");
-    location.href ="userSettings.html";
-  } else{
-   alert("Username changed sucessfully");
-   location.href = "userSettings.html";
-}
-}
+    const statusRqst = new Request("../APIs/Users/update.php", request);
+    console.log(statusRqst);
 
- /* fetch("../APIs/users/update.php", {
-    method: "PUT",
-    headers: { "Content-type": "application/json" },
-    body: JSON.stringify({
-      id: id, username: confirmUsername, password: confirmPassword
-    }).then((respo) => respo.json())
+    let statusResponse;
+    fetch(statusRqst)
+    .then((r) => {
+      statusResponse = r;
+      return r.json();
+    })
     .then((resource) => {
-
-        else{
-            console.log(resource);
-            password.value = "";
-            username.value = "";
-            UpdatePassword();
-        }
-})
-  })
+      UpdatePassword(statusResponse, resource.username);
+  
+    });
 }
 
-function UpdatePassword(){
+function UpdatePassword(statusResponse, username){ 
 
+  if(statusResponse.status === 200){
+    localStorage.setItem("sessionUser", username);
+    alert("Password changed sucessfully");
+    
+  } else{
+   location.href = "userSettings.html";
+   alert("New password and confirm password must match!");
+   console.log($user);
+  
 }
-
-*/
+}
