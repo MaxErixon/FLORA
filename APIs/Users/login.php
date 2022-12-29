@@ -1,48 +1,56 @@
 <?php
 //For login with username and password
+ini_set("display errors", 1);
+
+
 require_once "functions.php";
 
-//Displays errors
-ini_set("display_errors", 1);
+
+$fileName= "users.json";
 
 
 $method = $_SERVER["REQUEST_METHOD"];
-// If request method is not POST send error message 
-if($method !== "POST"){
-    $error = ["error" => "Only POST method is allowed"]; 
-    sendJSON($error, 400);
-} 
 
-// Any page you want to perform session-checks on needs to start with:
-    session_start();
 
-    if($_SESSION["loggedIn"] !== true){
-        echo 'not logged in';
-        header("Location: login.php");
-        exit;
+if ($method != "POST") {
+        $error = ["error"=>"Invalid method"];
+        sendJSON($error, 405);
+}
+
+$users = [];
+
+if (file_exists($fileName)) {
+            $json = file_get_contents($fileName);
+            $users = json_decode($json, true);
+            
+ }
+
+
+$contentType = $_SERVER["CONTENT_TYPE"];
+
+if ($contentType != "application/json") {
+    $error = ["error"=>"Invalid content type"];
+        sendJSON($error, 400);
+}
+
+$requestJSON = file_get_contents("php://input");
+$requestData = json_decode($requestJSON, true);
+
+if(isset($requestData["username"], $requestData["password"])){
+    if( empty($requestData["username"]) or empty($requestData["password"])){
+        $error = ["error"=>"missing"];
+        sendJSON($error, 405);
     }
-    
-    $_SESSION["loggedIn"] = true;
 
-
-function findUser($username, $password){
-        if($requestData['username'] && $requestData['password'] !== "") {
-            foreach($user as $users){
-                $requestData['id'] = $id;
-                $requestData['username'] = $username;
-                $requestData['password'] = $password;
-                sendJSON($user);
-            }{
-                $error = ["error" => "No user found."];
-                sendJSON($error, 400);
-            }
+    foreach($users as $user){
+        if($user["username"] == $requestData["username"] and $user["password"] == $requestData["password"]){
+            sendJSON($user);
         }
+    }
+    $error = ["error"=>"User not found"];
+        sendJSON($error, 405);
 }
 
-function loginUser(){
-
-
-}
 
 
 ?>

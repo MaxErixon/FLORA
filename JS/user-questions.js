@@ -172,6 +172,7 @@ function playQuiz() {
         let hiddenWrapperQuiz = document.getElementById("wrapper-quiz");
         hiddenWrapperQuiz.style.visibility = "hidden";
         showResults.style.visibility = "hidden";
+        document.getElementById("quiz-title").innerHTML="Quiz with user questions";
 
         let results_box = document.getElementById("question-count");
         results_box.innerHTML =
@@ -289,24 +290,21 @@ let correctAnswer = "";
 async function getQuizQuestion(limit) {
   let response = await fetch(`/APIs/Questions/show.php?limit=${limit}`);
   data = await response.json();
-  let quizTitle = document.getElementById("quiz-title");
-  quizTitle.innerHTML = data[0].category;
+  
+  
 
   showQuestion();
 }
-// Show the question from online-API
+// Show the question from API
 function showQuestion() {
-  // let incorrectAnswers = [];
-  // incorrectAnswers.push(data.incorrectAnswer1)
-  // incorrectAnswers.push(data.incorrectAnswer2)
-  // incorrectAnswers.push(data.incorrectAnswer3)
-  // console.log(incorrectAnswers);
 
   let questionCounter = document.getElementById("question-count");
   questionCounter.innerText = `${questionNumber}` + "/" + `${data.length}`;
 
   let question = document.getElementById("question");
   question.innerHTML = data[questionNumber - 1].question;
+  let quizTitle = document.getElementById("quiz-title");
+  quizTitle.innerHTML = data[questionNumber -1].category;
   console.log(data);
 
   let answers = [

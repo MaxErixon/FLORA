@@ -123,5 +123,15 @@
         "id": 25,
         "username": "sdf",
         "password": "sdf"
+    },
+    {
+        "id": 26,
+        "username": "Miranda",
+        "password": "Malm\u00f6123"
+    },
+    {
+        "id": 27,
+        "username": "Anna",
+        "password": "Titanic"
     }
 ]
