@@ -106,6 +106,8 @@ function categoryEvent(categoryId) {
   let hidden = document.getElementById("container");
   hidden.style.display = "none";
 
+  document.querySelector(".title").innerHTML="";
+
   let backDiv = document.createElement("div");
   backDiv.className = "backDiv";
   backDiv.innerHTML = `

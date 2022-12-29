@@ -19,6 +19,11 @@ h1 {
   text-align: center;
   font-size: 3rem;
   font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.title h3 {
+  text-align: center;
 }
 
 img {
@@ -240,7 +245,6 @@ label {
   padding-left: 45px;
   font-weight: bold;
   font-family: "Varela Round", sans-serif;
-  margin-bottom: 0px;
 }
 
 .first-input {
@@ -411,4 +415,8 @@ a:hover {
   top: 1.5vh;
   left: 85vh;
   font-family: "Varela Round", sans-serif;
+}
+
+#input-fields .label{
+  margin-bottom: 0px;
 }
