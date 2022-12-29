@@ -1,0 +1,330 @@
+function createInputFields() {
+  inputFields = document.getElementById("input-fields");
+  inputFields.innerHTML = "";
+
+  let text = document.createElement("div");
+  text.innerHTML = "Number of questions" + ":";
+  text.className = "textOfNumber";
+  inputFields.appendChild(text);
+
+  numberOfQuestion = document.createElement("input");
+  numberOfQuestion.type = "number";
+  numberOfQuestion.className = "first-input";
+  inputFields.appendChild(numberOfQuestion);
+}
+
+function selectQuiz() {
+  document.getElementById("clock").style.visibility = "hidden";
+  createInputFields();
+  let btnPlayQuiz = document.createElement("div");
+  btnPlayQuiz.id = "button-play";
+  btnPlayQuiz.innerHTML = `
+      <button id = "btnPlayQuiz"> Play quiz </button>`;
+  document.body.appendChild(btnPlayQuiz);
+  //When you click on the play button
+  let click = document.getElementById("button-play");
+  click.addEventListener("click", function () {
+    inputFields.innerText = numberOfQuestion.value;
+    numberInput = inputFields.innerText;
+
+    if (isNaN(numberInput) || numberInput < 1 || numberInput > 50) {
+      alert("Sorry, number of question must be between 1-50");
+      createInputFields();
+    } else {
+      playQuiz();
+    }
+  });
+}
+let inputFields = null;
+let numberOfQuestion = null;
+let categoryName = "";
+let numberInput = "";
+let levelOption = "";
+let selectList = null;
+let questionNumber = 1;
+
+function playQuiz() {
+  document.querySelector(".title").remove();
+  document.getElementById("clock").style.visibility = "visible";
+  document.getElementById("wrapper-category").style.display = "none";
+  document.getElementById("input-fields").style.display = "none";
+  document.getElementById("button-play").style.display = "none";
+
+  let clockDiv = document.getElementById("clock");
+  let clock = document.createElement("SPAN");
+  clock.id = "seconds";
+  clock.innerHTML = "5";
+  clockDiv.appendChild(clock);
+
+  timeLeft = 5;
+  //Countdown timer on the quiz
+  function countdown() {
+    timeLeft--;
+    document.getElementById("seconds").innerHTML = String(timeLeft);
+    if (timeLeft > 0) {
+      setTimeout(countdown, 1000);
+    } else if (timeLeft == 0) {
+      document.getElementById("clock").style.display = "none";
+      let overviewQuiz = document.getElementById("wrapper-quiz");
+      let infoQuiz = document.getElementById("info-quiz");
+      let timer = document.createElement("div");
+      timer.className = "timer";
+      infoQuiz.appendChild(timer);
+      let time_txt = document.createElement("div");
+      time_txt.className = "time_left_txt";
+      time_txt.innerHTML = "Time Left";
+      timer.appendChild(time_txt);
+      let timer_sec = document.createElement("div");
+      timer_sec.className = "timer_sec";
+      timer_sec.innerHTML = "30";
+      timer.appendChild(timer_sec);
+
+      startTimer(30);
+
+      let quizTitle = document.createElement("div");
+      quizTitle.id = "quiz-title";
+      infoQuiz.appendChild(quizTitle);
+
+      let questionCount = document.createElement("div");
+      questionCount.id = "question-count";
+      infoQuiz.appendChild(questionCount);
+
+      let question = document.createElement("div");
+      question.id = "question";
+      infoQuiz.appendChild(question);
+
+      let userScore = 0;
+      //Create each div of the answers
+      for (let i = 0; i < 4; i++) {
+        let questionBox = document.createElement("div");
+        questionBox.className = "box-question";
+        questionBox.id = "box-question" + `${i}`;
+        overviewQuiz.appendChild(questionBox);
+        let input = document.createElement("input");
+        input.id = "input";
+        input.type = "radio";
+
+        input.name = "radio";
+        questionBox.appendChild(input);
+
+        let label = document.createElement("label");
+        label.id = "label" + `${i}`;
+        questionBox.appendChild(label);
+
+        let radioButtons = document.querySelectorAll('input[name="radio"]');
+        console.log(radioButtons.length);
+
+        input.addEventListener("click", () => {
+          let i = 0;
+          for (let radioButton of radioButtons) {
+            if (radioButton.checked) {
+              let label = document.getElementById("label" + `${i}`);
+              let color = document.getElementById("box-question" + `${i}`);
+
+              clearInterval(counter);
+              if (correctAnswer == label.textContent) {
+                color.style.backgroundColor = "green";
+                userScore += 1;
+                console.log(userScore);
+              } else {
+                color.style.backgroundColor = "red";
+                setCorrectAnswer();
+              }
+              nextQuestion.style.visibility = "visible";
+            }
+            if (`${questionNumber}` == `${data.length}`) {
+              let finish = document.getElementById("results");
+              finish.style.visibility = "visible";
+              nextQuestion.style.visibility = "hidden";
+            }
+            i++;
+          }
+        });
+      }
+      let nextQuestion = document.createElement("button");
+      nextQuestion.id = "next-question";
+      nextQuestion.innerHTML = "Next Question";
+      overviewQuiz.appendChild(nextQuestion);
+      nextQuestion.style.visibility = "hidden";
+
+      nextQuestion.addEventListener("click", () => {
+        clearInterval(counter);
+        startTimer(timeValue);
+        questionNumber++;
+        nextQuestion.style.visibility = "hidden";
+        clearAnswerColor();
+        clearButtonSelect();
+        showQuestion();
+      });
+      getQuizQuestion(numberInput);
+
+      let showResults = document.createElement("button");
+      showResults.id = "results";
+      showResults.innerHTML = "Finish";
+      overviewQuiz.appendChild(showResults);
+      showResults.style.visibility = "hidden";
+
+      showResults.addEventListener("click", () => {
+        let hiddenTimer = document.getElementsByClassName("timer");
+        hiddenTimer[0].style.visibility = "hidden";
+        let hiddenQuestion = document.getElementById("question");
+        hiddenQuestion.style.visibility = "hidden";
+        let hiddenWrapperQuiz = document.getElementById("wrapper-quiz");
+        hiddenWrapperQuiz.style.visibility = "hidden";
+        showResults.style.visibility = "hidden";
+
+        let results_box = document.getElementById("question-count");
+        results_box.innerHTML =
+          "Score: " + `${userScore}` + " of " + `${data.length}`;
+
+        let pictureFinish = document.createElement("div");
+        pictureFinish.id = "Finish-logo";
+        pictureFinish.innerHTML = `
+              <img src="../Images/trophy.png">
+             `;
+        infoQuiz.appendChild(pictureFinish);
+
+        function addZero(i) {
+          if (i < 10) {
+            i = "0" + i;
+          }
+          return i;
+        }
+        //Results - date and time
+        const date = new Date();
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+        let currentDate = `${day}-${month}-${year}`;
+        let h = addZero(date.getHours());
+        let m = addZero(date.getMinutes());
+        let s = addZero(date.getSeconds());
+        let time = h + ":" + m + ":" + s;
+
+        let current_time = console.log(currentDate);
+
+        let dateInfo = document.createElement("div");
+        dateInfo.id = "date";
+        dateInfo.innerHTML = "Date" + ": " + currentDate;
+        infoQuiz.appendChild(dateInfo);
+
+        let timeInfo = document.createElement("div");
+        timeInfo.id = "time";
+        timeInfo.innerHTML = "Time" + ": " + time;
+        infoQuiz.appendChild(timeInfo);
+
+        let backToMenu = document.createElement("button");
+        backToMenu.id = "back-menu";
+        backToMenu.innerHTML = "Back to menu";
+        infoQuiz.appendChild(backToMenu);
+
+        backToMenu.addEventListener("click", () => {
+          location.href = "home-account.html";
+        });
+      });
+    }
+  }
+  let timeTex = document.getElementsByClassName("time_left_txt");
+  let timeCount = document.getElementsByClassName("timer_sec");
+
+  let timeValue = 30;
+  let counter = 0;
+  //The big time of the white page
+  function startTimer(time) {
+    counter = setInterval(timer, 1000);
+    function timer() {
+      timeCount[0].textContent = time;
+      time--;
+      if (time < 9) {
+        timeCount[0].textContent = "0" + timeCount[0].textContent;
+      }
+
+      if (time < 0 && questionNumber < data.length) {
+        clearInterval(counter);
+        timeTex[0].textContent = "Time off";
+        setCorrectAnswer();
+        let showNextQuestion = document.getElementById("next-question");
+        showNextQuestion.style.visibility = "visible";
+      } else if (questionNumber == data.length && time < 0) {
+        clearInterval(counter);
+        timeTex[0].textContent = "Time off";
+        setCorrectAnswer();
+        let findShowResults = document.getElementById("results");
+        findShowResults.style.visibility = "visible";
+      }
+    }
+  }
+
+  //Check if answer is correct
+  function setCorrectAnswer() {
+    for (i = 0; i < 4; i++) {
+      let label = document.getElementById("label" + `${i}`);
+      let color = document.getElementById("box-question" + `${i}`);
+      if (correctAnswer == label.textContent) {
+        color.style.backgroundColor = "green";
+      }
+    }
+  }
+  //Answer-color resets
+  function clearAnswerColor() {
+    for (i = 0; i < 4; i++) {
+      let color = document.getElementById("box-question" + `${i}`);
+      color.style.backgroundColor = "";
+    }
+  }
+  //Button resets
+  function clearButtonSelect() {
+    let radioButtons = document.querySelectorAll('input[name="radio"]');
+    for (let radioButton of radioButtons) {
+      radioButton.checked = false;
+    }
+  }
+
+  setTimeout(countdown, 1000);
+}
+let data = [];
+let correctAnswer = "";
+
+//Find the online-API
+async function getQuizQuestion(limit) {
+  let response = await fetch(`/APIs/Questions/show.php?limit=${limit}`);
+  data = await response.json();
+  let quizTitle = document.getElementById("quiz-title");
+  quizTitle.innerHTML = data[0].category;
+
+  showQuestion();
+}
+// Show the question from online-API
+function showQuestion() {
+  // let incorrectAnswers = [];
+  // incorrectAnswers.push(data.incorrectAnswer1)
+  // incorrectAnswers.push(data.incorrectAnswer2)
+  // incorrectAnswers.push(data.incorrectAnswer3)
+  // console.log(incorrectAnswers);
+
+  let questionCounter = document.getElementById("question-count");
+  questionCounter.innerText = `${questionNumber}` + "/" + `${data.length}`;
+
+  let question = document.getElementById("question");
+  question.innerHTML = data[questionNumber - 1].question;
+  console.log(data);
+
+  let answers = [
+    data[questionNumber - 1].incorrectAnswer1,
+    data[questionNumber - 1].incorrectAnswer2,
+    data[questionNumber - 1].incorrectAnswer3,
+  ];
+  answers.push(data[questionNumber - 1].correctAnswer);
+  console.log(answers);
+  correctAnswer = data[questionNumber - 1].correctAnswer;
+
+  let shuffledArray = answers.sort((a, b) => 0.8 - Math.random());
+  console.log(shuffledArray);
+
+  for (let i = 0; i < 4; i++) {
+    let addAnswer = document.getElementById("label" + `${i}`);
+    addAnswer.textContent = shuffledArray[i];
+  }
+}
+
+selectQuiz();
