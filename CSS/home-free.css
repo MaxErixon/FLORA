@@ -190,11 +190,12 @@ button {
     right: 11vh;
 }
 
-h3{
+h3 {
     position: absolute;
-    top: 10vh;
-    right: 18vh;
+    top: 8vh;
+    right: 16vh;
     font-family:'Indie Flower', cursive;
+    font-size: 4vh;
 }
 
 

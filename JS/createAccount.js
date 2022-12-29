@@ -22,7 +22,7 @@ function accountCreated() {
     );
     if (answer === true) {
       console.log(answer);
-      location.href = "home-account.html";
+      location.href = "login.html";
     }
   }
 

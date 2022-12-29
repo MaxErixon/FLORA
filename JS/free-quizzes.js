@@ -106,6 +106,8 @@ function categoryEvent(categoryId) {
   let hidden = document.getElementById("container");
   hidden.style.display = "none";
 
+  document.querySelector(".title").innerHTML="";
+
   let backDiv = document.createElement("div");
   backDiv.className = "backDiv";
   backDiv.innerHTML = `
@@ -297,10 +299,10 @@ function playQuiz() {
       timer.appendChild(time_txt);
       let timer_sec = document.createElement("div");
       timer_sec.className = "timer_sec";
-      timer_sec.innerHTML = "30";
+      timer_sec.innerHTML = "20";
       timer.appendChild(timer_sec);
 
-      startTimer(30);
+      startTimer(20);
 
       let quizTitle = document.createElement("div");
       quizTitle.id = "quiz-title";
@@ -449,7 +451,7 @@ function playQuiz() {
   let timeTex = document.getElementsByClassName("time_left_txt");
   let timeCount = document.getElementsByClassName("timer_sec");
 
-  let timeValue = 30;
+  let timeValue = 20;
   let counter = 0;
 //The timer of the white page 
   function startTimer(time) {

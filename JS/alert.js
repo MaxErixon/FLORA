@@ -22,14 +22,37 @@ function cantSubmit() {
   alert("There must be a minimum of 5 questions to submit this quiz!");
 }
 
+function deleteUser() {
+  let body_delete = {
+    username: localStorage.getItem("setName"),
+  };
+
+  let rqt_delete = new Request("/APIs/Users/delete.php", {
+    method: "DELETE",
+    body: JSON.stringify(body_delete),
+    headers: { "Content-type": "application/json" },
+  });
+  fetch(rqt_delete)
+    .then((response) => {
+      response.json();
+    })
+
+    .then((resource) => {
+      if (resource.error) {
+      } else {
+        console.log("nice");
+      }
+    });
+}
+
 function DeleteAccount() {
   let answer = confirm(
     "Are you sure you want to delete your account?\nYour data will be permanently deleted."
   );
   if (answer === true) {
-    console.log(answer);
+    deleteUser();
     alert("Your account has been deleted!");
-    location.href = "home-free.html";
+    location.href = "index.html";
   }
 }
 
@@ -53,13 +76,6 @@ function contactUs() {
   alert(
     "Contact us\nmaxerixon112@gmail.com\nlovisa.ericsson01@gmail.com\nmelissa.sjostedt@outlook.com"
   );
-}
-
-function logout() {
-  let answer = confirm("Are you sure you want to logout?");
-  if (answer === true) {
-    location.href = "login.html";
-  }
 }
 
 function DeleteQuestion() {

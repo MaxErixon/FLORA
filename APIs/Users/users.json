@@ -15,11 +15,6 @@
         "password": "l\u00f6senord"
     },
     {
-        "id": 4,
-        "username": "bingbong",
-        "password": "banana123"
-    },
-    {
         "id": 5,
         "username": "hej",
         "password": "L\u00f6senord123"
@@ -125,13 +120,18 @@
         "password": "sdf"
     },
     {
-        "id": 26,
-        "username": "Miranda",
-        "password": "Malm\u00f6123"
-    },
-    {
         "id": 27,
         "username": "Anna",
         "password": "Titanic"
+    },
+    {
+        "id": 28,
+        "username": "Maximus",
+        "password": "MPP22"
+    },
+    {
+        "id": 29,
+        "username": "Pineiro123",
+        "password": "spanien"
     }
 ]

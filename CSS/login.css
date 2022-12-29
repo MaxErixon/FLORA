@@ -18,6 +18,14 @@ body {
   right: 50px;
   width: 6vh;
 }
+.header > h2:nth-child(2) {
+ margin-top: 0px;
+ margin-bottom: 0px;
+ margin-left: 85vw;
+ position: relative;
+ top: 25px;
+}
+
 
 h1 {
   margin-top: 0;

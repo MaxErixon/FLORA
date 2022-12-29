@@ -33,15 +33,15 @@ $requestJSON = file_get_contents("php://input");
 $requestData = json_decode($requestJSON, true);
 
 if ($method == "DELETE") {
-    if (!isset($requestData["id"])) {
+    if (!isset($requestData["username"])) {
         $error = ["error"=>"Bad Request"];
         sendJSON($error, 400);
     } 
 
-    $id = $requestData["id"];
+    $username = $requestData["username"];
 
     foreach ($users as $index => $user) {
-        if ($user["id"] == $id) {
+        if ($user["username"] == $username) {
             array_splice($users, $index, 1);
             $json = json_encode($users, JSON_PRETTY_PRINT);
             file_put_contents($fileName,$json);
