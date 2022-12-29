@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "category": "sports&leisure",
+        "category": "Sports & Leisure",
         "question": "Which team won the 2014 Fifa world cup?",
         "correctAnswer": "Germany",
         "incorrectAnswer1": "Spain",
@@ -10,92 +10,11 @@
     },
     {
         "id": 2,
-        "category": "music",
+        "category": "Music",
         "question": "Who owns the record for the most streamed song on spotify?",
         "correctAnswer": "Ed Sheeran",
         "incorrectAnswer1": "The Weeknd",
         "incorrectAnswer2": "Drake",
         "incorrectAnswer3": "Zara Larsson"
-    },
-    {
-        "id": 3,
-        "category": "science",
-        "question": "fr\u00e5ga om science",
-        "correctAnswer": "r\u00e4tt",
-        "incorrectAnswer1": "fel1",
-        "incorrectAnswer2": "fel2",
-        "incorrectAnswer3": "fel3"
-    },
-    {
-        "id": 4,
-        "category": "music",
-        "question": "fr\u00e5ga om musik",
-        "correctAnswer": "r\u00e4tt",
-        "incorrectAnswer1": "fel1",
-        "incorrectAnswer2": "fel2",
-        "incorrectAnswer3": "fel3"
-    },
-    {
-        "id": 5,
-        "category": "arts&Literature",
-        "question": "fr\u00e5ga om arts",
-        "correctAnswer": "r\u00e4tt",
-        "incorrectAnswer1": "fel1",
-        "incorrectAnswer2": "fel2",
-        "incorrectAnswer3": "fel3"
-    },
-    {
-        "id": 6,
-        "category": "food&drink",
-        "question": "fr\u00e5ga om food",
-        "correctAnswer": "r\u00e4tt",
-        "incorrectAnswer1": "fel1",
-        "incorrectAnswer2": "fel2",
-        "incorrectAnswer3": "fel3"
-    },
-    {
-        "id": 7,
-        "category": "history",
-        "question": "fr\u00e5ga om historia",
-        "correctAnswer": "r\u00e4tt",
-        "incorrectAnswer1": "fel1",
-        "incorrectAnswer2": "fel2",
-        "incorrectAnswer3": "fel3"
-    },
-    {
-        "id": 8,
-        "category": "sports&leisure",
-        "question": "fr\u00e5ga om sport",
-        "correctAnswer": "r\u00e4tt",
-        "incorrectAnswer1": "fel1",
-        "incorrectAnswer2": "fel2",
-        "incorrectAnswer3": "fel3"
-    },
-    {
-        "id": 9,
-        "category": "movies&TV",
-        "question": "fr\u00e5ga om movie",
-        "correctAnswer": "r\u00e4tt",
-        "incorrectAnswer1": "fel1",
-        "incorrectAnswer2": "fel2",
-        "incorrectAnswer3": "fel3"
-    },
-    {
-        "id": 10,
-        "category": "generalKnowledge",
-        "question": "fr\u00e5ga om gk",
-        "correctAnswer": "r\u00e4tt",
-        "incorrectAnswer1": "fel1",
-        "incorrectAnswer2": "fel2",
-        "incorrectAnswer3": "fel3"
-    },
-    {
-        "id": 11,
-        "category": "society&culture",
-        "question": "fr\u00e5ga om socie",
-        "correctAnswer": "r\u00e4tt",
-        "incorrectAnswer1": "fel1",
-        "incorrectAnswer2": "fel2",
-        "incorrectAnswer3": "fel3"
     }
 ]
