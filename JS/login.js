@@ -32,7 +32,7 @@ function checkUsers() {
         alert("Wrong username or password!");
       } else {
         // logIn_answer(responseStatus, resource.username);
-        alert(`Welcome ${resource.username}`);
+        alert(`Welcome ${resource.username}!`);
         location.href = "home-account.html";
         localStorage.setItem("setName", `${resource.username}`)
         cat = localStorage.getItem("setName");
