@@ -214,7 +214,7 @@ function createInputFields() {
   label.className = "label";
   inputFields.appendChild(label);
  
-  let array = ["easy", "medium", "hard"];
+  let array = ["Easy", "Medium", "Hard"];
   selectList = document.createElement("select");
   selectList.id = "mySelect";
   inputFields.append(selectList);

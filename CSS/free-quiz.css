@@ -169,6 +169,7 @@ a {
   width: 15vh;
   background-color: rgb(210, 208, 208);
   border-radius: 10px 10px 10px 10px;
+  font-family: "Varela Round", sans-serif;
 }
 
 #button-play > #btnPlayQuiz:hover {
