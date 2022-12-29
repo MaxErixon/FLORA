@@ -10,10 +10,10 @@ document.querySelector("header").innerHTML =
       <h3 class="edit">
       <a href="userSettings.html">Edit account settings</a>
       </h3>
-      <button id="icon-user">
+      <a href = "userSettings.html" id="icon-user">
       <h2>${localStorage.getItem("setName")}</h2>
         <img src="../Images/user.jpg" alt="buttonpng" />
-      </button>
+      </a>
     </div>`
 
    

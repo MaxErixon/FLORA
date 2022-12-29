@@ -14,21 +14,24 @@
   width: 6vh;
 }
 #icon-user > h2 {
+  font-family: "Varela Round", sans-serif;
   /*! margin-top: 0px; */
   /*! margin-bottom: 0px; */
   /*! position: relative; */
-  top: 25px;
   /*! max-width: 228px; */
   /*! overflow-wrap: anywhere; */
   /*! text-align: end; */
   /*! left: 1052px; */
   color: #3b8631;
   /*! margin-right: -148px; */
-  margin-right: 25px;
+  /*! margin-right: 25px; */
   display: flex;
   align-items: center;
   margin-bottom: 0px;
   margin-top: 0px;
+  position: absolute;
+  right: 106px;
+  top: 2vh;
   font-size: x-large;
 }
 
@@ -51,11 +54,10 @@ img {
 
   position: absolute;
   top: 2vh;
-  right: 50px;
+  right: -20px;
   width: 10vh;
   display: flex;
-  /*! margin: ; */
-  margin-right: 75px;
+  margin-right: 10px;
   height: fit-content;
 }
 .title > h1 {
@@ -66,4 +68,14 @@ img {
   margin-top: 8vh;
   margin-left: 5vh;
   padding: 5px;
+}
+
+#icon-user:hover {
+    box-shadow: none;
+  /*! color: white; */
+    
+}
+
+#icon-user > h2:hover{
+  color: aquamarine;
 }
