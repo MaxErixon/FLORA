@@ -83,19 +83,16 @@ button {
     top: 21.5vh;
     right: 60vh;
     border: 5px dotted black;
-background-color: rgb(173, 173, 197);
-
-
-height: 30vh;
-width: 20vw;
-    
+    background-color: rgb(173, 173, 197);
+    height: 30vh;
+    width: 20vw;
+        
 }
 #meny{
     width: 50vh;
     height: 100vh;
     right: 0;
     position: fixed;
-    background-color:rgb(173, 173, 197);
     top: 0;
     display: flex;
     flex-direction: column;
@@ -104,45 +101,6 @@ width: 20vw;
 
 }
 
-.nav-item{
-  width: 40vw;
-  height: 30vh;
-  top: 50px;
-  right: 50px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-  
-}
-
-.nav-link{
-    text-decoration: none;
-    color: black;
-    margin-left: 3vh;
-    
-}
-
-.Library-container{
-    display: flex;
-    align-items: center;
-}
-.Quiz-container{
-    display: flex;
-    align-items: center;
-}
-.Settings-container{
-    display: flex;
-    align-items: center;
-}
-
-.helpAndlogout {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
-}
 
 #help {
     margin-left: 50px;
