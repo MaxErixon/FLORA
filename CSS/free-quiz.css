@@ -207,7 +207,7 @@ span {
   padding-right: 5vh;
 }
 
-.box-question {
+.box-answer {
   width: 50vh;
   height: auto;
   background-color: rgb(169, 207, 212);
@@ -216,7 +216,7 @@ span {
   border: 1px solid white;
 }
 
-.box-question > input {
+.box-answer > input {
   width: 20px;
   height: 20px;
   padding: 0;

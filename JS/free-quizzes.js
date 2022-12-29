@@ -318,20 +318,20 @@ function playQuiz() {
       let userScore = 0;
 //Create each div of the answers
       for (let i = 0; i < 4; i++) {
-        let questionBox = document.createElement("div");
-        questionBox.className = "box-question";
-        questionBox.id = "box-question" + `${i}`;
-        overviewQuiz.appendChild(questionBox);
+        let answerBox = document.createElement("div");
+        answerBox.className = "box-answer";
+        answerBox.id = "box-answer" + `${i}`;
+        overviewQuiz.appendChild(answerBox);
         let input = document.createElement("input");
         input.id = "input";
         input.type = "radio";
 
         input.name = "radio";
-        questionBox.appendChild(input);
+        answerBox.appendChild(input);
 
         let label = document.createElement("label");
         label.id = "label" + `${i}`;
-        questionBox.appendChild(label);
+        answerBox.appendChild(label);
 
         let radioButtons = document.querySelectorAll('input[name="radio"]');
         console.log(radioButtons.length);
@@ -341,7 +341,7 @@ function playQuiz() {
           for (let radioButton of radioButtons) {
             if (radioButton.checked) {
               let label = document.getElementById("label" + `${i}`);
-              let color = document.getElementById("box-question" + `${i}`);
+              let color = document.getElementById("box-answer" + `${i}`);
 
               clearInterval(counter);
               if (correctAnswer == label.textContent) {
@@ -451,7 +451,7 @@ function playQuiz() {
 
   let timeValue = 30;
   let counter = 0;
-//The big time of the white page 
+//The timer of the white page 
   function startTimer(time) {
     counter = setInterval(timer, 1000);
     function timer() {
@@ -481,7 +481,7 @@ function playQuiz() {
   function setCorrectAnswer() {
     for (i = 0; i < 4; i++) {
       let label = document.getElementById("label" + `${i}`);
-      let color = document.getElementById("box-question" + `${i}`);
+      let color = document.getElementById("box-answer" + `${i}`);
       if (correctAnswer == label.textContent) {
         color.style.backgroundColor = "green";
       }
@@ -490,7 +490,7 @@ function playQuiz() {
 //Answer-color resets
   function clearAnswerColor() {
     for (i = 0; i < 4; i++) {
-      let color = document.getElementById("box-question" + `${i}`);
+      let color = document.getElementById("box-answer" + `${i}`);
       color.style.backgroundColor = "";
     }
   }
