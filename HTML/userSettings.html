@@ -21,7 +21,7 @@
 
 
              <div id="forms">
-                    <form action="change_password.php" method="post">
+                    <form action="changePass.php" method="post">
                             <h1>Edit account settings</h1>
                                     <div class="userform">
                                         <h3>Old Username:</h3>
@@ -33,7 +33,7 @@
                                             <h3>Confirm new username:</h3>              
                                             <input type="text" id="confirmUsername" placeholder="confirm username">
                                             <br><br>
-                                            <button class="change-username" onclick="ChangePassword()">Change username</button>
+                                            <button onclick="ChangeUsername()" class="btn">Change username</button>
                                         </form>
                                         </div>
 
@@ -47,7 +47,7 @@
                                                 <h3>Confirm new password:</h3>
                                                 <input type="password" id="confirmPassword" placeholder="confirm password">
                                                 <br><br>
-                                                <button class ="change-password" onclick="ChangePassword()">Change password</div>
+                                                <button onclick="ChangePassword()" class="btn">Change password</div>
                                             </form>
                                        </div>
              </div>

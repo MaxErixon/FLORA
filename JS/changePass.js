@@ -1,42 +1,43 @@
 "use-strict";
-// Hämta databasen
+
 
 
 function ChangePassword(){
+    var newPassword = document.querySelector('input[name="newPassword"]');
+    var confirmPassword = document.querySelector('input[name="confirmPassword"]');
+    
+
+   if(newPassword !== confirmPassword){
+    alert("New password and confirm password must match!");
+    location.href ="userSettings.html";
+  } else{
+   alert("Password changed sucessfully");
+   location.href = "userSettings.html";
+}
+}
+
+function ChangeUsername(){
+  
     var newUsername = document.querySelector('input[name="newUsername"]');
     var confirmUsername = document.querySelector('input[name="confirmUsername"]');
     
-    var newPassword = document.querySelector('input[name="newPassword"]');
-    var confirmPassword = document.querySelector('input[name="confirmPassword"]');
-   
+   if(newUsername !== confirmUsername){
+    alert("New username and confirm username must match!");
+    location.href ="userSettings.html";
+  } else{
+   alert("Username changed sucessfully");
+   location.href = "userSettings.html";
+}
+}
 
-    if (isset($_POST['changepass'])) {
-
-      if (($_POST['oldpass']!=$pass) || ($_POST['newpass']!=$_POST['confirmpass']) ) {
-          $error = "Insert valid password!";
-      }
-      else
-      {
-          $pass=$_POST["confirmpass"];
-          $email = $_SESSION["email"];
-      }
-    }  
-
-   if(newPassword === confirmPassword){
-
-
-   }
-
-  fetch("../APIs/users/update.php", {
+ /* fetch("../APIs/users/update.php", {
     method: "PUT",
     headers: { "Content-type": "application/json" },
     body: JSON.stringify({
       id: id, username: confirmUsername, password: confirmPassword
     }).then((respo) => respo.json())
     .then((resource) => {
-        if (username.value == confirmUsername || password.value == confirmPassword ) {
-          missingText();
-        }
+
         else{
             console.log(resource);
             password.value = "";
@@ -51,12 +52,4 @@ function UpdatePassword(){
 
 }
 
-/*
-function loginBtnClick(){
-    if(document.getElementById('login').value == localStorage.getItem('password')){
-      alert('Correct Login');
-    }else{
-      alert('Wrong Password');
-    }
-  }
-  */
+*/

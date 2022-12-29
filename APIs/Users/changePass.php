@@ -30,7 +30,7 @@ $error = ["error"=>"Invalid content type"];
 $requestJSON = file_get_contents("php://input");
 $requestData = json_decode($requestJSON, true);
 
-if ($method == "POST") {
+if ($method == "PUT") {
     if (!isset($requestData["username"],$requestData["password"])) {
         $error = ["error"=>"Bad request"];
         sendJSON($error, 400);
@@ -46,23 +46,19 @@ if ($method == "POST") {
 
    
         // Hitta användaren som är inloggad och ta bort den 
-        foreach($user as $users){
-            $var index = arr.indexOf(value);
-            if(index > -1){
-                arr.splice(index, 1);
-            } foreach ($users as $user) {
-                if ($user["id"] > $updateId) {
-                    $updateId = $user["id"];
-                    $json = json_encode($users, JSON_PRETTY_PRINT);
-                    $updatedUser = ["id" => $updateId, "username" => $confirmUsername, "password" => $confirmPassword];
-                    $users[]= $updatedUser;
-                    file_put_contents($fileName,$json);
-                    sendJSON($updatedUser);
+             foreach ($currentUser as $index => $user) {
+                if ($user["id"] > $requestData["id"]) {
+                    array_splice($currentUser, $index, 1);                  
+                    $data = ["id" => $updateId, "username" => $confirmUsername, "password" => $confirmPassword];
+                    $currentUser[]= $data;
+                    array_multisort($currentUser); // Gör att användaren har kvar sin plats
+                    file_put_contents($fileName,json_encode($currentUser, JSON_PRETTY_PRINT));
+                    echo json_encode($data);
                 }
 
             }
-        }
+}
     
 
-}
+
 ?> 
