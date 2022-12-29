@@ -17,11 +17,12 @@ body {
     margin-bottom: 50px;
   }
   
-  .title > p {
+ body .title > p {
     text-align: center;
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 0px;
+    color: rgb(137, 255, 198);
   }
   
   .title h3 {

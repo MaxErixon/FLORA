@@ -22,6 +22,7 @@ h1 {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 0px;
+  color: rgb(255, 246, 147);
 }
 
 .title h3 {
@@ -49,7 +50,7 @@ img {
 
 form {
     width: 250px;
-    background-color: rgb(220, 212, 128);
+    background-color: rgb(255, 234, 0);
     padding: 25px;
     border-radius: 20px;
     margin-bottom: 50px;
