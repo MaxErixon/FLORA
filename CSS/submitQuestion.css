@@ -76,6 +76,7 @@ form {
   cursor: pointer;
   width: 100%;
   text-align: center;
+  font-family: "Varela Round", sans-serif;
 }
 
 #correctAnswer {
