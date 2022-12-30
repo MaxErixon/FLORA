@@ -25,5 +25,14 @@
         "incorrectAnswer1": "2005",
         "incorrectAnswer2": "2003",
         "incorrectAnswer3": "2002"
+    },
+    {
+        "id": 4,
+        "category": "Movies & TV",
+        "question": "What is the name of Tony Sopranos daughter in the tv-series The Sopranos?",
+        "correctAnswer": "Meadow",
+        "incorrectAnswer1": "Carmela",
+        "incorrectAnswer2": "Angelina",
+        "incorrectAnswer3": "Skyler"
     }
 ]
