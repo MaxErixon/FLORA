@@ -33,6 +33,7 @@ function DeleteAccount() {
   }
 }
 
+
 /* function SavedEditings() {
   let userform = document.getElementsByClassName("userform");
   let passWform = document.getElementsByClassName("passWform");
