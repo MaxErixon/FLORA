@@ -580,7 +580,7 @@ p.bubble {
 	background-color: #fff;
 	border: 8px solid #333;
 	border-radius: 30px;
-	font-family: sans-serif;
+	font-family: "Varela Round", sans-serif;
 	padding: 20px;
 	font-size: large;
 }
@@ -588,7 +588,8 @@ p.bubble {
 p.thought {
 	width: 300px;
 	border-radius: 200px;
-	padding: 30px;	
+	padding: 30px;
+  font-family: "Varela Round", sans-serif;
 }
 
 p.bubble:before,
