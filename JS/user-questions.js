@@ -27,8 +27,8 @@ function selectQuiz() {
     inputFields.innerText = numberOfQuestion.value;
     numberInput = inputFields.innerText;
 
-    if (isNaN(numberInput) || numberInput < 1 || numberInput > 50) {
-      alert("Sorry, number of question must be between 1-50");
+    if (isNaN(numberInput) || numberInput < 1 || numberInput > 20) {
+      alert("Sorry, number of question must be between 1-20");
       createInputFields();
     } else {
       playQuiz();

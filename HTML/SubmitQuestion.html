@@ -13,22 +13,11 @@
     />
     <link rel="stylesheet" href="../CSS/free-quiz.css" />
     <link rel="stylesheet" href="../CSS/submitQuestion.css" />
+    <link rel="stylesheet" href="../CSS/header.css">
   </head>
 
   <body>
-    <div class="header">
-      <!--Typsnitt Roboto-->
-      <a href="home-account.html"
-        ><img src="../Images/Quiz-logo.png" class="logo"
-      /></a>
-      <h3 class="user-text"><a href="user-questions.html">User Quiz</a></h3>
-      <h3 class="submit">
-        <a href="SubmitQuestion.html">Submit a question</a>
-      </h3>
-      <h3 class="edit">
-        <a href="userSettings.html">Edit account settings</a>
-      </h3>
-    </div>
+    <header></header>
 
     <div class="title">
       <p>Submit a question</p>
@@ -42,16 +31,16 @@
       <form>
         <select id="category" name="category" size="1">
           <option value="" selected disabled hidden>Choose a category</option>
-          <option value="arts&Literature">Arts & Literature</option>
-          <option value="movies&TV">Movies & TV</option>
-          <option value="sports&leisure">Sports & Leisure</option>
-          <option value="geography">Geography</option>
-          <option value="history">History</option>
-          <option value="science">Science</option>
-          <option value="society&culture">Society & Culture</option>
-          <option value="generalKnowledge">Genreal Knowledge</option>
-          <option value="music">Music</option>
-          <option value="food&drink">Food & Drink</option>
+          <option value="Arts & Literature">Arts & Literature</option>
+          <option value="Movies & TV">Movies & TV</option>
+          <option value="Sports & Leisure">Sports & Leisure</option>
+          <option value="Geography">Geography</option>
+          <option value="History">History</option>
+          <option value="Science">Science</option>
+          <option value="Society & Culture">Society & Culture</option>
+          <option value="General Knowledge">Genreal Knowledge</option>
+          <option value="Music">Music</option>
+          <option value="Food & Drink">Food & Drink</option>
         </select>
         <br />
 
@@ -114,7 +103,10 @@
         </div>
       </form>
     </div>
+    <div class="bubble"><p class="bubble thought">Your questions can be submitted in both English and Swedish!</p></div>
+
 
     <script src="../JS/submitQuestion.js"></script>
+    <script src="../JS/header.js"></script>
   </body>
 </html>
