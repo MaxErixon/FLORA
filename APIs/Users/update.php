@@ -1,24 +1,18 @@
 <?php
 ini_set("display errors", 1);
-
-
 require_once "functions.php";
-
-
 $fileName= "users.json";
-
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
-$requestJSON = file_get_contents("php://input");
-$requestData = json_decode($requestJSON, true);
+if($_SERVER["REQUEST_METHOD"] === "PATCH"){
+    $activeUser = file_get_contents($filename);
+    $dataUser= json_decode($json, true);
 
+    $requestJSON = file_get_contents("php://input");
+    $requestData = json_encode($requestJSON, true);
 
-        if (file_exists($fileName)) {
-                 $requestFile = file_get_contents($fileName);
-                 $usersArray = json_decode($requestJSON, true);
-        }
-
+}
 
 if ($requestMethod == "PATCH") {
 
@@ -34,17 +28,20 @@ if ($requestMethod == "PATCH") {
         $password = $requestData["password"];
         $newPassword =$requestData["newPassword"];
         $confirmPassword = $requestData["confirmPassword"];
-        
-        $currentUser = json_decode($currentUserJSON, true);
-        // Update the password
-        foreach ($currentUser as $index => $user){
-            if ($user["id"] == $requestData["id"]){
-                array_splice($currentUser, $index, 1);
-                $users = ["id" => $requestData["id"], "username" => $requestData["password"], "newPassword" => $requestData["newPassword"]];
-                $currentUserJSON[] = $users;
-                array_multisort($currentUser);
-                file_put_contents($filename, json_encode($currentUser, JSON_PRETTY_PRINT));
-                echo json_encode($users);
+
+
+     
+        // Update users password
+        foreach ($users as $index => $activeUser){
+            if ($user["username"] == $requestData["username"]) {
+                $users[$index]["userId"] = $user["userId"];
+                $users[$index]["username"] = $user["username"];
+                $users[$index]["newPassword"] = $newPassword;
+                $users[$index]["confirmPassword"] = $confirmPassword;
+                array_splice($activeUser, $index, 1);
+                array_multisort($activeUser);
+                file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
+                sendJSON($users[$index]);
             }
         }          
 
