@@ -5,11 +5,6 @@
         "password": "pass"
     },
     {
-        "id": 3,
-        "username": "hej",
-        "password": "l\u00f6senord"
-    },
-    {
         "id": 5,
         "username": "hej",
         "password": "L\u00f6senord123"
@@ -128,5 +123,15 @@
         "id": 29,
         "username": "Pineiro123",
         "password": "spanien"
+    },
+    {
+        "id": 30,
+        "username": "alli",
+        "password": "alli"
+    },
+    {
+        "id": 31,
+        "username": "Maximus97",
+        "password": "Malm\u00f622"
     }
 ]
