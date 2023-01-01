@@ -15,3 +15,5 @@ function sendJSON($data, $statusCode = 200){
     echo $json;
     exit();
 }
+
+?>

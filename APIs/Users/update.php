@@ -1,22 +1,46 @@
 <?php
 ini_set("display errors", 1);
+
 require_once "functions.php";
+
 $fileName= "users.json";
 
-$requestMethod = $_SERVER["REQUEST_METHOD"];
 
-if($_SERVER["REQUEST_METHOD"] === "PATCH"){
-    $activeUser = file_get_contents($filename);
-    $dataUser= json_decode($json, true);
+$method = $_SERVER["REQUEST_METHOD"];
 
-    $requestJSON = file_get_contents("php://input");
-    $requestData = json_encode($requestJSON, true);
-
+if ($method != "PATCH") {
+    $error = ["error"=>"Invalid method"];
+    sendJSON($error, 405);
 }
 
-if ($requestMethod == "PATCH") {
+var_dump($_SERVER);
 
-    if (!isset($requestData["password"], $requestData["newPassword"], $requestData["confirmPassword"])) {
+$users = [];
+
+
+if (file_exists($fileName)) {
+    $json = file_get_contents($fileName);
+    sendJSON($json);
+    $users = json_decode($json, true);
+    
+}
+
+$contentType = $_SERVER["CONTENT_TYPE"];
+
+if ($contentType != "application/json") {
+
+    $error = ["error"=>"Invalid content type"];
+        sendJSON($error, 400);
+}
+
+$requestJSON = file_get_contents("php://input");
+$requestData = json_decode($requestJSON, true);
+
+
+
+if ($method == "PATCH") {
+
+    if (!isset($requestData["username"], $requestData["password"], $requestData["newPassword"], $requestData["confirmPassword"])) {
         $error = ["error"=>"The new password and confirm password must match!"];
         sendJSON($error, 400);
     }
@@ -25,29 +49,26 @@ if ($requestMethod == "PATCH") {
         $error = ["error"=>"Please fill in all inputfields!"];
         sendJSON($error, 400);
     }
-        $password = $requestData["password"];
-        $newPassword =$requestData["newPassword"];
-        $confirmPassword = $requestData["confirmPassword"];
+    $username = $requestData["username"];
+    $password = $requestData["password"];
+    $newPassword =$requestData["newPassword"];
+    $confirmPassword = $requestData["confirmPassword"];
 
-
-     
         // Update users password
-        foreach ($users as $index => $activeUser){
-            if ($user["username"] == $requestData["username"]) {
-                $users[$index]["userId"] = $user["userId"];
-                $users[$index]["username"] = $user["username"];
-                $users[$index]["newPassword"] = $newPassword;
-                $users[$index]["confirmPassword"] = $confirmPassword;
-                array_splice($activeUser, $index, 1);
-                array_multisort($activeUser);
-                file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
-                sendJSON($users[$index]);
+    foreach ($user as $users){    
+        if ($user["username"] == $username) {
+            
+            $user["password"] = $newPassword;
+            $users[$index] = $user;
+
+            $json = json_encode($users, JSON_PRETTY_PRINT);
+            file_put_contents($fileName, $json);
+            sendJSON($user);
             }
+
         }          
-
+   
     }
-
-
 
 
 
