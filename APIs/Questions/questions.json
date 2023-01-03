@@ -34,5 +34,14 @@
         "incorrectAnswer1": "Carmela",
         "incorrectAnswer2": "Angelina",
         "incorrectAnswer3": "Skyler"
+    },
+    {
+        "id": 5,
+        "category": "Food & Drink",
+        "question": "What does the italian dish name Caponata mean?",
+        "correctAnswer": "Head food \/ main food",
+        "incorrectAnswer1": "Without pasta",
+        "incorrectAnswer2": "With pasta \/ with gluten",
+        "incorrectAnswer3": "Non-traditional"
     }
 ]

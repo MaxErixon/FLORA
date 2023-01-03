@@ -49,6 +49,10 @@ if ($method == "PATCH") {
     // Update users password
     foreach ($users as $index => $user){    
         if ($user["username"] == $username) {
+            if ($user["password"] !== $password ) {
+                $error = ["The old password must match your current password!"];
+                sendJSON($error, 403);
+            }
             $user["password"] = $newPassword;
             $users[$index] = $user;
 
@@ -57,6 +61,7 @@ if ($method == "PATCH") {
             $message = ["message" => "Success"];
             sendJSON($message);
         }
+        
     }          
 }
 

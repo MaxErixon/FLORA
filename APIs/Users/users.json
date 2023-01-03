@@ -110,16 +110,6 @@
         "password": "sdf"
     },
     {
-        "id": 27,
-        "username": "Anna",
-        "password": "Titanic"
-    },
-    {
-        "id": 28,
-        "username": "Maximus",
-        "password": "MPP22"
-    },
-    {
         "id": 29,
         "username": "Pineiro123",
         "password": "spanien"
@@ -128,5 +118,15 @@
         "id": 31,
         "username": "Maximus97",
         "password": "Malm\u00f622"
+    },
+    {
+        "id": 32,
+        "username": "titanicfan96",
+        "password": "leobby123"
+    },
+    {
+        "id": 33,
+        "username": "Maximus",
+        "password": "mixu"
     }
 ]
