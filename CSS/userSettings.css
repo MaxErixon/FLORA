@@ -38,29 +38,22 @@ h1 {
 img {
   width: 6vh;
   height: 6vh;
+  margin-top: 1vh;
 }
 
 #container {
   display: flex;
   align-items: center;
-}
-
-.userform {
-  border: 5px dotted black;
-  background-color: rgb(173, 173, 197);
-  margin: 30px;
-  padding: 50px;
-  gap: 50px;
-  width: 30vw;
+  margin-left: 16vw;
 }
 
 .passWform {
-  border: 5px dotted black;
   background-color: rgb(173, 173, 197);
   margin: 30px;
   padding: 50px;
   gap: 50px;
   width: 30vw;
+  border-radius: 9px;
 }
 
 .profilePic {
@@ -75,20 +68,26 @@ img {
   background-color: darkgray;
 }
 
-button {
+#forms button {
+  height: 7vh;
+  width: 20vh;
+  margin-top: 2vh;
+}
+
+.btnWrapper button{
   height: 10vh;
   width: 20vh;
 }
 
 .btnWrapper {
   position: absolute;
-  top: 21.5vh;
-  right: 60vh;
-  border: 5px dotted black;
+  top: 22.5vh;
+  right: 34vh;
   background-color: rgb(173, 173, 197);
 
   height: 30vh;
   width: 20vw;
+  border-radius: 9px;
 }
 
 #meny {
@@ -120,6 +119,7 @@ button {
   position: absolute;
   bottom: 6vh;
   left: 5vh;
+  text-align: center;
 }
 
 #help:hover {
@@ -136,6 +136,7 @@ button {
   bottom: 5vh;
   right: 5vh;
   border-radius: 40px 40px 40px 40px;
+  text-align: center;
 }
 
 #logout:hover {
@@ -181,18 +182,6 @@ a:hover {
 
 h3 {
   font-family: "Varela Round", sans-serif;
-}
-
-.change-username {
-  border-radius: 10px 10px 10px 10px;
-  position: absolute;
-  left: 50vh;
-  bottom: 33vh;
-  border: none;
-  cursor: pointer;
-  appearance: none;
-  width: 15vh;
-  height: 5vh;
 }
 
 .change-password {

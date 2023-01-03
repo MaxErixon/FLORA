@@ -442,7 +442,7 @@ function playQuiz() {
         infoQuiz.appendChild(backToMenu);
 
         backToMenu.addEventListener("click", () => {
-          location.href = "index.html";
+          location.href = "home-account.html";
         });
       });
     }

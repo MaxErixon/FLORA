@@ -49,7 +49,7 @@ button {
 }
 
 .free-quiz {
-  background-color: rgb(0, 193, 255);
+  background-color: rgb(56, 209, 255);
   height: 30vh;
   width: 28vh;
   display: flex;
@@ -59,7 +59,7 @@ button {
   border-top-right-radius: 10px;
   cursor: pointer;
   transition: 0.5s ease;
-  border: solid 2px;
+  
 }
 
 .free-quiz:hover {
@@ -81,7 +81,7 @@ button {
   border-radius: 0px 0px 10px 10px;
   cursor: pointer;
   transition: 0.5s ease;
-  border: solid 2px;
+  
 }
 
 .title-free-quiz:hover {
@@ -95,7 +95,7 @@ button {
 }
 
 .user-quiz {
-  background-color: rgb(0, 255, 133);
+  background-color: rgb(52, 255, 157);
   height: 30vh;
   width: 28vh;
   display: flex;
@@ -105,7 +105,7 @@ button {
   border-top-right-radius: 10px;
   cursor: pointer;
   transition: 0.5s ease;
-  border: solid 2px;
+  
 }
 
 .user-quiz > img {
@@ -127,7 +127,7 @@ button {
   border-radius: 0px 0px 10px 10px;
   cursor: pointer;
   transition: 0.5s ease;
-  border: solid 2px;
+  
 }
 
 .title-user-quiz > p {
@@ -141,7 +141,7 @@ button {
 }
 
 .submit-quiz {
-  background-color: rgb(255, 233, 0);
+  background-color: rgb(255, 238, 52);
   height: 30vh;
   width: 28vh;
   display: flex;
@@ -151,7 +151,7 @@ button {
   border-top-right-radius: 10px;
   cursor: pointer;
   transition: 0.5s ease;
-  border: solid 2px;
+  
 }
 
 .submit-quiz:hover {
@@ -173,7 +173,7 @@ button {
   border-radius: 0px 0px 10px 10px;
   cursor: pointer;
   transition: 0.5s ease;
-  border: solid 2px;
+  
 }
 
 .title-submit-quiz:hover {
