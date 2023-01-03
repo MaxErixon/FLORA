@@ -40,13 +40,16 @@ function ChangeInfo() {
       console.log(result);
       clearInputs();
     });
-
-  function UpdatePassword(responseStatus) {
-    if (responseStatus.status === 200) {
-      alert("Password changed sucessfully");
-    }
-    if (responseStatus.status === 406) {
-      alert("New password and confirm password must match!");
-    }
+    
+    function UpdatePassword(responseStatus) {
+      if (responseStatus.status === 200) {
+        alert("Password changed sucessfully");
+      }
+      if (responseStatus.status === 406) {
+        alert("New password and confirm password must match!");
+      }
+      if (responseStatus.status == 403) {
+        alert("The old password must match your current password!")
+      }
   }
 }
