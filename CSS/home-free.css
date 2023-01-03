@@ -59,6 +59,7 @@ button {
   border-top-right-radius: 10px;
   cursor: pointer;
   transition: 0.5s ease;
+  border: solid 2px;
 }
 
 .free-quiz:hover {
@@ -80,6 +81,7 @@ button {
   border-radius: 0px 0px 10px 10px;
   cursor: pointer;
   transition: 0.5s ease;
+  border: solid 2px;
 }
 
 .title-free-quiz:hover {
@@ -103,6 +105,7 @@ button {
   border-top-right-radius: 10px;
   cursor: pointer;
   transition: 0.5s ease;
+  border: solid 2px;
 }
 
 .user-quiz > img {
@@ -124,6 +127,7 @@ button {
   border-radius: 0px 0px 10px 10px;
   cursor: pointer;
   transition: 0.5s ease;
+  border: solid 2px;
 }
 
 .title-user-quiz > p {
@@ -147,6 +151,7 @@ button {
   border-top-right-radius: 10px;
   cursor: pointer;
   transition: 0.5s ease;
+  border: solid 2px;
 }
 
 .submit-quiz:hover {
@@ -168,6 +173,7 @@ button {
   border-radius: 0px 0px 10px 10px;
   cursor: pointer;
   transition: 0.5s ease;
+  border: solid 2px;
 }
 
 .title-submit-quiz:hover {
@@ -203,4 +209,34 @@ h3 {
   right: 16vh;
   font-family: "Indie Flower", cursive;
   font-size: 4vh;
+}
+
+.bg {
+  animation:slide 9s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, whitesmoke 50%, #9190ae 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:12s;
+}
+
+.bg3 {
+  animation-duration:15s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
 }

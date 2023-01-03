@@ -442,7 +442,7 @@ function playQuiz() {
         infoQuiz.appendChild(backToMenu);
 
         backToMenu.addEventListener("click", () => {
-          location.href = "free-quiz.html";
+          location.href = "index.html";
         });
       });
     }
