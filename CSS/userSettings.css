@@ -1,218 +1,221 @@
-body{
-    margin:0;
-    background-color: #9190ae;
-    font-family: "Varela Round", sans-serif;
- }
- header{
-     height: 10vh;
-     background-color: whitesmoke;  
- }
-
- h1{
-    font-family: 'Varela Round', sans-serif;
-    margin-left: 3.5vh;
- }
-
- #icon-user{
-    border: none;
-    cursor: pointer;
-    appearance: none;
-    background-color: inherit;
-  
-    position: absolute;
-    top: 2vh;
-    right: 50px;
-    width: 10vh;
+body {
+  margin: 0;
+  background-color: #9190ae;
+  font-family: "Varela Round", sans-serif;
 }
 
-.logo{
-    position: absolute;
-    top: -5vh;
-    left: 5vh;
-    margin-top: 2vh;
-    width: 15vh;
-    height: 18vh;
+header {
+  height: 10vh;
+  background-color: whitesmoke;
 }
-img{
-    width: 6vh;
-    height: 6vh;
- }
-#container{
-    display: flex;
-    align-items: center;
 
+h1 {
+  font-family: "Varela Round", sans-serif;
+  margin-left: 3.5vh;
+}
+
+#icon-user {
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: inherit;
+
+  position: absolute;
+  top: 2vh;
+  right: 50px;
+  width: 10vh;
+}
+
+.logo {
+  position: absolute;
+  top: -5vh;
+  left: 5vh;
+  margin-top: 2vh;
+  width: 15vh;
+  height: 18vh;
+}
+
+img {
+  width: 6vh;
+  height: 6vh;
+}
+
+#container {
+  display: flex;
+  align-items: center;
 }
 
 .userform {
-    border: 5px dotted black;
-    background-color: rgb(173, 173, 197);
-    margin: 30px;
-    padding: 50px;
-    gap: 50px;
-    width: 30vw;
-    
-}
-.passWform {
-    border: 5px dotted black;
-    background-color: rgb(173, 173, 197);
-    margin: 30px;
-    padding: 50px;
-    gap: 50px;
-    width: 30vw;
-    
+  border: 5px dotted black;
+  background-color: rgb(173, 173, 197);
+  margin: 30px;
+  padding: 50px;
+  gap: 50px;
+  width: 30vw;
 }
 
-.profilePic{
-    height: 129px;
-    width: 129px;
-    border-radius: 10px 10px 10px 10px;
-    background: url(../Images/picture.jpg) no-repeat;
-    cursor: pointer;
+.passWform {
+  border: 5px dotted black;
+  background-color: rgb(173, 173, 197);
+  margin: 30px;
+  padding: 50px;
+  gap: 50px;
+  width: 30vw;
 }
+
+.profilePic {
+  height: 129px;
+  width: 129px;
+  border-radius: 10px 10px 10px 10px;
+  background: url(../Images/picture.jpg) no-repeat;
+  cursor: pointer;
+}
+
 .profilePic:hover {
-    background-color: darkgray;
+  background-color: darkgray;
 }
 
 button {
-    height: 10vh;
-    width: 20vh;
+  height: 10vh;
+  width: 20vh;
 }
 
 .btnWrapper {
-    position: absolute;
-    top: 21.5vh;
-    right: 60vh;
-    border: 5px dotted black;
-background-color: rgb(173, 173, 197);
+  position: absolute;
+  top: 21.5vh;
+  right: 60vh;
+  border: 5px dotted black;
+  background-color: rgb(173, 173, 197);
 
-
-height: 30vh;
-width: 20vw;
-    
+  height: 30vh;
+  width: 20vw;
 }
-#meny{
-    width: 50vh;
-    height: 100vh;
-    right: 0;
-    position: fixed; 
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
 
+#meny {
+  width: 50vh;
+  height: 100vh;
+  right: 0;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
+
 .helpAndlogout {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
 }
 
 #help {
-    margin-left: 50px;
-    height: 50px;
-    width: 50px;
-    border: none;
-    cursor: pointer;
-    appearance: none;
-    position: absolute;
-    bottom: 6vh;
-    left: 5vh;
+  margin-left: 50px;
+  height: 50px;
+  width: 50px;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  position: absolute;
+  bottom: 6vh;
+  left: 5vh;
 }
 
-#help:hover{
-    scale: 1.2;
+#help:hover {
+  scale: 1.2;
 }
 
 #logout {
-    height: 60px;
-    width: 60px;
-    border: none;
-    cursor: pointer;
-    appearance: none;
-    position: absolute;
-    bottom: 5vh;
-    right: 5vh;
-    border-radius: 40px 40px 40px 40px;
-}
-#logout:hover{
-    scale: 1.2;
+  height: 60px;
+  width: 60px;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  position: absolute;
+  bottom: 5vh;
+  right: 5vh;
+  border-radius: 40px 40px 40px 40px;
 }
 
-.user-text{
-    position: absolute;
-    top: 1.5vh;
-    left: 35vh;
-    font-family: 'Varela Round', sans-serif;
-    border: none;
-    cursor: pointer;
-    appearance: none;
- }
+#logout:hover {
+  scale: 1.2;
+}
 
- a{
-    text-decoration:none;
-    color: black;
-    box-shadow: inset 0 0 0 0 #9190ae;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-    font-family: 'Varela Round', sans-serif;
- }
-a:hover{
-  box-shadow: inset 100px 100px 0 0  #9190ae;
+.user-text {
+  position: absolute;
+  top: 1.5vh;
+  left: 35vh;
+  font-family: "Varela Round", sans-serif;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  box-shadow: inset 0 0 0 0 #9190ae;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  font-family: "Varela Round", sans-serif;
+}
+
+a:hover {
+  box-shadow: inset 100px 100px 0 0 #9190ae;
   color: white;
-    
-}
- .submit{
-    position: absolute;
-    top: 1.5vh;
-    left: 55vh;
-    font-family: 'Varela Round', sans-serif;
- }
-
- .edit{
-    position: absolute;
-    top: 1.5vh;
-    left: 85vh;
-    font-family: 'Varela Round', sans-serif;
- }
-
- h3{
-    font-family: 'Varela Round', sans-serif;
- }
-
- .change-username{
-    border-radius: 10px 10px 10px 10px;
-    position: absolute;
-    left: 50vh;
-    bottom: 33vh;
-    border: none;
-    cursor: pointer;
-    appearance: none;
-    width: 15vh;
-    height: 5vh;
- }
-
- .change-password{
-    border-radius: 10px 10px 10px 10px;
-    margin-left: 39vh;
-    border: none;
-    cursor: pointer;
-    appearance: none;
-    width: 15vh;
-    height: 5vh;
- }
-
-.btn-default{
-    border-radius: 10px 10px 10px 10px;
-    position: absolute;
-    top: 10vh;
-    left: 8vh;
-    border: none;
-    cursor: pointer;
-    appearance: none;
-    background-color: rgb(222, 109, 109);
-}
-.btn-default:hover{
-    background-color: rgb(165, 107, 107);
 }
 
+.submit {
+  position: absolute;
+  top: 1.5vh;
+  left: 55vh;
+  font-family: "Varela Round", sans-serif;
+}
+
+.edit {
+  position: absolute;
+  top: 1.5vh;
+  left: 85vh;
+  font-family: "Varela Round", sans-serif;
+}
+
+h3 {
+  font-family: "Varela Round", sans-serif;
+}
+
+.change-username {
+  border-radius: 10px 10px 10px 10px;
+  position: absolute;
+  left: 50vh;
+  bottom: 33vh;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  width: 15vh;
+  height: 5vh;
+}
+
+.change-password {
+  border-radius: 10px 10px 10px 10px;
+  margin-left: 39vh;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  width: 15vh;
+  height: 5vh;
+}
+
+.btn-default {
+  border-radius: 10px 10px 10px 10px;
+  position: absolute;
+  top: 10vh;
+  left: 8vh;
+  border: none;
+  cursor: pointer;
+  appearance: none;
+  background-color: rgb(222, 109, 109);
+}
+
+.btn-default:hover {
+  background-color: rgb(165, 107, 107);
+}

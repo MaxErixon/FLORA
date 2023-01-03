@@ -5,7 +5,6 @@ require_once "functions.php";
 
 $fileName= "users.json";
 
-
 $method = $_SERVER["REQUEST_METHOD"];
 
 if ($method != "PATCH") {
@@ -15,19 +14,16 @@ if ($method != "PATCH") {
 
 $users = [];
 
-
 if (file_exists($fileName)) {
     $json = file_get_contents($fileName);
     $users = json_decode($json, true);
-    
 }
 
 $contentType = $_SERVER["CONTENT_TYPE"];
 
 if ($contentType != "application/json") {
-
     $error = ["error"=>"Invalid content type"];
-        sendJSON($error, 400);
+    sendJSON($error, 400);
 }
 
 $requestJSON = file_get_contents("php://input");
@@ -60,11 +56,11 @@ if ($method == "PATCH") {
             file_put_contents($fileName, $json);
             $message = ["message" => "Success"];
             sendJSON($message);
-            }
+        }
+    }          
+}
 
-        }          
-   
-    }
+?>
 
 
 

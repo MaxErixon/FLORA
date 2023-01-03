@@ -9,6 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "OPTIONS"){
 }else{
     header("Access-Control-Allow-Origin: *");
 };
+
 function sendJSON($data, $statusCode = 200){
     header("Content-Type: application/json");
     http_response_code($statusCode);

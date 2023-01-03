@@ -20,3 +20,5 @@ if (file_exists($fileName)) {
     
 } 
 sendJSON($users);
+
+?>

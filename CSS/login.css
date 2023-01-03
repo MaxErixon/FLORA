@@ -3,6 +3,7 @@ body {
   background-color: #9190ae;
   font-family: "Varela Round", sans-serif;
 }
+
 .header {
   height: 10vh;
   background-color: whitesmoke;
@@ -18,14 +19,14 @@ body {
   right: 50px;
   width: 6vh;
 }
-.header > h2:nth-child(2) {
- margin-top: 0px;
- margin-bottom: 0px;
- margin-left: 85vw;
- position: relative;
- top: 25px;
-}
 
+.header > h2:nth-child(2) {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 85vw;
+  position: relative;
+  top: 25px;
+}
 
 h1 {
   margin-top: 0;
@@ -49,16 +50,19 @@ img {
   right: 50px;
   width: 10vh;
 }
+
 #login {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 #loginForm {
   display: flex;
   justify-content: center;
   justify-content: center;
 }
+
 .loginform {
   display: grid;
   justify-content: center;
@@ -69,6 +73,7 @@ img {
   width: 50vh;
   border-radius: 10px 10px 10px 10px;
 }
+
 input {
   padding: 10px;
   margin-top: 3vh;
@@ -105,6 +110,7 @@ h3 {
   cursor: pointer;
   appearance: none;
 }
+
 #createAccountBtn {
   margin-left: 11vh;
   width: 15vh;
@@ -114,6 +120,7 @@ h3 {
   cursor: pointer;
   appearance: none;
 }
+
 p {
   margin-top: 5vh;
   margin-left: 5vh;
