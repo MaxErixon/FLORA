@@ -1,3 +1,4 @@
+
 function createInputFields() {
   inputFields = document.getElementById("input-fields");
   inputFields.innerHTML = "";

@@ -1,15 +1,15 @@
 
-
-
+// controlls the user info that will be filled in these input fields that tries to login exists in the users.json
 function checkUsers() {
   const password = document.querySelector("#logInpassword").value;
   const username = document.querySelector("#logInusername").value;
 
+  // mekes a post request that contains the password and username
   let body_post = {
     password: password,
     username: username,
   };
-
+  // sends a request to the login.php file
   let rqt_post = new Request("/APIs/users/login.php", {
     method: "POST",
     body: JSON.stringify(body_post),
@@ -24,7 +24,6 @@ function checkUsers() {
       if (responseStatus.status != 200) {
         console.log("error");
       }
-
       return responseStatus.json();
     })
     .then((resource) => {
@@ -44,7 +43,6 @@ function checkUsers() {
       
     });
 }
-
 document.querySelector("#loginBtn").addEventListener("click", checkUsers)
 
 

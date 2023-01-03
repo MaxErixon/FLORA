@@ -1,5 +1,8 @@
 "use strict";
+// When the user has logged in the username will appear with this message
 document.querySelector(".title h1").innerHTML=`Welcome to Quizmaster <span>${localStorage.getItem("setName")}!<span>`
+
+// When the user clicks on buttons from index.html the onclick function activates them
 function btnuserIcon() {
   location.href = "login.html";
   console.log("hello");

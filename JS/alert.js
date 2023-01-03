@@ -1,5 +1,7 @@
 "use strict";
 
+// pop ups for different events 
+
 function needAccountSubmit() {
   let answer = confirm("You need an account to play user quizzes!");
   if (answer === true) {
@@ -26,7 +28,7 @@ function deleteUser() {
   let body_delete = {
     username: localStorage.getItem("setName"),
   };
-
+  // sends request to our delete 
   let rqt_delete = new Request("/APIs/Users/delete.php", {
     method: "DELETE",
     body: JSON.stringify(body_delete),
@@ -56,26 +58,9 @@ function DeleteAccount() {
   }
 }
 
-
-/* function SavedEditings() {
-  let userform = document.getElementsByClassName("userform");
-  let passWform = document.getElementsByClassName("passWform");
-  if (userform && passWform === "") {
-    alert("Input fields can not be left blank");
-  } else userform && passWform !== "";
-  {
-    confirm("Do you want to save your changes?");
-  }
-  if (userform && passWform === true) {
-    alert("Your changes have been saved!");
-    location.href = "home-account.html";
-  }
-}
-*/
-
 function contactUs() {
   alert(
-    "Contact us\nmaxerixon112@gmail.com\nlovisa.ericsson01@gmail.com\nmelissa.sjostedt@outlook.com"
+    "Contact us\nMaxerixon112@gmail.com\nLovisa.ericsson01@gmail.com\nMelissa.sjostedt@outlook.com"
   );
 }
 

@@ -40,11 +40,17 @@ if ($method == "DELETE") {
 
     $username = $requestData["username"];
 
+    // loops through the userss as the index user
     foreach ($users as $index => $user) {
+        // kontrolls if the username is the same as the one that clicked
         if ($user["username"] == $username) {
+            // uses the array splice method to delete one of the current user 
             array_splice($users, $index, 1);
+            // PHP to JSON and prints the user
             $json = json_encode($users, JSON_PRETTY_PRINT);
+            // gets the contents thats inside the file
             file_put_contents($fileName,$json);
+            // sends the user 
             sendJSON($user);
         }
         

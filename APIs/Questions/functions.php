@@ -1,9 +1,9 @@
 <?php
+// If method OPTIONS = Allows all methods, places, domains and headers to be allowed
 if($_SERVER["REQUEST_METHOD"] == "OPTIONS"){
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Headers: *");
     header("Access-Control-Allow-Methods: *");
-    
     exit();
 }else{
     header("Access-Control-Allow-Origin: *");
@@ -14,4 +14,4 @@ function sendJSON($data, $statusCode = 200){
     $json = json_encode($data);
     echo $json;
     exit();
-    }
+}

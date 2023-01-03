@@ -19,7 +19,4 @@ if (file_exists($fileName)) {
     $users = json_decode($json, true);
     
 } 
-
-
-
 sendJSON($users);

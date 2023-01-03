@@ -18,7 +18,6 @@ $users = [];
 
 if (file_exists($fileName)) {
     $json = file_get_contents($fileName);
-    //sendJSON($json);
     $users = json_decode($json, true);
     
 }
@@ -34,15 +33,8 @@ if ($contentType != "application/json") {
 $requestJSON = file_get_contents("php://input");
 $requestData = json_decode($requestJSON, true);
 
-
-
 if ($method == "PATCH") {
 
-    if (!isset($requestData["username"], $requestData["password"], $requestData["newPassword"], $requestData["confirmPassword"])) {
-        $error = ["error"=>"The new password and confirm password must match!"];
-        sendJSON($error, 400);
-    }
-    
     if ($requestData["password"] == ""||  $requestData["newPassword"] == "" || $requestData["confirmPassword"] == "") {
         $error = ["error"=>"Please fill in all inputfields!"];
         sendJSON($error, 400);
@@ -52,15 +44,15 @@ if ($method == "PATCH") {
         $error = ["The new password and confirm password must match!"];
         sendJSON($error, 406);
     }
+
     $username = $requestData["username"];
     $password = $requestData["password"];
     $newPassword =$requestData["newPassword"];
     $confirmPassword = $requestData["confirmPassword"];
 
-        // Update users password
+    // Update users password
     foreach ($users as $index => $user){    
         if ($user["username"] == $username) {
-            
             $user["password"] = $newPassword;
             $users[$index] = $user;
 

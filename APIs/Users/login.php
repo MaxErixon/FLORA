@@ -23,7 +23,7 @@ if (file_exists($fileName)) {
             $json = file_get_contents($fileName);
             $users = json_decode($json, true);
             
- }
+}
 
 
 $contentType = $_SERVER["CONTENT_TYPE"];

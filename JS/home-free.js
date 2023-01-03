@@ -1,5 +1,6 @@
 "use strict"
 
+// When the user clicks on buttons from index.html the onclick function activates them
 function btnuserIcon(){
     location.href = "login.html"
     console.log("hello");

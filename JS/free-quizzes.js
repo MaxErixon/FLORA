@@ -1,5 +1,5 @@
 "use-strict";
-
+// This is an array over every category that is included in the open API
 const category = [
   {
     id: 1,
@@ -73,7 +73,6 @@ const category = [
   },
 ];
 
-
 //Create boxes of category 
 function createBoxesOfQuiz() {
   for (let i = 0; i < category.length; i++) {
@@ -130,6 +129,7 @@ function categoryEvent(categoryId) {
   let categoryDivInfo = document.createElement("div");
   categoryDivInfo.className = "categoryInfo";
   wrapper.appendChild(categoryDivInfo);
+
   // Check each category, then the title and icon shows
   if (categoryId == "categoryId0") {
     categoryDivTitle.innerHTML = category[0].title;
@@ -280,6 +280,8 @@ function playQuiz() {
   clockDiv.appendChild(clock);
 
   timeLeft = 5;
+
+
 //Countdown timer on the quiz 
   function countdown() {
     timeLeft--;
@@ -414,7 +416,7 @@ function playQuiz() {
           }
           return i;
         }
-//Results - date and time
+        //Results - date and time
         const date = new Date();
         let day = date.getDate();
         let month = date.getMonth() + 1;
@@ -503,7 +505,6 @@ function playQuiz() {
       radioButton.checked = false;
     }
   }
-
   setTimeout(countdown, 1000);
 }
 let data = [];

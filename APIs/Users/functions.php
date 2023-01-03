@@ -1,4 +1,5 @@
 <?php
+// If method OPTIONS = Allows all methods, places, domains and headers to be allowed
 if($_SERVER["REQUEST_METHOD"] == "OPTIONS"){
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Headers: *");

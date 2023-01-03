@@ -1,3 +1,6 @@
+
+// The links in the header 
+// we use localStorage to set the logged in users name in the header
 document.querySelector("header").innerHTML = 
 `<div class="header">
       
