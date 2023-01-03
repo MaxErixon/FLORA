@@ -281,7 +281,6 @@ function playQuiz() {
 
   timeLeft = 5;
 
-
 //Countdown timer on the quiz 
   function countdown() {
     timeLeft--;
@@ -426,8 +425,6 @@ function playQuiz() {
         let m = addZero(date.getMinutes());
         let s = addZero(date.getSeconds());
         let time = h + ":" + m + ":" + s;
-
-        let current_time = console.log(currentDate);
 
         let dateInfo = document.createElement("div");
         dateInfo.id = "date";

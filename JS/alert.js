@@ -34,11 +34,11 @@ function deleteUser() {
     body: JSON.stringify(body_delete),
     headers: { "Content-type": "application/json" },
   });
+
   fetch(rqt_delete)
     .then((response) => {
       response.json();
     })
-
     .then((resource) => {
       if (resource.error) {
       } else {

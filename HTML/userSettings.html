@@ -1,63 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Varela+Round&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href ="../CSS/userSettings.css"> 
-    <link rel="stylesheet" href="../CSS/header.css">
-    <title>UserSettings</title>
-</head>
-    <header></header>
-<body>
-    <div id="container">
-
-
-             <div id="forms">
-                            <h1>Edit account settings</h1>
-                                        <div class="passWform">
-                                                <h3>Old Password:</h3>
-                                                <input type="password" id="password" placeholder="old password">
-                                                <br><br>
-                                                <h3>New password:</h3>
-                                                <input type="password" id="newPassword" placeholder="new password">
-                                                <br><br>
-                                                <h3>Confirm new password:</h3>
-                                                <input type="password" id="confirmPassword" placeholder="confirm password">
-                                                <br><br>
-                                                <button onclick="ChangeInfo()" class="btn">Change password</button>
-                                            </form>
-                                       </div>
-             </div>
-
-        
-
-            <div class="btnWrapper">
-                 
-                 <button onclick="DeleteAccount()" class="btn-default">Delete account</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Varela+Round&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href ="../CSS/userSettings.css"> 
+        <link rel="stylesheet" href="../CSS/header.css">
+        <title>UserSettings</title>
+    </head>
+    <body>
+        <header></header>
+        <div id="container">
+            <div id="forms">
+                <h1>Edit account settings</h1>
+                <div class="passWform">
+                    <h3>Old Password:</h3>
+                    <input type="password" id="password" placeholder="old password">
+                    <br><br>
+                    <h3>New password:</h3>
+                    <input type="password" id="newPassword" placeholder="new password">
+                    <br><br>
+                    <h3>Confirm new password:</h3>
+                    <input type="password" id="confirmPassword" placeholder="confirm password">
+                    <br><br>
+                    <button onclick="ChangeInfo()" class="btn">Change password</button>
+                </form>
             </div>
+        </div>
+        <div class="btnWrapper">
+            <button onclick="DeleteAccount()" class="btn-default">Delete account</button>
+        </div>
+
+        <div id = "meny">
+            <div class="helpAndlogout"> 
+                <div id ="help" onclick="contactUs()"><img src="../Images/help.jpg">
                 </div>
-
-</div>
-
-</div>
-<div id = "meny">
-    <div class="helpAndlogout"> 
-          <div id ="help" onclick="contactUs()"><img src="../Images/help.jpg"></div>
-          <div id ="logout"><img src="../Images/logout.jpg"></div>    
-    </div>
-
-</div>    
+                <div id ="logout"><img src="../Images/logout.jpg">
+                </div>    
+            </div>
+        </div>  
 <!--Mention the path of the json file in the script source along with the javascript file -->
-<script src="../JS/changePass.js"></script>
-<script src="../JS/alert.js"></script>
-<script src="../JS/header.js"></script>
-<script src="../JS/logOut.js"></script>
-
-      
-    
-</body>
+        <script src="../JS/changePass.js"></script>
+        <script src="../JS/alert.js"></script>
+        <script src="../JS/header.js"></script>
+        <script src="../JS/logOut.js"></script>
+    </body>
 </html>

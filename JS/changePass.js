@@ -1,12 +1,10 @@
 "use strict";
-
 // Gets the value from the inputfields in HTML
 function ChangeInfo() {
   const password = document.getElementById("password").value;
   const newPassword = document.getElementById("newPassword").value;
   const confirmPassword = document.getElementById("confirmPassword").value;
   const username = `${localStorage.getItem("setName")}`;
-
 
 // request body contains this keys
   let pwForm = {
@@ -43,5 +41,4 @@ function ChangeInfo() {
      
     }
   }
-
 }
