@@ -49,7 +49,7 @@ button {
 }
 
 .free-quiz {
-  background-color: rgb(126, 195, 217);
+  background-color: rgb(0, 193, 255);
   height: 30vh;
   width: 28vh;
   display: flex;
@@ -73,7 +73,7 @@ button {
 .title-free-quiz {
   position: absolute;
   bottom: 30vh;
-  background-color: rgb(126, 195, 217);
+  background-color: rgb(118, 222, 255);
   border-top: solid black 2px;
   width: 28vh;
   height: 10vh;
@@ -93,7 +93,7 @@ button {
 }
 
 .user-quiz {
-  background-color: rgb(119, 219, 171);
+  background-color: rgb(0, 255, 133);
   height: 30vh;
   width: 28vh;
   display: flex;
@@ -117,7 +117,7 @@ button {
 .title-user-quiz {
   position: absolute;
   bottom: 30vh;
-  background-color: rgb(119, 219, 171);
+  background-color: rgb(107, 251, 182);
   border-top: solid black 2px;
   width: 28vh;
   height: 10vh;
@@ -137,7 +137,7 @@ button {
 }
 
 .submit-quiz {
-  background-color: rgb(220, 212, 128);
+  background-color: rgb(255, 233, 0);
   height: 30vh;
   width: 28vh;
   display: flex;
@@ -161,7 +161,7 @@ button {
 .title-submit-quiz {
   position: absolute;
   bottom: 30vh;
-  background-color: rgb(220, 212, 128);
+  background-color: rgb(255, 243, 116);
   border-top: solid black 2px;
   width: 28vh;
   height: 10vh;
