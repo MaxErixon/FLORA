@@ -22,7 +22,7 @@ function ChangeInfo() {
     confirmPassword: confirmPassword,
   };
   // variable rqt_post contains the request
-  let rqt_post = new Request("/APIs/Users/update.php", {
+  let rqt_post = new Request("https://www.maumt.se/dbp/dbp22/projekt/flora/APIs/Users/update.php", {
     method: "PATCH",
     body: JSON.stringify(pwForm),
     headers: { "Content-type": "application/json" },

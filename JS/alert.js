@@ -29,7 +29,7 @@ function deleteUser() {
     username: localStorage.getItem("setName"),
   };
   // sends request to our delete 
-  let rqt_delete = new Request("/APIs/Users/delete.php", {
+  let rqt_delete = new Request("https://www.maumt.se/dbp/dbp22/projekt/flora/APIs/Users/delete.php", {
     method: "DELETE",
     body: JSON.stringify(body_delete),
     headers: { "Content-type": "application/json" },

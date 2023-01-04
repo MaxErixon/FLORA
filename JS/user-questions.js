@@ -289,7 +289,7 @@ let correctAnswer = "";
 
 //Find the online-API
 async function getQuizQuestion(limit) {
-  let response = await fetch(`/APIs/Questions/show.php?limit=${limit}`);
+  let response = await fetch(`https://www.maumt.se/dbp/dbp22/projekt/flora/APIs/Questions/show.php?limit=${limit}`);
   data = await response.json();
   
   
