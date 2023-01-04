@@ -128,5 +128,10 @@
         "id": 33,
         "username": "Maximus",
         "password": "mixu"
+    },
+    {
+        "id": 34,
+        "username": "lollo",
+        "password": "123"
     }
 ]
