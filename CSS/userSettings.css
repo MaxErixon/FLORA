@@ -74,7 +74,7 @@ img {
   margin-top: 2vh;
 }
 
-.btnWrapper button{
+.btnWrapper button {
   height: 10vh;
   width: 20vh;
 }
@@ -211,5 +211,4 @@ h3 {
 
 #forms > h1:nth-child(1) {
   margin-top: 3vh;
- }
- 
+}

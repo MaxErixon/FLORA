@@ -1,4 +1,3 @@
-
 //Alert for sucessfully created question
 function questionCreated() {
   let answer = confirm("Your questions has been added!");
@@ -59,6 +58,7 @@ function submitQuestion() {
       return response.json();
     })
     .then((resource) => {
+      //If the resource contains an error do nothing, else empty all the inputs and tell the user the submission is sucessfull
       if (resource.error == "Missing text or category") {
       } else {
         clearInputs();

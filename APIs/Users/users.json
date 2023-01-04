@@ -125,13 +125,13 @@
         "password": "leobby123"
     },
     {
-        "id": 33,
-        "username": "Maximus",
-        "password": "mixu"
-    },
-    {
         "id": 34,
         "username": "lollo",
         "password": "123"
+    },
+    {
+        "id": 35,
+        "username": "Maxi",
+        "password": "bong"
     }
 ]

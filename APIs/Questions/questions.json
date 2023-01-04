@@ -43,5 +43,14 @@
         "incorrectAnswer1": "Without pasta",
         "incorrectAnswer2": "With pasta \/ with gluten",
         "incorrectAnswer3": "Non-traditional"
+    },
+    {
+        "id": 6,
+        "category": "Geography",
+        "question": "Hur m\u00e5nga inv\u00e5nare har Malm\u00f6?",
+        "correctAnswer": "353 000",
+        "incorrectAnswer1": "260 000",
+        "incorrectAnswer2": "400 000",
+        "incorrectAnswer3": "500 000"
     }
 ]

@@ -73,7 +73,7 @@ const category = [
   },
 ];
 
-//Create boxes of category 
+//Create boxes of category
 function createBoxesOfQuiz() {
   for (let i = 0; i < category.length; i++) {
     let divId = document.getElementById("container");
@@ -86,14 +86,14 @@ function createBoxesOfQuiz() {
 
     categoryTitleId.className = "titleBox";
     categoryChildId.appendChild(categoryTitleId);
-//Adds icon of each category 
+    //Adds icon of each category
     let iconId = document.createElement("div");
     iconId.innerHTML = `
         <img src=${category[i].icon}>
         `;
     iconId.className = "iconBox";
     categoryChildId.appendChild(iconId);
-//When you clicking on a box of category 
+    //When you clicking on a box of category
     let click = document.getElementById(categoryId.id);
     click.addEventListener("click", function () {
       categoryEvent(categoryId.id);
@@ -105,7 +105,7 @@ function categoryEvent(categoryId) {
   let hidden = document.getElementById("container");
   hidden.style.display = "none";
 
-  document.querySelector(".title").innerHTML="";
+  document.querySelector(".title").innerHTML = "";
 
   let backDiv = document.createElement("div");
   backDiv.className = "backDiv";
@@ -213,7 +213,7 @@ function createInputFields() {
   label.innerHTML = "Difficulty" + ":";
   label.className = "label";
   inputFields.appendChild(label);
- 
+
   let array = ["easy", "medium", "hard"];
   selectList = document.createElement("select");
   selectList.id = "mySelect";
@@ -226,7 +226,7 @@ function createInputFields() {
     selectList.appendChild(option);
   }
 }
-//Select quiz 
+//Select quiz
 function selectQuiz() {
   document.getElementById("clock").style.visibility = "hidden";
   createInputFields();
@@ -235,7 +235,7 @@ function selectQuiz() {
   btnPlayQuiz.innerHTML = `
     <button id = "btnPlayQuiz"> Play quiz </button>`;
   document.body.appendChild(btnPlayQuiz);
-//When you click on the play button 
+  //When you click on the play button
   let click = document.getElementById("button-play");
   click.addEventListener("click", function () {
     inputFields.innerText = numberOfQuestion.value;
@@ -251,7 +251,7 @@ function selectQuiz() {
     }
   });
 }
-//Global variabels 
+//Global variabels
 let inputFields = null;
 let numberOfQuestion = null;
 let categoryName = "";
@@ -260,7 +260,7 @@ let levelOption = "";
 let selectList = null;
 let questionNumber = 1;
 
-//Find the category-Title 
+//Find the category-Title
 function playQuiz() {
   let categoryClass = document.getElementsByClassName("categoryTitle");
   let categoryNameBlank = categoryClass[0].innerHTML;
@@ -281,7 +281,7 @@ function playQuiz() {
 
   timeLeft = 5;
 
-//Countdown timer on the quiz 
+  //Countdown timer on the quiz
   function countdown() {
     timeLeft--;
     document.getElementById("seconds").innerHTML = String(timeLeft);
@@ -319,7 +319,7 @@ function playQuiz() {
       categoryName;
 
       let userScore = 0;
-//Create each div of the answers
+      //Create each div of the answers
       for (let i = 0; i < 4; i++) {
         let answerBox = document.createElement("div");
         answerBox.className = "box-answer";
@@ -452,7 +452,7 @@ function playQuiz() {
 
   let timeValue = 20;
   let counter = 0;
-//The timer of the white page 
+  //The timer of the white page
   function startTimer(time) {
     counter = setInterval(timer, 1000);
     function timer() {
@@ -478,7 +478,7 @@ function playQuiz() {
     }
   }
 
- //Check if answer is correct 
+  //Check if answer is correct
   function setCorrectAnswer() {
     for (i = 0; i < 4; i++) {
       let label = document.getElementById("label" + `${i}`);
@@ -488,14 +488,14 @@ function playQuiz() {
       }
     }
   }
-//Answer-color resets
+  //Answer-color resets
   function clearAnswerColor() {
     for (i = 0; i < 4; i++) {
       let color = document.getElementById("box-answer" + `${i}`);
       color.style.backgroundColor = "";
     }
   }
-//Button resets
+  //Button resets
   function clearButtonSelect() {
     let radioButtons = document.querySelectorAll('input[name="radio"]');
     for (let radioButton of radioButtons) {
@@ -507,7 +507,7 @@ function playQuiz() {
 let data = [];
 let correctAnswer = "";
 
-//Find the online-API 
+//Find the online-API
 async function getQuizQuestion(category, limit, difficulty) {
   let response = await fetch(
     `https://the-trivia-api.com/api/questions?categories=${category}&limit=${limit}&difficulty=${difficulty}`

@@ -1,4 +1,3 @@
-
 function createInputFields() {
   inputFields = document.getElementById("input-fields");
   inputFields.innerHTML = "";
@@ -173,7 +172,8 @@ function playQuiz() {
         let hiddenWrapperQuiz = document.getElementById("wrapper-quiz");
         hiddenWrapperQuiz.style.visibility = "hidden";
         showResults.style.visibility = "hidden";
-        document.getElementById("quiz-title").innerHTML="Quiz with user questions";
+        document.getElementById("quiz-title").innerHTML =
+          "Quiz with user questions";
 
         let results_box = document.getElementById("question-count");
         results_box.innerHTML =
@@ -287,25 +287,22 @@ function playQuiz() {
 let data = [];
 let correctAnswer = "";
 
-//Find the online-API
+//Find the local API with questions
 async function getQuizQuestion(limit) {
   let response = await fetch(`../APIs/Questions/show.php?limit=${limit}`);
   data = await response.json();
-  
-  
 
   showQuestion();
 }
-// Show the question from API
+// Show the question from the local API with questions
 function showQuestion() {
-
   let questionCounter = document.getElementById("question-count");
   questionCounter.innerText = `${questionNumber}` + "/" + `${data.length}`;
 
   let question = document.getElementById("question");
   question.innerHTML = data[questionNumber - 1].question;
   let quizTitle = document.getElementById("quiz-title");
-  quizTitle.innerHTML = data[questionNumber -1].category;
+  quizTitle.innerHTML = data[questionNumber - 1].category;
   console.log(data);
 
   let answers = [

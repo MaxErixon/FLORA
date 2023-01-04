@@ -1,7 +1,6 @@
 "use strict";
 // Gets the value from the inputfields in HTML
 function ChangeInfo() {
-  
   let password = document.getElementById("password").value;
   let newPassword = document.getElementById("newPassword").value;
   let confirmPassword = document.getElementById("confirmPassword").value;
@@ -9,7 +8,7 @@ function ChangeInfo() {
 
   //Empty the inputs
   function clearInputs() {
-    document.getElementById("password").value= "";
+    document.getElementById("password").value = "";
     document.getElementById("newPassword").value = "";
     confirmPassword = document.getElementById("confirmPassword").value = "";
   }
@@ -40,16 +39,16 @@ function ChangeInfo() {
       console.log(result);
       clearInputs();
     });
-    
-    function UpdatePassword(responseStatus) {
-      if (responseStatus.status === 200) {
-        alert("Password changed sucessfully");
-      }
-      if (responseStatus.status === 406) {
-        alert("New password and confirm password must match!");
-      }
-      if (responseStatus.status == 403) {
-        alert("The old password must match your current password!")
-      }
+
+  function UpdatePassword(responseStatus) {
+    if (responseStatus.status === 200) {
+      alert("Password changed sucessfully");
+    }
+    if (responseStatus.status === 406) {
+      alert("New password and confirm password must match!");
+    }
+    if (responseStatus.status == 403) {
+      alert("The old password must match your current password!");
+    }
   }
 }

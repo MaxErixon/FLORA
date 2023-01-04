@@ -1,8 +1,6 @@
-
-// The links in the header 
+// The links in the header
 // we use localStorage to set the logged in users name in the header
-document.querySelector("header").innerHTML = 
-`<div class="header">
+document.querySelector("header").innerHTML = `<div class="header">
       
       <a href="home-account.html"><img src="../Images/Quiz-logo.png" class = "logo"></a>
       
@@ -17,6 +15,4 @@ document.querySelector("header").innerHTML =
       <h2>${localStorage.getItem("setName")}</h2>
         <img src="../Images/user.jpg" alt="buttonpng" />
       </a>
-    </div>`
-
-   
+    </div>`;

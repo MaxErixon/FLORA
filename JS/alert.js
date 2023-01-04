@@ -1,6 +1,6 @@
 "use strict";
 
-// pop ups for different events 
+// pop ups for different events
 
 function needAccountSubmit() {
   let answer = confirm("You need an account to play user quizzes!");
@@ -28,7 +28,7 @@ function deleteUser() {
   let body_delete = {
     username: localStorage.getItem("setName"),
   };
-  // sends request to our delete 
+  // sends request to our delete
   let rqt_delete = new Request("../APIs/Users/delete.php", {
     method: "DELETE",
     body: JSON.stringify(body_delete),
@@ -74,5 +74,3 @@ function DeleteQuestion() {
 function submitQuestion() {
   alert("YEY!\nYour quiz is now in the user quiz!");
 }
-
-

@@ -1,4 +1,3 @@
-
 // controlls the user info that will be filled in these input fields that tries to login exists in the users.json
 function checkUsers() {
   const password = document.querySelector("#logInpassword").value;
@@ -33,21 +32,11 @@ function checkUsers() {
         // logIn_answer(responseStatus, resource.username);
         alert(`Welcome ${resource.username}!`);
         location.href = "home-account.html";
-        localStorage.setItem("setName", `${resource.username}`)
+        localStorage.setItem("setName", `${resource.username}`);
         cat = localStorage.getItem("setName");
         console.log(cat);
-
-        
       }
       console.log(responseStatus);
-      
     });
 }
-document.querySelector("#loginBtn").addEventListener("click", checkUsers)
-
-
-
-
-
-
-
+document.querySelector("#loginBtn").addEventListener("click", checkUsers);
