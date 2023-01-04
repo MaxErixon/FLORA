@@ -45,7 +45,7 @@ function submitQuestion() {
     incorrectAnswer3: incorrectAnswer3.value,
   };
 
-  let rqt_post = new Request("https://www.maumt.se/dbp/dbp22/projekt/flora/APIs/Questions/add.php", {
+  let rqt_post = new Request("../APIs/Questions/add.php", {
     method: "POST",
     body: JSON.stringify(body_post),
     headers: { "Content-type": "application/json" },

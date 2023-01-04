@@ -22,7 +22,7 @@ function createUser() {
     password: password.value,
   };
   // variable rqt_post contains the request 
-  let rqt_post = new Request("https://www.maumt.se/dbp/dbp22/projekt/flora/APIs/Users/create.php", {
+  let rqt_post = new Request("../APIs/Users/create.php", {
     method: "POST",
     body: JSON.stringify(body_post),
     headers: { "Content-type": "application/json" },
