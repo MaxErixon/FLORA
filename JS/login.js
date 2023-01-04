@@ -10,7 +10,7 @@ function checkUsers() {
     username: username,
   };
   // sends a request to the login.php file
-  let rqt_post = new Request("https://www.maumt.se/dbp/dbp22/projekt/flora/APIs/Users/login.php", {
+  let rqt_post = new Request("../APIs/Users/login.php", {
     method: "POST",
     body: JSON.stringify(body_post),
     headers: { "Content-type": "application/json" },
