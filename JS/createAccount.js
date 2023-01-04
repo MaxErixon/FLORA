@@ -22,7 +22,7 @@ function createUser() {
     password: password.value,
   };
   // variable rqt_post contains the request 
-  let rqt_post = new Request("/dbp/dbp22/projekt/flora/APIs/users/create.php", {
+  let rqt_post = new Request("../APIs/users/create.php", {
     method: "POST",
     body: JSON.stringify(body_post),
     headers: { "Content-type": "application/json" },
